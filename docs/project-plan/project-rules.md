@@ -4,7 +4,7 @@ These rules are mandatory for Project Seal delivery work.
 
 ## Git Commit Rule
 
-When an agent changes any non-ignored project file, the change must be committed to git after the relevant verification passes.
+When an agent changes any non-ignored project file, the change must be committed to git and pushed to the tracked remote branch after the relevant verification passes.
 
 Applies to:
 
@@ -27,7 +27,9 @@ Commit rules:
 - Include all non-ignored files that belong to the completed delivery.
 - If unrelated user work is present, do not overwrite it; either leave it untouched or call it out before committing.
 - Use a concise commit message that names the milestone or delivery.
-- Pushing to remote is done when the owner asks for push, or when a delivery explicitly requires remote backup.
+- Push the commit to the tracked remote branch immediately after a successful commit.
+- Stop before push only if secrets, private raw photos, unrelated user work, merge conflicts, authentication failure, or remote rejection is detected.
+- After push, confirm `git status -sb` shows the local branch is aligned with its remote tracking branch.
 
 ## Meowa Art Direction Rule
 
@@ -67,3 +69,5 @@ Required checks:
 - Confirm key visual traits are visible.
 - Confirm no fallback character, old UI, or debug label is covering the pet.
 - Show or attach the screenshot before asking for owner acceptance.
+
+
