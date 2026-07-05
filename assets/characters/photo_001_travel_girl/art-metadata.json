@@ -1,6 +1,6 @@
-{
+﻿{
     "characterId":  "photo_001_travel_girl",
-    "status":  "right_top_small_meowa_optimized_mvp_animation_implemented",
+    "status":  "right_top_small_meowa_v2_animation_screenshot_qa_passed",
     "sourceType":  "owner_selected_candidate_to_meowa_optimized_animation_pack",
     "sourcePhoto":  "assets/references/photo-inputs/photo-001.png",
     "approvedReferenceSheet":  "assets/references/photo-to-pixel-tests/photo-001-style-candidates-v1.png",
@@ -27,7 +27,15 @@
     "notes":  [
                   "Owner selected the smaller top-right candidate, not the top-left tall candidate.",
                   "Meowa pixelate output is used as the normalized visual source.",
+                  "V2 animation frames generated with stricter art director prompts for stable pose, outfit, and 1-2 pixel motion.",
                   "MVP animation states implemented: idle 4 frames, walk 4 frames, sleep 2 frames, happy/poke 2 frames.",
-                  "Do not change outfit palette or candidate selection without owner approval."
-              ]
+                  "All art changes must run screenshot QA before handoff."
+              ],
+    "meowaAnimationV2Jobs":  {
+                                 "idle":  "c7f196e1-5abe-4ca4-90df-e92e2e3d338d",
+                                 "walk":  "ab2e205c-bc4b-489a-8cf1-45dce17396ca",
+                                 "sleep":  "d948e35e-d50c-403f-8031-ee84ef081fd3",
+                                 "happy":  "84149964-d804-4ebd-9ad6-d6fa1d2ea2e6"
+                             },
+    "v2Preview":  "assets/references/meowa/photo001/anim_v2/animation-v2-preview.png"
 }

@@ -1,4 +1,4 @@
-# Art And AI Pipeline
+﻿# Art And AI Pipeline
 
 ## Art Direction
 
@@ -136,6 +136,12 @@ The imported photo owns only:
 
 The default white seal is a first-party character pack and placeholder runtime mascot. It is not the target template for user photo generation.
 
+## Meowa Prompt Ownership
+
+Meowa is treated as an art production tool, not a free-form implementation shortcut. A unified Art Director owns the prompt language, negative prompts, style consistency, and batch acceptance criteria. Engineers may execute the approved prompts and convert the selected output into runtime assets, but they do not change the art direction independently.
+
+Every Meowa batch must record remaining credit after generation.
+
 ## AI Integration
 
 Use local AI for:
@@ -191,3 +197,4 @@ Screenshot order:
 4. Local/offline chat.
 5. Scene props and interactions.
 6. Skins and customization.
+

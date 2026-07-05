@@ -1,0 +1,19 @@
+{
+  "id": "ab2e205c-bc4b-489a-8cf1-45dce17396ca",
+  "api_job_id": "ab2e205c-bc4b-489a-8cf1-45dce17396ca",
+  "status": "success",
+  "error": null,
+  "animation_type": "other",
+  "source_image_url": "https://media.meowa.ai/public/animate/output/2026-07-05/15%3A33%3A27-ab2e205c-bc4b-489a-8cf1-45dce17396ca/source_static.png",
+  "final_prompt": "The character in the brown beanie and sunglasses performs a 4-frame walk cycle in place, remaining front-facing and centered. Their legs alternate in a subtle stepping motion with slight shifts in the blue jeans, while the long brown hair and black leather jacket bounce gently with each step. The arms sway slightly at their sides to match the rhythmic movement before the cycle loops back to the starting frame.",
+  "output": {
+    "url": "https://media.meowa.ai/public/animate/output/2026-07-05/15%3A34%3A12-ab2e205c-bc4b-489a-8cf1-45dce17396ca/transparent_backup.webp",
+    "transparent_output_urls": {
+      "webp": "https://media.meowa.ai/public/animate/output/2026-07-05/15%3A34%3A12-ab2e205c-bc4b-489a-8cf1-45dce17396ca/transparent_backup.webp",
+      "gif": "https://media.meowa.ai/public/animate/output/2026-07-05/15%3A34%3A12-ab2e205c-bc4b-489a-8cf1-45dce17396ca/transparent_backup.gif",
+      "png": "https://media.meowa.ai/public/animate/output/2026-07-05/15%3A34%3A12-ab2e205c-bc4b-489a-8cf1-45dce17396ca/transparent_backup.png"
+    },
+    "frame_count": 4,
+    "output_frames": 4
+  }
+}

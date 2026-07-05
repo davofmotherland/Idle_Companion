@@ -1,4 +1,4 @@
-# Photo Commission Character Pipeline
+﻿# Photo Commission Character Pipeline
 
 ## Product Direction Change
 
@@ -37,6 +37,10 @@ assets/characters/photo_XXX_<short_name>/idle.png
 assets/characters/photo_XXX_<short_name>/manifest.json
 assets/characters/photo_XXX_<short_name>/art-metadata.json
 ```
+
+## Unified Art Director Gate
+
+Before any Meowa job is run, the Art Director must generate or approve the prompt. The implementation agent records the approved brief, job IDs, output paths, owner selection, and remaining Meowa credit. No ad hoc prompt rewrites are allowed during implementation unless they go back through the Art Director.
 
 ## Art Director Brief Template
 
@@ -98,4 +102,5 @@ python .agents/skills/game-assets/meowart_api.py pixel-gen-run \
 ```
 
 After generation, keep the original Meowa sprite as `idle-source.png`, normalize the selected sprite to `48x64` as `idle.png`, and record the Meowa job id in `art-metadata.json`.
+
 

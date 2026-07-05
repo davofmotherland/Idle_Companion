@@ -1,0 +1,19 @@
+{
+  "id": "d948e35e-d50c-403f-8031-ee84ef081fd3",
+  "api_job_id": "d948e35e-d50c-403f-8031-ee84ef081fd3",
+  "status": "success",
+  "error": null,
+  "animation_type": "other",
+  "source_image_url": "https://media.meowa.ai/public/animate/output/2026-07-05/15%3A33%3A38-d948e35e-d50c-403f-8031-ee84ef081fd3/source_static.png",
+  "final_prompt": "The chibi girl in the brown beanie and leather jacket performs a subtle two-frame sleepy idle loop while standing. Her head slumps forward by two pixels as her shoulders drop slightly, accompanied by a slow, rhythmic breathing motion. The animation maintains her front-facing posture and dark sunglasses while conveying a low-energy, drowsy state.",
+  "output": {
+    "url": "https://media.meowa.ai/public/animate/output/2026-07-05/15%3A34%3A47-d948e35e-d50c-403f-8031-ee84ef081fd3/transparent_backup.webp",
+    "transparent_output_urls": {
+      "webp": "https://media.meowa.ai/public/animate/output/2026-07-05/15%3A34%3A47-d948e35e-d50c-403f-8031-ee84ef081fd3/transparent_backup.webp",
+      "gif": "https://media.meowa.ai/public/animate/output/2026-07-05/15%3A34%3A47-d948e35e-d50c-403f-8031-ee84ef081fd3/transparent_backup.gif",
+      "png": "https://media.meowa.ai/public/animate/output/2026-07-05/15%3A34%3A47-d948e35e-d50c-403f-8031-ee84ef081fd3/transparent_backup.png"
+    },
+    "frame_count": 2,
+    "output_frames": 2
+  }
+}

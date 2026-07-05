@@ -99,3 +99,26 @@ Minor:
 - Placeholder visuals.
 - Copy/text issues.
 - Non-final asset quality.
+
+## Art Change Screenshot QA
+
+Any change to character art, animation frames, scaling, frame loading, renderer visibility, or UI elements near the pet must run screenshot QA before handoff.
+
+Minimum required checks:
+
+- Build the app or renderer output used by QA.
+- Launch an Electron QA window with the target character data.
+- Capture a screenshot of the rendered pet.
+- Confirm the character is visible and not blocked by UI.
+- Confirm the intended art traits are visible at runtime size.
+- Attach or show the screenshot before asking the owner to accept the art change.
+
+For the current character, screenshot QA must confirm:
+
+- Brown beanie and hair.
+- Black sunglasses and jacket.
+- White shirt.
+- Blue jeans.
+- No fallback seal.
+- No old import/save UI.
+- No debug label covering the pet.

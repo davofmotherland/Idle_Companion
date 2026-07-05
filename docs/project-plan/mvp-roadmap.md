@@ -20,9 +20,9 @@ Build Project Seal, a Windows-first offline Steam desktop pet centered on a cute
 | 1 | Desktop foundation | Transparent window prototype, draggable seal, tray exit/settings, renderer proof, first recording |
 | 2 | Pet runtime | State machine, animation player, idle/walk/sleep/poke/drag reactions, mood/energy/affection values |
 | 3 | Character packs | Character directory format, animation fallback, default seal, 1-2 replacement skins |
-| 4 | Photo-to-pixel MVP | Import image, crop, pixelize, palette limit, template body, preview, save as custom character |
-| 5 | AI + scene slice | Local model bridge, persona prompt, basic chat bubble, no-network fallback, bed/toy/food props |
-| 6 | Steam candidate | Settings, packaged Windows build, smoke test checklist, store asset draft, performance pass |
+| 4 | Photo commission pipeline | Owner-provided photo, Meowa-assisted character asset production, character pack implementation |
+| 5 | Character animation MVP | Meowa pixel cleanup, idle/walk/sleep/happy keyframes, state-based animation playback, screenshot QA |
+| 6 | AI + scene slice | Local model bridge, persona prompt, basic chat bubble, no-network fallback, bed/toy/food props |
 
 ## Acceptance Criteria
 
@@ -33,8 +33,8 @@ The MVP is acceptable when:
 - The pet does not block normal desktop use by default.
 - Idle CPU/GPU usage is low enough for everyday background use.
 - The default pet clearly reads as a white baby seal at desktop size.
-- At least six animation states are implemented.
-- Imported images can become a usable pixel avatar preview.
+- At least four visible character animation state groups are implemented: idle, walk, sleep, and happy/poke.
+- Owner-provided photos can become a usable commissioned pixel character pack.
 - The local AI feature works offline or is cleanly disabled when no model is installed.
 - A Windows build can be launched from a Steam-like install folder without developer tooling.
 
@@ -51,7 +51,7 @@ Keep:
 
 Cut if timeline slips:
 
-- Full generated animation sheets.
+- Additional dedicated reaction animation sheets beyond MVP states.
 - Multi-character collection.
 - Steam Workshop.
 - Complex item economy.
@@ -122,3 +122,18 @@ Pet save:
   "customCharacters": []
 }
 ```
+
+## Current Milestone Status
+
+As of the M5 documentation pass, the project status is:
+
+| Milestone | Status | Notes |
+| --- | --- | --- |
+| M0 Product Lock | Complete | Product name, platform, pricing, language, and non-goals documented |
+| M1 Desktop Shell | Complete | Transparent draggable Electron shell established |
+| M2 Pet Runtime | Complete | State machine, drag/poke, cross-screen safety, and runtime save behavior established |
+| M3 Character Packs | Complete | Manifest-driven character packs and fallback behavior established |
+| M4 Photo Commission Pipeline | Complete | Product direction changed from live local generation to owner-directed commissioned character packs |
+| M5 Character Animation MVP | Complete pending owner acceptance | Right-top selected character has Meowa-assisted idle/walk/sleep/happy animation frames and screenshot QA |
+| M6 AI + Scene Slice | Not started | Next recommended milestone |
+| M7 Steam Candidate | Not started | Packaging/store candidate follows M6 |

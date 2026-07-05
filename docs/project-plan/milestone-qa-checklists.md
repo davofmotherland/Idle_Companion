@@ -173,35 +173,72 @@ Reject M4 if:
 - The result is only a raw pixelated photo crop instead of the built-in character template.
 - The feature implies exact likeness but cannot deliver it.
 
-## M5: AI + Scene Interaction QA
+## M5: Character Animation MVP QA
 
-Goal: Confirm simple props and offline-safe chat support the seal fantasy.
+Goal: Confirm the selected photo-commission character has MVP-level state animation and is visible in a real Electron screenshot.
+
+Prepare:
+
+- Current character pack: `assets/characters/photo_001_travel_girl/`.
+- QA screenshot path after automated check: `C:\tmp\project-seal-qa\renderer-screenshot.png`.
 
 | Check | How To Verify | Pass Criteria | Severity |
 | --- | --- | --- | --- |
-| Bed prop | Click/use bed | Seal reacts with rest/sleep behavior | Major |
-| Toy prop | Click/use toy | Seal reacts with play behavior | Major |
-| Food prop | Click/use food | Seal reacts with eat/happy behavior | Major |
+| Correct selected character | Launch app or inspect `manifest.json` and screenshot | Uses right-top small candidate direction, not top-left tall candidate and not rejected all-black version | Blocker |
+| Character visible | Run Electron screenshot QA or launch app | Character is visible, not blank and not fallback seal | Blocker |
+| Outfit readability | Inspect screenshot and runtime frames | Brown hat/hair, black sunglasses/jacket, white shirt, and blue jeans are readable | Blocker |
+| Idle frames | Inspect `animations/idle-*.png` and observe runtime | 4 idle frames exist and play | Blocker |
+| Walk frames | Inspect `animations/walk-*.png` and observe runtime | 4 walk frames exist and play | Major |
+| Sleep frames | Inspect `animations/sleep-*.png` and observe runtime | 2 sleep frames exist and play | Major |
+| Happy/poke frames | Inspect `animations/happy-*.png` and click pet | 2 happy frames exist and are used for poke/happy | Major |
+| No old import UI | Inspect app runtime | Import/save/customizer UI is absent | Blocker |
+| No debug obstruction | Inspect screenshot | No debug label covers the character | Blocker |
+| Frame loading | Run app and screenshot QA | Pixi loads animation frames without data URL texture errors | Blocker |
+| Pixel crispness | Inspect screenshot at desktop size | Pixel art is crisp and not blurred | Major |
+| Build health | Run `npm.cmd run typecheck`, `npm.cmd test`, `npm.cmd run build` | All pass | Blocker |
+
+Acceptable in M5:
+
+- `annoyed` can reuse happy frames.
+- `dragged` can reuse idle frames with light renderer tilt.
+- Animation polish can be improved in a later art pass.
+
+Reject M5 if:
+
+- Screenshot QA is skipped.
+- The pet is not visible in the screenshot.
+- The wrong candidate or rejected outfit appears.
+- Runtime motion is only whole-sprite movement for the core states.
+- Old import/save UI remains visible.
+
+## M6: AI + Scene Interaction QA
+
+Goal: Confirm simple props and offline-safe chat support the desktop pet fantasy.
+
+| Check | How To Verify | Pass Criteria | Severity |
+| --- | --- | --- | --- |
+| Bed prop | Click/use bed | Pet reacts with rest/sleep behavior | Major |
+| Toy prop | Click/use toy | Pet reacts with play behavior | Major |
+| Food prop | Click/use food | Pet reacts with eat/happy behavior | Major |
 | Prop effects | Inspect values/UI/debug if available | Mood/energy/affection/hunger change correctly | Major |
-| Chat entry | Send simple message | Seal replies or fallback appears | Blocker |
+| Chat entry | Send simple message | Pet replies or fallback appears | Blocker |
 | Offline behavior | Disable network and use chat | App still works or clean fallback appears | Blocker |
 | Model missing behavior | Remove/disable model if applicable | App does not crash; fallback replies work | Blocker |
 | Timeout/cancel | Trigger slow response if possible | UI recovers and pet returns to normal state | Major |
 | Talking state | Chat while pet is moving/sleeping | Talking state enters/exits cleanly | Major |
 | Tone | Review replies | Replies feel cute, short, and bilingual-ready | Minor |
 
-Acceptable in M5:
+Acceptable in M6:
 
 - AI can be mock/fallback-only if local model is not ready.
 - Props can use placeholder art.
 
-Reject M5 if:
+Reject M6 if:
 
 - Chat failure breaks the pet runtime.
 - Offline use is blocked.
 - Props feel disconnected or do not trigger visible reactions.
-
-## M6: Steam Candidate QA
+## M7: Steam Candidate QA
 
 Goal: Confirm the MVP can be packaged and reviewed as a Steam candidate.
 
@@ -238,7 +275,7 @@ Reject M6 if:
 
 Accept the MVP only when:
 
-- All M6 blocker checks pass.
+- All M7 blocker checks pass.
 - Any major failures are either fixed or explicitly deferred by owner.
 - The app can be safely used as a desktop companion for a normal session.
 - The default white baby seal is strong enough to carry the store page.

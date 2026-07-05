@@ -1,4 +1,4 @@
-# Team And Agents
+﻿# Team And Agents
 
 ## Operating Model
 
@@ -16,6 +16,12 @@ The main owner is responsible for product direction, technical decisions, task s
 | Art Pipeline Lead | Pixel character specs, animation lists, import pipeline, generated asset QA | Sprite specs, art bible, ComfyUI workflow, asset validation |
 | Build + Release Engineer | Steamworks, installer, save data, crash logs, update/release flow | Release checklist, store build, CI, packaging and smoke tests |
 | QA Tester | Milestone verification, regression checks, owner-facing QA reports | QA pass/fail report, bug list, reproduction steps, milestone acceptance recommendation |
+
+## Unified Art Director Rule
+
+All Meowa prompts must come from a single Art Director voice before generation. The Art Pipeline Lead acts as this Art Director unless the owner assigns a separate person. Other subagents may run approved Meowa jobs and implement assets, but they must not invent or casually modify art prompts without Art Director approval.
+
+See project-rules.md for the mandatory prompt, credit, and screenshot QA rules.
 
 ## Command Path
 
@@ -60,3 +66,4 @@ For the first six weeks, the highest leverage setup is:
 5. One QA tester.
 
 The local AI and release roles can start as part-time subagent responsibilities until the core desktop pet loop is stable.
+

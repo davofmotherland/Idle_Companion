@@ -1,0 +1,19 @@
+{
+  "id": "c7f196e1-5abe-4ca4-90df-e92e2e3d338d",
+  "api_job_id": "c7f196e1-5abe-4ca4-90df-e92e2e3d338d",
+  "status": "success",
+  "error": null,
+  "animation_type": "other",
+  "source_image_url": "https://media.meowa.ai/public/animate/output/2026-07-05/15%3A33%3A17-c7f196e1-5abe-4ca4-90df-e92e2e3d338d/source_static.png",
+  "final_prompt": "The chibi character in a brown beanie and black leather jacket performs a subtle idle breathing loop while facing forward. Her shoulders and long brown hair rise and fall slightly as her body bobs by a few pixels. The movement is rhythmic and calm, with her feet remaining planted as the animation cycles seamlessly.",
+  "output": {
+    "url": "https://media.meowa.ai/public/animate/output/2026-07-05/15%3A33%3A54-c7f196e1-5abe-4ca4-90df-e92e2e3d338d/transparent_backup.webp",
+    "transparent_output_urls": {
+      "webp": "https://media.meowa.ai/public/animate/output/2026-07-05/15%3A33%3A54-c7f196e1-5abe-4ca4-90df-e92e2e3d338d/transparent_backup.webp",
+      "gif": "https://media.meowa.ai/public/animate/output/2026-07-05/15%3A33%3A54-c7f196e1-5abe-4ca4-90df-e92e2e3d338d/transparent_backup.gif",
+      "png": "https://media.meowa.ai/public/animate/output/2026-07-05/15%3A33%3A54-c7f196e1-5abe-4ca4-90df-e92e2e3d338d/transparent_backup.png"
+    },
+    "frame_count": 4,
+    "output_frames": 4
+  }
+}

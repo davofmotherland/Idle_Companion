@@ -1,0 +1,19 @@
+{
+  "id": "84149964-d804-4ebd-9ad6-d6fa1d2ea2e6",
+  "api_job_id": "84149964-d804-4ebd-9ad6-d6fa1d2ea2e6",
+  "status": "success",
+  "error": null,
+  "animation_type": "other",
+  "source_image_url": "https://media.meowa.ai/public/animate/output/2026-07-05/15%3A33%3A49-84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/source_static.png",
+  "final_prompt": "The character in the brown beanie and sunglasses performs a cute poke reaction, bobbing downward slightly before bouncing back up. Her hands lift briefly at her sides while her long brown hair and knit hat sway with the momentum of the movement. She maintains her front-facing posture and stoic expression, quickly settling back into her original standing position.",
+  "output": {
+    "url": "https://media.meowa.ai/public/animate/output/2026-07-05/15%3A34%3A58-84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/transparent_backup.webp",
+    "transparent_output_urls": {
+      "webp": "https://media.meowa.ai/public/animate/output/2026-07-05/15%3A34%3A58-84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/transparent_backup.webp",
+      "gif": "https://media.meowa.ai/public/animate/output/2026-07-05/15%3A34%3A58-84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/transparent_backup.gif",
+      "png": "https://media.meowa.ai/public/animate/output/2026-07-05/15%3A34%3A58-84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/transparent_backup.png"
+    },
+    "frame_count": 2,
+    "output_frames": 2
+  }
+}
