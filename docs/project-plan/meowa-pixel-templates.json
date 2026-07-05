@@ -1,0 +1,2178 @@
+﻿{
+  "templates": [
+    {
+      "template_name": "16_9",
+      "display_name": "General 16:9 Pixel Grid",
+      "description": "Middle 16:9 2K pixel reference grid using two style references and two generation slots.",
+      "labels": [
+        "pixel",
+        "general",
+        "16:9",
+        "middle",
+        "2K"
+      ],
+      "workflow_id": "pixel_gen_general",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "64-128",
+      "default_params": {
+        "grid_size": 2,
+        "target_count": 2,
+        "remove_bg_method": "pixel",
+        "size": "middle",
+        "resolution": "2K",
+        "aspect_ratio": "16:9",
+        "temperature": 0.0,
+        "canvas_mode": "wide_16_9",
+        "canvas_size": [
+          2752,
+          1536
+        ],
+        "layout_canvases": [
+          [
+            2752,
+            1536
+          ]
+        ],
+        "layout_gap_units": 1,
+        "stage1_reference_scale": 6,
+        "stage1_pixel_size": [
+          6,
+          6
+        ]
+      },
+      "supported_config_keys": [
+        "size",
+        "grid_size",
+        "target_count",
+        "remove_bg_method",
+        "aspect_ratio"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/16_9.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/16_9.png?v=20260509-nobg-r2",
+      "output_size_px": 256
+    },
+    {
+      "template_name": "24px_icon",
+      "display_name": "24px Icon",
+      "description": "5x5 24px pixel icon sprite-pack template.",
+      "labels": [
+        "pixel",
+        "icon",
+        "sprite-pack",
+        "beta"
+      ],
+      "workflow_id": "pixel_gen_grid_24px",
+      "agent_type": "sprite-packs",
+      "is_beta": true,
+      "developer_only": false,
+      "output_size": "24",
+      "default_params": {
+        "target_count": 15,
+        "remove_bg_method": "pixel",
+        "prompt_optimization_mode": "medium",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "prompt_optimization_mode",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/24px_icon.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/24px_icon.png?v=20260509-nobg-r2",
+      "output_size_px": 24
+    },
+    {
+      "template_name": "3_4",
+      "display_name": "General 3:4 Pixel Grid",
+      "description": "Middle 3:4 2K pixel reference grid using two portrait references and two generation slots.",
+      "labels": [
+        "pixel",
+        "general",
+        "3:4",
+        "portrait",
+        "middle",
+        "2K"
+      ],
+      "workflow_id": "pixel_gen_general",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "128-256",
+      "default_params": {
+        "grid_size": 2,
+        "target_count": 2,
+        "remove_bg_method": "pixel",
+        "size": "middle",
+        "resolution": "2K",
+        "aspect_ratio": "3:4",
+        "temperature": 0.0,
+        "canvas_mode": "portrait_3_4",
+        "canvas_size": [
+          1792,
+          2400
+        ],
+        "layout_canvases": [
+          [
+            1792,
+            2400
+          ]
+        ],
+        "layout_gap_units": 1,
+        "stage1_reference_scale": 6,
+        "stage1_pixel_size": [
+          6,
+          6
+        ]
+      },
+      "supported_config_keys": [
+        "size",
+        "grid_size",
+        "target_count",
+        "remove_bg_method",
+        "aspect_ratio"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/3_4.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/3_4.png?v=20260509-nobg-r2",
+      "output_size_px": 256
+    },
+    {
+      "template_name": "4_3",
+      "display_name": "General 4:3 Pixel Grid",
+      "description": "Middle 4:3 2K pixel reference grid using two wide references and two generation slots.",
+      "labels": [
+        "pixel",
+        "general",
+        "4:3",
+        "landscape",
+        "middle",
+        "2K"
+      ],
+      "workflow_id": "pixel_gen_general",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "128-256",
+      "default_params": {
+        "grid_size": 2,
+        "target_count": 2,
+        "remove_bg_method": "pixel",
+        "size": "middle",
+        "resolution": "2K",
+        "aspect_ratio": "4:3",
+        "temperature": 0.0,
+        "canvas_mode": "landscape_4_3",
+        "canvas_size": [
+          2400,
+          1792
+        ],
+        "layout_canvases": [
+          [
+            2400,
+            1792
+          ]
+        ],
+        "layout_gap_units": 1,
+        "stage1_reference_scale": 6,
+        "stage1_pixel_size": [
+          6,
+          6
+        ]
+      },
+      "supported_config_keys": [
+        "size",
+        "grid_size",
+        "target_count",
+        "remove_bg_method",
+        "aspect_ratio"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/4_3.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/4_3.png?v=20260509-nobg-r2",
+      "output_size_px": 256
+    },
+    {
+      "template_name": "9_16",
+      "display_name": "General 9:16 Pixel Grid",
+      "description": "Middle 9:16 2K pixel reference grid using two portrait references and two generation slots.",
+      "labels": [
+        "pixel",
+        "general",
+        "9:16",
+        "portrait",
+        "middle",
+        "2K"
+      ],
+      "workflow_id": "pixel_gen_general",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "128-256",
+      "default_params": {
+        "grid_size": 2,
+        "target_count": 2,
+        "remove_bg_method": "pixel",
+        "size": "middle",
+        "resolution": "2K",
+        "aspect_ratio": "9:16",
+        "temperature": 0.0,
+        "canvas_mode": "portrait_9_16",
+        "canvas_size": [
+          1536,
+          2752
+        ],
+        "layout_canvases": [
+          [
+            1536,
+            2752
+          ]
+        ],
+        "layout_gap_units": 1,
+        "stage1_reference_scale": 6,
+        "stage1_pixel_size": [
+          6,
+          6
+        ]
+      },
+      "supported_config_keys": [
+        "size",
+        "grid_size",
+        "target_count",
+        "remove_bg_method",
+        "aspect_ratio"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/9_16.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/9_16.png?v=20260509-nobg-r2",
+      "output_size_px": 256
+    },
+    {
+      "template_name": "animal",
+      "display_name": "����Q�����ض���",
+      "description": "���ý�յ����ص������������ɫ��������Ͼ��µ�Q���������������ؼ������������������ֶ���ɰ�����Ȥ����̬",
+      "labels": [
+        "pixel",
+        "animal"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/animal.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/animal.png?v=20260509-nobg-r2",
+      "output_size_px": 64
+    },
+    {
+      "template_name": "animal5x5",
+      "display_name": "5x5 ���ض���",
+      "description": "ͬ�������ض���,����5x5����",
+      "labels": [
+        "pixel",
+        "animal",
+        "sprite-pack",
+        "beta"
+      ],
+      "workflow_id": "pixel_gen_grid_5x5",
+      "agent_type": "sprite-packs",
+      "is_beta": true,
+      "developer_only": false,
+      "output_size": "64-128",
+      "default_params": {
+        "target_count": 15,
+        "remove_bg_method": "pixel",
+        "prompt_optimization_mode": "medium",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "prompt_optimization_mode",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/animal5x5.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/animal5x5.png?v=20260509-nobg-r2",
+      "output_size_px": 64
+    },
+    {
+      "template_name": "animal_2",
+      "display_name": "�ͷֱ������ض���",
+      "description": "���õͷֱ��ʵ������������Կɰ���Q��������ָ��ֶ����飬�����������������������޵�ɫ�塣",
+      "labels": [
+        "pixel",
+        "animal"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/animal_2.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/animal_2.png?v=20260509-nobg-r2",
+      "output_size_px": 32
+    },
+    {
+      "template_name": "boss��־",
+      "display_name": "����boss����",
+      "description": "���������������͸߶Աȶ�ɫ�ʵ����ط�񣬿������ڴ���������в�Եķ���BOSS��ʶ��",
+      "labels": [
+        "pixel",
+        "badge",
+        "boss"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/boss%E6%A0%87%E5%BF%97.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/boss%E6%A0%87%E5%BF%97.png?v=20260509-nobg-r2",
+      "output_size_px": 64
+    },
+    {
+      "template_name": "cat",
+      "display_name": "��������ϵ����è��",
+      "description": "�Եͷֱ�������Ϊ������������͵�ůɫ��������ɫ����������һϵ�д��ȵ�����Сè��",
+      "labels": [
+        "pixel",
+        "animal",
+        "cat"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/cat.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/cat.png?v=20260509-nobg-r2",
+      "output_size_px": 64
+    },
+    {
+      "template_name": "cat_2",
+      "display_name": "����Q������è��",
+      "description": "ͨ�������������ߺ���͵���Ӱ�����Ծ�׼��׽����ԭ����è����ܰ�������Ŀɰ�˲�䡣",
+      "labels": [
+        "pixel",
+        "animal",
+        "cat"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/cat_2.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/cat_2.png?v=20260509-nobg-r2",
+      "output_size_px": 64
+    },
+    {
+      "template_name": "cat_3",
+      "display_name": "��������è��",
+      "description": "���������ص㹴��è����������������������չ�ֳ��������Դ����ȸе��Ӿ����",
+      "labels": [
+        "pixel",
+        "animal",
+        "cat"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/cat_3.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/cat_3.png?v=20260509-nobg-r2",
+      "output_size_px": 32
+    },
+    {
+      "template_name": "cat_4",
+      "display_name": "��Լ����è��",
+      "description": "�м�Լ��ɫ�������������������ڼ�������è�����ı���è��������Ľ�ɫ���������������ĳ��ָ���ɰ������б�ʶ�ȵ�è���ɫ����",
+      "labels": [
+        "pixel",
+        "animal",
+        "cat"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/cat_4.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/cat_4.png?v=20260509-nobg-r2",
+      "output_size_px": 32
+    },
+    {
+      "template_name": "dog",
+      "display_name": "����Q������С��",
+      "description": "�������޵ĵ�ɫ�塢������Ӳ����ߣ�չ����һϵ�б���������������������̬���ȵĿɰ�С������",
+      "labels": [
+        "pixel",
+        "animal",
+        "dog"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/dog.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/dog.png?v=20260509-nobg-r2",
+      "output_size_px": 64
+    },
+    {
+      "template_name": "dog_2",
+      "display_name": "�ͷֱ�������С��",
+      "description": "ͨ�������������������ɫ�飬��������һϵ�м����б�ʶ�ȵĿɰ�С����",
+      "labels": [
+        "pixel",
+        "animal",
+        "dog"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/dog_2.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/dog_2.png?v=20260509-nobg-r2",
+      "output_size_px": 32
+    },
+    {
+      "template_name": "food",
+      "display_name": "����Q��������ʳ",
+      "description": "ͨ����������ط��ú�ɫ����ϣ��ü�Լ�ķ�ʽģ�⸴�ӵ�ʳ���ʸУ�ɫ���������죬��ͼ�������������ͯȤ��������",
+      "labels": [
+        "pixel",
+        "food"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/food.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/food.png?v=20260509-nobg-r2",
+      "output_size_px": 64
+    },
+    {
+      "template_name": "large_16_9",
+      "display_name": "Large 16:9 Pixel Grid",
+      "description": "Large 16:9 2K pixel reference grid using two wide references and two generation slots.",
+      "labels": [
+        "pixel",
+        "general",
+        "16:9",
+        "large",
+        "2K"
+      ],
+      "workflow_id": "pixel_gen_general",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "256+",
+      "default_params": {
+        "grid_size": 2,
+        "target_count": 2,
+        "remove_bg_method": "pixel",
+        "size": "large",
+        "resolution": "2K",
+        "aspect_ratio": "16:9",
+        "temperature": 0.0,
+        "canvas_mode": "wide_16_9",
+        "canvas_size": [
+          2752,
+          1536
+        ],
+        "layout_canvases": [
+          [
+            2752,
+            1536
+          ]
+        ],
+        "layout_gap_units": 1,
+        "stage1_reference_scale": 4,
+        "stage1_pixel_size": [
+          4,
+          4
+        ]
+      },
+      "supported_config_keys": [
+        "size",
+        "grid_size",
+        "target_count",
+        "remove_bg_method",
+        "aspect_ratio"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/large_16_9.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/large_16_9.png?v=20260509-nobg-r2",
+      "output_size_px": 512
+    },
+    {
+      "template_name": "large_3_4",
+      "display_name": "Large 3:4 Pixel Grid",
+      "description": "Large 3:4 2K pixel reference grid using two portrait references and two generation slots.",
+      "labels": [
+        "pixel",
+        "general",
+        "3:4",
+        "portrait",
+        "large",
+        "2K"
+      ],
+      "workflow_id": "pixel_gen_general",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "256+",
+      "default_params": {
+        "grid_size": 2,
+        "target_count": 2,
+        "remove_bg_method": "pixel",
+        "size": "large",
+        "resolution": "2K",
+        "aspect_ratio": "3:4",
+        "temperature": 0.0,
+        "canvas_mode": "portrait_3_4",
+        "canvas_size": [
+          1792,
+          2400
+        ],
+        "layout_canvases": [
+          [
+            1792,
+            2400
+          ]
+        ],
+        "layout_gap_units": 1,
+        "stage1_reference_scale": 4,
+        "stage1_pixel_size": [
+          4,
+          4
+        ]
+      },
+      "supported_config_keys": [
+        "size",
+        "grid_size",
+        "target_count",
+        "remove_bg_method",
+        "aspect_ratio"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/large_3_4.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/large_3_4.png?v=20260509-nobg-r2",
+      "output_size_px": 512
+    },
+    {
+      "template_name": "large_4_3",
+      "display_name": "Large 4:3 Pixel Grid",
+      "description": "Large 4:3 2K pixel reference grid using two wide references and two generation slots.",
+      "labels": [
+        "pixel",
+        "general",
+        "4:3",
+        "landscape",
+        "large",
+        "2K"
+      ],
+      "workflow_id": "pixel_gen_general",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "256+",
+      "default_params": {
+        "grid_size": 2,
+        "target_count": 2,
+        "remove_bg_method": "pixel",
+        "size": "large",
+        "resolution": "2K",
+        "aspect_ratio": "4:3",
+        "temperature": 0.0,
+        "canvas_mode": "landscape_4_3",
+        "canvas_size": [
+          2400,
+          1792
+        ],
+        "layout_canvases": [
+          [
+            2400,
+            1792
+          ]
+        ],
+        "layout_gap_units": 1,
+        "stage1_reference_scale": 4,
+        "stage1_pixel_size": [
+          4,
+          4
+        ]
+      },
+      "supported_config_keys": [
+        "size",
+        "grid_size",
+        "target_count",
+        "remove_bg_method",
+        "aspect_ratio"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/large_4_3.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/large_4_3.png?v=20260509-nobg-r2",
+      "output_size_px": 512
+    },
+    {
+      "template_name": "large_9_16",
+      "display_name": "Large 9:16 Pixel Grid",
+      "description": "Large 9:16 2K pixel reference grid using two portrait references and two generation slots.",
+      "labels": [
+        "pixel",
+        "general",
+        "9:16",
+        "portrait",
+        "large",
+        "2K"
+      ],
+      "workflow_id": "pixel_gen_general",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "256+",
+      "default_params": {
+        "grid_size": 2,
+        "target_count": 2,
+        "remove_bg_method": "pixel",
+        "size": "large",
+        "resolution": "2K",
+        "aspect_ratio": "9:16",
+        "temperature": 0.0,
+        "canvas_mode": "portrait_9_16",
+        "canvas_size": [
+          1536,
+          2752
+        ],
+        "layout_canvases": [
+          [
+            1536,
+            2752
+          ]
+        ],
+        "layout_gap_units": 1,
+        "stage1_reference_scale": 4,
+        "stage1_pixel_size": [
+          4,
+          4
+        ]
+      },
+      "supported_config_keys": [
+        "size",
+        "grid_size",
+        "target_count",
+        "remove_bg_method",
+        "aspect_ratio"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/large_9_16.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/large_9_16.png?v=20260509-nobg-r2",
+      "output_size_px": 512
+    },
+    {
+      "template_name": "large_portrait",
+      "display_name": "Large Portrait",
+      "description": "2K large portrait pixel template for polished fantasy characters and full-body character portraits, with crisp silhouettes, ornate costume detail, rich colors, and refined pixel-art rendering.",
+      "labels": [
+        "pixel",
+        "character",
+        "portrait",
+        "large"
+      ],
+      "workflow_id": "pixel_gen_grid_2x2",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "128-256",
+      "default_params": {
+        "target_count": 2,
+        "remove_bg_method": "pixel",
+        "resolution": "2K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0,
+        "layout_canvases": [
+          [
+            2048,
+            2048
+          ],
+          [
+            2528,
+            1696
+          ],
+          [
+            1696,
+            2528
+          ]
+        ],
+        "layout_gap_units": 1,
+        "stage1_pixel_size": [
+          4,
+          4
+        ]
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units",
+        "stage1_pixel_size"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/hd_portrait.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/hd_portrait.png?v=20260509-nobg-r2",
+      "output_size_px": 256
+    },
+    {
+      "template_name": "monster",
+      "display_name": "���Ÿ߾������ع���",
+      "description": "������÷��ɫ�ʶԱ�ǿ�ң�Ӫ���һ�ֺ��ز��Ҿ���ʷʫ�е��Ӿ���Χ��",
+      "labels": [
+        "pixel",
+        "character",
+        "monster"
+      ],
+      "workflow_id": "pixel_gen_grid_2x2",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "64-128",
+      "default_params": {
+        "target_count": 2,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "direction",
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": true,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/monster.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/monster.png?v=20260509-nobg-r2",
+      "output_size_px": 128,
+      "directions": [
+        "front",
+        "left",
+        "right",
+        "back"
+      ],
+      "default_direction": "front",
+      "direction_image_urls": {
+        "front": "https://media.meowa.ai/public/templates/gsc/monster__front.png?v=20260509-nobg-r2",
+        "left": "https://media.meowa.ai/public/templates/gsc/monster__left.png?v=20260509-nobg-r2",
+        "right": "https://media.meowa.ai/public/templates/gsc/monster__right.png?v=20260509-nobg-r2",
+        "back": "https://media.meowa.ai/public/templates/gsc/monster__back.png?v=20260509-nobg-r2"
+      }
+    },
+    {
+      "template_name": "object",
+      "display_name": "�������ص���",
+      "description": "���þ���ĵͷֱ�����������ÿ����Ʒ�ⲿ��������������ɫӲ����ߣ�ͨ���ɾ��Ĵ�ɫ��ƴ�Ӻͼ�������������ߣ����Ծ�׼�ؿ̻�������������",
+      "labels": [
+        "pixel",
+        "object"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/object.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/object.png?v=20260509-nobg-r2",
+      "output_size_px": 64
+    },
+    {
+      "template_name": "object_2",
+      "display_name": "�ͷֱ������ص���",
+      "description": "���ü���ߴ�����ػ�������������ϸ�ڣ���������Ʒ��ߴ����Ե�������̬��ɫ�ʷ��š�",
+      "labels": [
+        "pixel",
+        "object"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/object_2.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/object_2.png?v=20260509-nobg-r2",
+      "output_size_px": 32
+    },
+    {
+      "template_name": "pixel_char_1",
+      "display_name": "�߾�����ø�����������",
+      "description": "��ɫӵ�иɾ�����������ɫ��Ե��������ɫ��ḻ�����ޣ��������������ڵ�Ӳ��ɫ�����ơ��������ɾ����������ĸ߷ֱ����������",
+      "labels": [
+        "pixel",
+        "character"
+      ],
+      "workflow_id": "pixel_gen_grid_2x2",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "64-128",
+      "default_params": {
+        "target_count": 2,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "direction",
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": true,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/pixel_char_1.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/pixel_char_1.png?v=20260509-nobg-r2",
+      "output_size_px": 128,
+      "directions": [
+        "front",
+        "left",
+        "right",
+        "back"
+      ],
+      "default_direction": "front",
+      "direction_image_urls": {
+        "front": "https://media.meowa.ai/public/templates/gsc/pixel_char_1__front.png?v=20260509-nobg-r2",
+        "left": "https://media.meowa.ai/public/templates/gsc/pixel_char_1__left.png?v=20260509-nobg-r2",
+        "right": "https://media.meowa.ai/public/templates/gsc/pixel_char_1__right.png?v=20260509-nobg-r2",
+        "back": "https://media.meowa.ai/public/templates/gsc/pixel_char_1__back.png?v=20260509-nobg-r2"
+      }
+    },
+    {
+      "template_name": "pixel_char_10",
+      "display_name": "����ͯ����������",
+      "description": "��Ȼ��������ػ����÷������˸��ߵ������ܶȣ��ڽ�ɫ�沿�����ϸ�����ٱ��ͷḻ��ϸ�ڣ�����ɫ��ƫ����Ȼ������ĵͱ��Ͷ�ɫ�ʣ����ж��ص�������Ϣ��",
+      "labels": [
+        "pixel",
+        "character"
+      ],
+      "workflow_id": "pixel_gen_grid_2x2",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "64-128",
+      "default_params": {
+        "target_count": 2,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "direction",
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": true,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/pixel_char_10.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/pixel_char_10.png?v=20260509-nobg-r2",
+      "output_size_px": 128,
+      "directions": [
+        "front",
+        "left",
+        "right",
+        "back"
+      ],
+      "default_direction": "front",
+      "direction_image_urls": {
+        "front": "https://media.meowa.ai/public/templates/gsc/pixel_char_10__front.png?v=20260509-nobg-r2",
+        "left": "https://media.meowa.ai/public/templates/gsc/pixel_char_10__left.png?v=20260509-nobg-r2",
+        "right": "https://media.meowa.ai/public/templates/gsc/pixel_char_10__right.png?v=20260509-nobg-r2",
+        "back": "https://media.meowa.ai/public/templates/gsc/pixel_char_10__back.png?v=20260509-nobg-r2"
+      }
+    },
+    {
+      "template_name": "pixel_char_2",
+      "display_name": "Q�������������",
+      "description": "���þ��¸��ŵĵ���������רΪ��ý�ɫ����ƣ�ӵ�����������ض��壬�㹻���£��ܹ���׽���ӵ�����������������Ʊ����ɰ�������ʶ��",
+      "labels": [
+        "pixel",
+        "character"
+      ],
+      "workflow_id": "pixel_gen_grid_2x2",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "64-128",
+      "default_params": {
+        "target_count": 2,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "direction",
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": true,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/pixel_char_2.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/pixel_char_2.png?v=20260509-nobg-r2",
+      "output_size_px": 128,
+      "directions": [
+        "front",
+        "left",
+        "right",
+        "back"
+      ],
+      "default_direction": "front",
+      "direction_image_urls": {
+        "front": "https://media.meowa.ai/public/templates/gsc/pixel_char_2__front.png?v=20260509-nobg-r2",
+        "left": "https://media.meowa.ai/public/templates/gsc/pixel_char_2__left.png?v=20260509-nobg-r2",
+        "right": "https://media.meowa.ai/public/templates/gsc/pixel_char_2__right.png?v=20260509-nobg-r2",
+        "back": "https://media.meowa.ai/public/templates/gsc/pixel_char_2__back.png?v=20260509-nobg-r2"
+      }
+    },
+    {
+      "template_name": "pixel_char_3",
+      "display_name": "����߾�ϸ������������",
+      "description": "���������������ʹ���˸ɾ�����ȷ������������ӵ�зḻ�ұ��͵ĵ�ɫ�壬�����й��Ŵ���ɫ����ѧ�����봫ͳװ��ͼ����ʹ������Ʒɢ����Ũ�����ʷ����кͶ����ŵ���ζ��",
+      "labels": [
+        "pixel",
+        "character"
+      ],
+      "workflow_id": "pixel_gen_grid_2x2",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "64-128",
+      "default_params": {
+        "target_count": 2,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "direction",
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": true,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/pixel_char_3.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/pixel_char_3.png?v=20260509-nobg-r2",
+      "output_size_px": 128,
+      "directions": [
+        "front",
+        "left",
+        "right",
+        "back"
+      ],
+      "default_direction": "front",
+      "direction_image_urls": {
+        "front": "https://media.meowa.ai/public/templates/gsc/pixel_char_3__front.png?v=20260509-nobg-r2",
+        "left": "https://media.meowa.ai/public/templates/gsc/pixel_char_3__left.png?v=20260509-nobg-r2",
+        "right": "https://media.meowa.ai/public/templates/gsc/pixel_char_3__right.png?v=20260509-nobg-r2",
+        "back": "https://media.meowa.ai/public/templates/gsc/pixel_char_3__back.png?v=20260509-nobg-r2"
+      }
+    },
+    {
+      "template_name": "pixel_char_4",
+      "display_name": "Q�������������",
+      "description": "����Ʋ��ö�ͷ���Q�������ͻ������Ŀɰ��������������׺�����",
+      "labels": [
+        "pixel",
+        "character"
+      ],
+      "workflow_id": "pixel_gen_grid_2x2",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "64-128",
+      "default_params": {
+        "target_count": 2,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "direction",
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": true,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/pixel_char_4.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/pixel_char_4.png?v=20260509-nobg-r2",
+      "output_size_px": 128,
+      "directions": [
+        "front",
+        "left",
+        "right",
+        "back"
+      ],
+      "default_direction": "front",
+      "direction_image_urls": {
+        "front": "https://media.meowa.ai/public/templates/gsc/pixel_char_4__front.png?v=20260509-nobg-r2",
+        "left": "https://media.meowa.ai/public/templates/gsc/pixel_char_4__left.png?v=20260509-nobg-r2",
+        "right": "https://media.meowa.ai/public/templates/gsc/pixel_char_4__right.png?v=20260509-nobg-r2",
+        "back": "https://media.meowa.ai/public/templates/gsc/pixel_char_4__back.png?v=20260509-nobg-r2"
+      }
+    },
+    {
+      "template_name": "pixel_char_5",
+      "display_name": "��ܰ�汾��������",
+      "description": "��ɫ�������ɼ��ķ������ؿ鹹�ɣ����ֳ����صĿ����С�ɫ�ʱ��Ͷ����У������ڴ��ۣ���������ů�����ʵĸо�������ͨ���򵥵������ͱ��飬��������桢���ֺ���������С�",
+      "labels": [
+        "pixel",
+        "character"
+      ],
+      "workflow_id": "pixel_gen_grid_2x2",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "64-128",
+      "default_params": {
+        "target_count": 2,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "direction",
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": true,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/pixel_char_5.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/pixel_char_5.png?v=20260509-nobg-r2",
+      "output_size_px": 128,
+      "directions": [
+        "front",
+        "left",
+        "right",
+        "back"
+      ],
+      "default_direction": "front",
+      "direction_image_urls": {
+        "front": "https://media.meowa.ai/public/templates/gsc/pixel_char_5__front.png?v=20260509-nobg-r2",
+        "left": "https://media.meowa.ai/public/templates/gsc/pixel_char_5__left.png?v=20260509-nobg-r2",
+        "right": "https://media.meowa.ai/public/templates/gsc/pixel_char_5__right.png?v=20260509-nobg-r2",
+        "back": "https://media.meowa.ai/public/templates/gsc/pixel_char_5__back.png?v=20260509-nobg-r2"
+      }
+    },
+    {
+      "template_name": "pixel_char_6",
+      "display_name": "����ϵ�ɰ���������",
+      "description": "�������е������ܶȣ��ڱ����������ؿ����е�ͬʱ���ܹ�ϸ��ؿ̻���ɫ��ɫ������ƫ������ȡ��ͱ��Ͷȵķ���ɫϵ��Ӫ���һ�����޻��ǰ���ӯ���λ��Һ��޹����Ե��Ӿ����顣",
+      "labels": [
+        "pixel",
+        "character"
+      ],
+      "workflow_id": "pixel_gen_grid_2x2",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "64-128",
+      "default_params": {
+        "target_count": 2,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "direction",
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": true,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/pixel_char_6.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/pixel_char_6.png?v=20260509-nobg-r2",
+      "output_size_px": 128,
+      "directions": [
+        "front",
+        "left",
+        "right",
+        "back"
+      ],
+      "default_direction": "front",
+      "direction_image_urls": {
+        "front": "https://media.meowa.ai/public/templates/gsc/pixel_char_6__front.png?v=20260509-nobg-r2",
+        "left": "https://media.meowa.ai/public/templates/gsc/pixel_char_6__left.png?v=20260509-nobg-r2",
+        "right": "https://media.meowa.ai/public/templates/gsc/pixel_char_6__right.png?v=20260509-nobg-r2",
+        "back": "https://media.meowa.ai/public/templates/gsc/pixel_char_6__back.png?v=20260509-nobg-r2"
+      }
+    },
+    {
+      "template_name": "pixel_char_7",
+      "display_name": "����׻�����������",
+      "description": "���������ɫ���沿����Ĩȥ������Ϊ��ɫ��ǳ��򵥵ķ�ɫɫ�飬û����١����м�ǿ�������к����ظУ��������ڹ�ע��ɫ������������̬����װ��ְҵ�������������ض��ĸ��ԡ�",
+      "labels": [
+        "pixel",
+        "character"
+      ],
+      "workflow_id": "pixel_gen_grid_2x2",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "64-128",
+      "default_params": {
+        "target_count": 2,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "direction",
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": true,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/pixel_char_7.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/pixel_char_7.png?v=20260509-nobg-r2",
+      "output_size_px": 128,
+      "directions": [
+        "front",
+        "left",
+        "right",
+        "back"
+      ],
+      "default_direction": "front",
+      "direction_image_urls": {
+        "front": "https://media.meowa.ai/public/templates/gsc/pixel_char_7__front.png?v=20260509-nobg-r2",
+        "left": "https://media.meowa.ai/public/templates/gsc/pixel_char_7__left.png?v=20260509-nobg-r2",
+        "right": "https://media.meowa.ai/public/templates/gsc/pixel_char_7__right.png?v=20260509-nobg-r2",
+        "back": "https://media.meowa.ai/public/templates/gsc/pixel_char_7__back.png?v=20260509-nobg-r2"
+      }
+    },
+    {
+      "template_name": "pixel_char_8",
+      "display_name": "�ͷֱ�����������������",
+      "description": "ÿ����ɫ��ӵ�зǳ���ʵ�ұպϵĺ�ɫ������������ɫ��Ӧ����ѭ�ŵ������Ϸ���߼���ʹ�ø߶Աȶȵ�ԭɫ��ϸ����˻���ɾ���������Ӿ��ʸС�",
+      "labels": [
+        "pixel",
+        "character"
+      ],
+      "workflow_id": "pixel_gen_grid_2x2",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "64-128",
+      "default_params": {
+        "target_count": 2,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "direction",
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": true,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/pixel_char_8.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/pixel_char_8.png?v=20260509-nobg-r2",
+      "output_size_px": 64,
+      "directions": [
+        "front",
+        "left",
+        "right",
+        "back"
+      ],
+      "default_direction": "front",
+      "direction_image_urls": {
+        "front": "https://media.meowa.ai/public/templates/gsc/pixel_char_8__front.png?v=20260509-nobg-r2",
+        "left": "https://media.meowa.ai/public/templates/gsc/pixel_char_8__left.png?v=20260509-nobg-r2",
+        "right": "https://media.meowa.ai/public/templates/gsc/pixel_char_8__right.png?v=20260509-nobg-r2",
+        "back": "https://media.meowa.ai/public/templates/gsc/pixel_char_8__back.png?v=20260509-nobg-r2"
+      }
+    },
+    {
+      "template_name": "pixel_char_9",
+      "display_name": "����ͯ����������",
+      "description": "���ýϵ͵����طֱ��ʣ���ɫ�ṹ����Ϊ������ļ�����״�������ɫһ���ִ��廭��ϴ���С�",
+      "labels": [
+        "pixel",
+        "character"
+      ],
+      "workflow_id": "pixel_gen_grid_2x2",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "64-128",
+      "default_params": {
+        "target_count": 2,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "direction",
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": true,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/pixel_char_9.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/pixel_char_9.png?v=20260509-nobg-r2",
+      "output_size_px": 128,
+      "directions": [
+        "front",
+        "left",
+        "right",
+        "back"
+      ],
+      "default_direction": "front",
+      "direction_image_urls": {
+        "front": "https://media.meowa.ai/public/templates/gsc/pixel_char_9__front.png?v=20260509-nobg-r2",
+        "left": "https://media.meowa.ai/public/templates/gsc/pixel_char_9__left.png?v=20260509-nobg-r2",
+        "right": "https://media.meowa.ai/public/templates/gsc/pixel_char_9__right.png?v=20260509-nobg-r2",
+        "back": "https://media.meowa.ai/public/templates/gsc/pixel_char_9__back.png?v=20260509-nobg-r2"
+      }
+    },
+    {
+      "template_name": "template5x5",
+      "display_name": "5x5 ͨ������ģ��",
+      "description": "ͨ�õ� 5x5 ���زο�ģ��",
+      "labels": [
+        "pixel",
+        "template",
+        "sprite-pack",
+        "beta"
+      ],
+      "workflow_id": "pixel_gen_grid_5x5",
+      "agent_type": "sprite-packs",
+      "is_beta": true,
+      "developer_only": false,
+      "output_size": "64-128",
+      "default_params": {
+        "target_count": 15,
+        "remove_bg_method": "pixel",
+        "prompt_optimization_mode": "medium",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "prompt_optimization_mode",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/template5x5.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/template5x5.png?v=20260509-nobg-r2",
+      "output_size_px": 32
+    },
+    {
+      "template_name": "template8x8",
+      "display_name": "16px Pixel Icon Pack",
+      "description": "16px icon sprite pack template using the 8x8 reference workflow.",
+      "labels": [
+        "pixel",
+        "template",
+        "sprite-pack",
+        "beta"
+      ],
+      "workflow_id": "pixel_gen_grid_8x8",
+      "agent_type": "sprite-packs",
+      "is_beta": true,
+      "developer_only": false,
+      "output_size": "16",
+      "default_params": {
+        "target_count": 36,
+        "remove_bg_method": "pixel",
+        "prompt_optimization_mode": "lightweight",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "prompt_optimization_mode",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/16px_icon_8x8.png?v=20260623-4x4",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/16px_icon_8x8.png?v=20260623-4x4",
+      "output_size_px": 16
+    },
+    {
+      "template_name": "weapon",
+      "display_name": "������������",
+      "description": "ͨ��������׼ȷ�����ص���ֳ��ɾ����ֿ顢û��ƽ�����ɵ��ʸС�ÿ�����ض���˾��ְ����ͬ���ճ������ĸ��ӽṹ��ʴ�����ĺ�ħ��������Ӱ������ͼ��һ�ֶ��ص������ֹ��ոС�",
+      "labels": [
+        "pixel",
+        "weapon"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/weapon.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/weapon.png?v=20260509-nobg-r2",
+      "output_size_px": 64
+    },
+    {
+      "template_name": "weapon_2",
+      "display_name": "�ͷֱ�����������",
+      "description": "�ϵ͵ķֱ��ʺ����޵ĵ�ɫ�壬�ܹ���ȷ�ط���ÿһ�����أ��Ӷ�����������Ҽ��߱�ʶ�ȵ������͵���ͼ�ꡣ",
+      "labels": [
+        "pixel",
+        "weapon"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/weapon_2.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/weapon_2.png?v=20260509-nobg-r2",
+      "output_size_px": 32
+    },
+    {
+      "template_name": "wuxia_character_5x5",
+      "display_name": "��������С��",
+      "description": "32px �����������С���زİ�,���� 5x5 ģ������ 15 ��ͬ����ɫ��",
+      "labels": [
+        "pixel",
+        "character",
+        "sprite-pack",
+        "wuxia",
+        "beta"
+      ],
+      "workflow_id": "pixel_gen_grid_5x5",
+      "agent_type": "sprite-packs",
+      "is_beta": true,
+      "developer_only": false,
+      "output_size": "32",
+      "default_params": {
+        "target_count": 15,
+        "remove_bg_method": "pixel",
+        "prompt_optimization_mode": "medium",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "prompt_optimization_mode",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/wuxia_character_5x5.png?v=20260623-3x3",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/wuxia_character_5x5.png?v=20260623-3x3",
+      "output_size_px": 32
+    },
+    {
+      "template_name": "xlarge_1_2",
+      "display_name": "Xlarge 1:2 Pixel Grid Fusion",
+      "description": "Xlarge 1:2 output from a 1:1 2K fusion canvas with one merged side reference image.",
+      "labels": [
+        "pixel",
+        "general",
+        "1:2",
+        "portrait",
+        "xlarge",
+        "2K",
+        "grid-fusion"
+      ],
+      "workflow_id": "pixel_gen_general",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "256+",
+      "default_params": {
+        "grid_size": 2,
+        "target_count": 1,
+        "remove_bg_method": "pixel",
+        "size": "xlarge",
+        "resolution": "2K",
+        "aspect_ratio": "1:1",
+        "output_aspect_ratio": "1:2",
+        "temperature": 0.0,
+        "canvas_mode": "xlarge_1_2_grid_fusion",
+        "canvas_size": [
+          2048,
+          2048
+        ],
+        "layout_canvases": [
+          [
+            2048,
+            2048
+          ]
+        ],
+        "layout_gap_units": 1,
+        "stage1_reference_scale": 4,
+        "stage1_pixel_size": [
+          4,
+          4
+        ],
+        "fusion_target_bbox": [
+          0,
+          0,
+          1024,
+          2048
+        ],
+        "fusion_reference_bbox": [
+          1024,
+          0,
+          2048,
+          2048
+        ],
+        "fusion_divider": "vertical"
+      },
+      "supported_config_keys": [
+        "size",
+        "remove_bg_method",
+        "generation_provider",
+        "aspect_ratio",
+        "grid_size",
+        "target_count"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/xlarge_1_2.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/xlarge_1_2.png?v=20260509-nobg-r2",
+      "output_size_px": 512
+    },
+    {
+      "template_name": "xlarge_2_1",
+      "display_name": "Xlarge 2:1 Pixel Grid Fusion",
+      "description": "Xlarge 2:1 output from a 1:1 2K fusion canvas with one merged bottom reference image.",
+      "labels": [
+        "pixel",
+        "general",
+        "2:1",
+        "landscape",
+        "xlarge",
+        "2K",
+        "grid-fusion"
+      ],
+      "workflow_id": "pixel_gen_general",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "256+",
+      "default_params": {
+        "grid_size": 2,
+        "target_count": 1,
+        "remove_bg_method": "pixel",
+        "size": "xlarge",
+        "resolution": "2K",
+        "aspect_ratio": "1:1",
+        "output_aspect_ratio": "2:1",
+        "temperature": 0.0,
+        "canvas_mode": "xlarge_2_1_grid_fusion",
+        "canvas_size": [
+          2048,
+          2048
+        ],
+        "layout_canvases": [
+          [
+            2048,
+            2048
+          ]
+        ],
+        "layout_gap_units": 1,
+        "stage1_reference_scale": 4,
+        "stage1_pixel_size": [
+          4,
+          4
+        ],
+        "fusion_target_bbox": [
+          0,
+          0,
+          2048,
+          1024
+        ],
+        "fusion_reference_bbox": [
+          0,
+          1024,
+          2048,
+          2048
+        ],
+        "fusion_divider": "horizontal"
+      },
+      "supported_config_keys": [
+        "size",
+        "remove_bg_method",
+        "generation_provider",
+        "aspect_ratio",
+        "grid_size",
+        "target_count"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/xlarge_2_1.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/xlarge_2_1.png?v=20260509-nobg-r2",
+      "output_size_px": 512
+    },
+    {
+      "template_name": "xlarge_2_3",
+      "display_name": "Xlarge 2:3 Pixel Grid Fusion",
+      "description": "Xlarge 2:3 output from a 4:3 2K fusion canvas with one merged side reference image.",
+      "labels": [
+        "pixel",
+        "general",
+        "2:3",
+        "portrait",
+        "xlarge",
+        "2K",
+        "grid-fusion"
+      ],
+      "workflow_id": "pixel_gen_general",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "256+",
+      "default_params": {
+        "grid_size": 2,
+        "target_count": 1,
+        "remove_bg_method": "pixel",
+        "size": "xlarge",
+        "resolution": "2K",
+        "aspect_ratio": "4:3",
+        "output_aspect_ratio": "2:3",
+        "temperature": 0.0,
+        "canvas_mode": "xlarge_2_3_grid_fusion",
+        "canvas_size": [
+          2400,
+          1792
+        ],
+        "layout_canvases": [
+          [
+            2400,
+            1792
+          ]
+        ],
+        "layout_gap_units": 1,
+        "stage1_reference_scale": 4,
+        "stage1_pixel_size": [
+          4,
+          4
+        ],
+        "fusion_target_bbox": [
+          0,
+          0,
+          1200,
+          1792
+        ],
+        "fusion_reference_bbox": [
+          1200,
+          0,
+          2400,
+          1792
+        ],
+        "fusion_divider": "vertical"
+      },
+      "supported_config_keys": [
+        "size",
+        "remove_bg_method",
+        "aspect_ratio",
+        "grid_size",
+        "target_count"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/xlarge_2_3.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/xlarge_2_3.png?v=20260509-nobg-r2",
+      "output_size_px": 2048
+    },
+    {
+      "template_name": "xlarge_3_2",
+      "display_name": "Xlarge 3:2 Pixel Grid Fusion",
+      "description": "Xlarge 3:2 output from a 3:4 2K fusion canvas with one merged bottom reference image.",
+      "labels": [
+        "pixel",
+        "general",
+        "3:2",
+        "landscape",
+        "xlarge",
+        "2K",
+        "grid-fusion"
+      ],
+      "workflow_id": "pixel_gen_general",
+      "agent_type": "perfect-pixel",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "256+",
+      "default_params": {
+        "grid_size": 2,
+        "target_count": 1,
+        "remove_bg_method": "pixel",
+        "size": "xlarge",
+        "resolution": "2K",
+        "aspect_ratio": "3:4",
+        "output_aspect_ratio": "3:2",
+        "temperature": 0.0,
+        "canvas_mode": "xlarge_3_2_grid_fusion",
+        "canvas_size": [
+          1792,
+          2400
+        ],
+        "layout_canvases": [
+          [
+            1792,
+            2400
+          ]
+        ],
+        "layout_gap_units": 1,
+        "stage1_reference_scale": 4,
+        "stage1_pixel_size": [
+          4,
+          4
+        ],
+        "fusion_target_bbox": [
+          0,
+          0,
+          1792,
+          1200
+        ],
+        "fusion_reference_bbox": [
+          0,
+          1200,
+          1792,
+          2400
+        ],
+        "fusion_divider": "horizontal"
+      },
+      "supported_config_keys": [
+        "size",
+        "remove_bg_method",
+        "aspect_ratio",
+        "grid_size",
+        "target_count"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/xlarge_3_2.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/xlarge_3_2.png?v=20260509-nobg-r2",
+      "output_size_px": 2048
+    },
+    {
+      "template_name": "���������",
+      "display_name": "����ϵQ������С��",
+      "description": "���ô�ͷС������������̶ȵļ��沿��������������������ص���Ϊ�۾��ͷ�ɫ����Ⱦ��Ϊ���죬���ִ��桢���ȵ��Ӿ����ܡ�",
+      "labels": [
+        "pixel",
+        "character",
+        "single"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/%E6%97%A0%E6%8F%8F%E8%BE%B9%E4%BA%BA%E7%89%A9.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/%E6%97%A0%E6%8F%8F%E8%BE%B9%E4%BA%BA%E7%89%A9.png?v=20260509-nobg-r2",
+      "output_size_px": 32
+    },
+    {
+      "template_name": "��ľ",
+      "display_name": "����������ľ",
+      "description": "�۽�����Ȼ��ĸ�����ľ��ͨ�����ӵ�����������ḻ��ɫ�ʲ�κ�ϸ��Ĺ�Ӱ���ɣ���׽��ÿ����ľ�Ķ���������",
+      "labels": [
+        "pixel",
+        "nature",
+        "tree"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/%E6%A0%91%E6%9C%A8.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/%E6%A0%91%E6%9C%A8.png?v=20260509-nobg-r2",
+      "output_size_px": 64
+    },
+    {
+      "template_name": "��ľ_2",
+      "display_name": "�ͷֱ���������ľ",
+      "description": "����������������������޵��������ḻ�ĵ�ɫ�壬ͨ���������������Ŵ�ҶƬ�Ĵ������׽��ÿ����ľ�Ķ�����״����ɫ��",
+      "labels": [
+        "pixel",
+        "nature",
+        "tree"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/%E6%A0%91%E6%9C%A8_2.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/%E6%A0%91%E6%9C%A8_2.png?v=20260509-nobg-r2",
+      "output_size_px": 32
+    },
+    {
+      "template_name": "ֲ��",
+      "display_name": "��������ֲ��",
+      "description": "���ø߶Ⱦ����Ҿ���ǿ�һ��ɸе�����������񣬳��ֳ�һ�ָɾ����ֿ顢û��ƽ�����ɵ��ʸС�ÿ�����ض���˾��ְ����ͬ���ճ�ֲ������������ͼ��һ�ֶ��ص������ֹ��ոС�",
+      "labels": [
+        "pixel",
+        "nature",
+        "plant"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/%E6%A4%8D%E7%89%A9.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/%E6%A4%8D%E7%89%A9.png?v=20260509-nobg-r2",
+      "output_size_px": 64
+    },
+    {
+      "template_name": "ֲ��_2",
+      "display_name": "�ͷֱ�������ֲ��",
+      "description": "���ü�������ĵͷֱ�����ƣ�ÿһ�����ؿ鶼�����ɼ���������ֲ���Կ�״���ɾ����Ӿ��ṹ���ܿ����ӵ�ϸ�ڣ�ͨ���򵥵���ʽ��׽ֲ������ϡ�",
+      "labels": [
+        "pixel",
+        "nature",
+        "plant"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/%E6%A4%8D%E7%89%A9_2.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/%E6%A4%8D%E7%89%A9_2.png?v=20260509-nobg-r2",
+      "output_size_px": 32
+    },
+    {
+      "template_name": "����",
+      "display_name": "������������",
+      "description": "һϵ�о�ϸ���ŵ��������ԣ�����ܰ���ͱ��Ͷ�ɫ�������������������������ĳ��ָ��־��µľӼ���ֲ��",
+      "labels": [
+        "pixel",
+        "nature",
+        "bonsai"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/%E7%9B%86%E6%A0%BD.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/%E7%9B%86%E6%A0%BD.png?v=20260509-nobg-r2",
+      "output_size_px": 64
+    },
+    {
+      "template_name": "����_2",
+      "display_name": "�ͷֱ�����������",
+      "description": "���õͷֱ�����������������͡���ܰ�ĵͱ��Ͷȵ�ɫ�壬�ɰ��ĳ��ָ���΢�����ԡ�",
+      "labels": [
+        "pixel",
+        "nature",
+        "bonsai"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/%E7%9B%86%E6%A0%BD_2.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/%E7%9B%86%E6%A0%BD_2.png?v=20260509-nobg-r2",
+      "output_size_px": 32
+    },
+    {
+      "template_name": "��ʯ",
+      "display_name": "�������ؿ�ʯ",
+      "description": "�����Ե����ط���ƴ�Ӷ��ɣ�����չ�ֳ�ǿ�ҵĻ��ɸУ����ϸ���ɳ�н���򾭵�RPG��Ϸ�е���Ʒ��ͼ����ơ�",
+      "labels": [
+        "pixel",
+        "resource",
+        "ore"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/%E7%9F%BF%E7%9F%B3.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/%E7%9F%BF%E7%9F%B3.png?v=20260509-nobg-r2",
+      "output_size_px": 64
+    },
+    {
+      "template_name": "��ʯ_2",
+      "display_name": "�ͷֱ������ؿ�ʯ",
+      "description": "����������������ߣ������޵ĵͷֱ��������������ֲ�ͬ���ʵ��ʸУ��������ڳ�����Ϸ�����и��ֱ�ʯ�Ϳ���ȡ�",
+      "labels": [
+        "pixel",
+        "resource",
+        "ore"
+      ],
+      "workflow_id": "pixel_gen_grid_4x4",
+      "agent_type": "sprite-packs",
+      "is_beta": false,
+      "developer_only": false,
+      "output_size": "32-64",
+      "default_params": {
+        "target_count": 8,
+        "remove_bg_method": "pixel",
+        "resolution": "1K",
+        "aspect_ratio": "1:1",
+        "temperature": 0.0
+      },
+      "supported_config_keys": [
+        "target_count",
+        "remove_bg_method",
+        "layout_canvases",
+        "layout_gap_units"
+      ],
+      "supports_direction": false,
+      "display_image_url": "https://media.meowa.ai/public/templates/gsc/%E7%9F%BF%E7%9F%B3_2.png?v=20260509-nobg-r2",
+      "preview_image_url": "https://media.meowa.ai/public/templates/gsc/%E7%9F%BF%E7%9F%B3_2.png?v=20260509-nobg-r2",
+      "output_size_px": 32
+    }
+  ]
+}

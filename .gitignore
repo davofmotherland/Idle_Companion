@@ -1,0 +1,11 @@
+node_modules/
+dist/
+release/
+*.log
+.env
+.env.local
+tmp-*.png
+.DS_Store
+Thumbs.db
+.agents/skills/**/.meow_art/
+assets/references/photo-inputs/

@@ -1,0 +1,12 @@
+{
+  "characterId": "template_blue_headphone_girl",
+  "status": "approved_baseline_reference",
+  "sourceType": "art_director_generated_reference",
+  "sourceReference": "assets/references/photo-to-pixel-tests/base-blue-white-headphone-girl-v1.png",
+  "generatedAt": "2026-06-23",
+  "notes": [
+    "Approved baseline direction for photo-to-pixel customization.",
+    "This asset is the visual target for future template implementation.",
+    "Clothing should remain simplified into large editable regions."
+  ]
+}

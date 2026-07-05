@@ -1,0 +1,30 @@
+{
+  "id": "default_seal",
+  "name": "Seal",
+  "scale": 3,
+  "theme": "white_baby_seal",
+  "renderMode": "procedural_seal",
+  "fallbackToProcedural": true,
+  "palette": {
+    "body": "#f8fcff",
+    "outline": "#b8c7d2",
+    "flipper": "#e5eef5",
+    "shadow": "#355070",
+    "cheek": "#ff9fb3"
+  },
+  "animations": {
+    "idle": "default_seal_sheet.png",
+    "walk": "default_seal_sheet.png",
+    "sleep": "default_seal_sheet.png",
+    "happy": "default_seal_sheet.png",
+    "dragged": "default_seal_sheet.png"
+  },
+  "personality": {
+    "tone": "cute_bilingual",
+    "catchphrases": [
+      "arf!",
+      "hello!",
+      "let's rest for a bit"
+    ]
+  }
+}

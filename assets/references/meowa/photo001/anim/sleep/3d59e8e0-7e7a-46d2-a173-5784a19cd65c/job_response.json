@@ -1,0 +1,19 @@
+{
+  "id": "3d59e8e0-7e7a-46d2-a173-5784a19cd65c",
+  "api_job_id": "3d59e8e0-7e7a-46d2-a173-5784a19cd65c",
+  "status": "success",
+  "error": null,
+  "animation_type": "other",
+  "source_image_url": "https://media.meowa.ai/public/animate/output/2026-07-05/10%3A00%3A14-3d59e8e0-7e7a-46d2-a173-5784a19cd65c/source_static.png",
+  "final_prompt": "The chibi girl wearing a brown beanie and sunglasses sits or stands still while her head tilts forward slightly to indicate a sleepy state. Her chest expands and contracts in a slow, calm breathing cycle while her long brown hair sways gently to simulate a resting desktop pet animation.",
+  "output": {
+    "url": "https://media.meowa.ai/public/animate/output/2026-07-05/10%3A00%3A28-3d59e8e0-7e7a-46d2-a173-5784a19cd65c/transparent_backup.webp",
+    "transparent_output_urls": {
+      "webp": "https://media.meowa.ai/public/animate/output/2026-07-05/10%3A00%3A28-3d59e8e0-7e7a-46d2-a173-5784a19cd65c/transparent_backup.webp",
+      "gif": "https://media.meowa.ai/public/animate/output/2026-07-05/10%3A00%3A28-3d59e8e0-7e7a-46d2-a173-5784a19cd65c/transparent_backup.gif",
+      "png": "https://media.meowa.ai/public/animate/output/2026-07-05/10%3A00%3A28-3d59e8e0-7e7a-46d2-a173-5784a19cd65c/transparent_backup.png"
+    },
+    "frame_count": 2,
+    "output_frames": 2
+  }
+}

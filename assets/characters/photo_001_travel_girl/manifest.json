@@ -1,0 +1,58 @@
+{
+    "id":  "photo_001_travel_girl",
+    "name":  "Travel Girl Small 001",
+    "scale":  3,
+    "theme":  "photo_commission_pixel_character_meowa_animated",
+    "renderMode":  "template_pixel_avatar",
+    "fallbackToProcedural":  false,
+    "palette":  {
+                    "body":  "#f8fbff",
+                    "outline":  "#3a3230",
+                    "flipper":  "#2f3640",
+                    "shadow":  "#1f2428",
+                    "cheek":  "#e9a6a1"
+                },
+    "animations":  {
+                       "idle":  [
+                                    "animations/idle-0.png",
+                                    "animations/idle-1.png",
+                                    "animations/idle-2.png",
+                                    "animations/idle-3.png"
+                                ],
+                       "walk":  [
+                                    "animations/walk-0.png",
+                                    "animations/walk-1.png",
+                                    "animations/walk-2.png",
+                                    "animations/walk-3.png"
+                                ],
+                       "sleep":  [
+                                     "animations/sleep-0.png",
+                                     "animations/sleep-1.png"
+                                 ],
+                       "happy":  [
+                                     "animations/happy-0.png",
+                                     "animations/happy-1.png"
+                                 ],
+                       "poke":  [
+                                    "animations/happy-0.png",
+                                    "animations/happy-1.png"
+                                ],
+                       "annoyed":  [
+                                       "animations/happy-0.png",
+                                       "animations/happy-1.png"
+                                   ],
+                       "dragged":  [
+                                       "animations/idle-0.png",
+                                       "animations/idle-1.png",
+                                       "animations/idle-2.png",
+                                       "animations/idle-3.png"
+                                   ]
+                   },
+    "personality":  {
+                        "tone":  "cute_bilingual_travel",
+                        "catchphrases":  [
+                                             "ready!",
+                                             "let\u0027s go!"
+                                         ]
+                    }
+}

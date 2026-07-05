@@ -1,0 +1,171 @@
+{
+  "job_id": "pixelate-24ba85fcfc014135b085ea4db4ed49f5",
+  "job_type": "pixelate",
+  "status": "success",
+  "stage": "completed",
+  "animation_type": null,
+  "queue": {
+    "position": 0,
+    "estimated_wait_seconds": 0
+  },
+  "progress": {
+    "label": "已完成",
+    "percent": 100
+  },
+  "result": {
+    "url": "https://media.meowa.ai/public/image/output/2026-07-05/09%3A57%3A20-pixelate-24ba85fcfc014135b085ea4db4ed49f5/result.png",
+    "gcs_url": "https://media.meowa.ai/public/image/output/2026-07-05/09%3A57%3A20-pixelate-24ba85fcfc014135b085ea4db4ed49f5/result.png",
+    "gcs_blob_name": "image/output/2026-07-05/09:57:20-pixelate-24ba85fcfc014135b085ea4db4ed49f5/result.png",
+    "metadata": {
+      "workflow_id": "pixelate",
+      "template_id": "default",
+      "request_id": "pixelate-24ba85fcfc014135b085ea4db4ed49f5",
+      "params": {
+        "pixel_size": [
+          4,
+          4
+        ],
+        "alpha_threshold": 128,
+        "sample_method": "majority",
+        "min_size": 2.0,
+        "peak_width": 6,
+        "refine_intensity": 0.25,
+        "max_ratio": 1.5,
+        "fix_square": true,
+        "fixed_grid_refine": false,
+        "pad_pow2_square": true,
+        "crop_border": false,
+        "crop_color_thr": 20,
+        "crop_bg_ratio": 0.995,
+        "crop_edge_width": 10
+      },
+      "metadata": {
+        "workflow_id": "pixelate",
+        "template_id": "default",
+        "template_display_name": "Default",
+        "template_dir": "/app/app/workflows/pixelate/templates/default",
+        "debug_run_dir": "https://storage.googleapis.com/meowart-bucket/image/output/2026-07-05/09:57:20-pixelate-24ba85fcfc014135b085ea4db4ed49f5/.",
+        "input_step_path": "https://storage.googleapis.com/meowart-bucket/image/output/2026-07-05/09:57:20-pixelate-24ba85fcfc014135b085ea4db4ed49f5/steps/095718_pixelate_00c33e01/step_00_prepare_input_image.png",
+        "perfect_pixel_output_size": [
+          128,
+          128
+        ],
+        "perfect_pixel": {
+          "requested_pixel_size": [
+            4,
+            4
+          ],
+          "detected_pixel_size": null,
+          "resolved_pixel_size": [
+            4,
+            4
+          ],
+          "pixel_size_source": "manual",
+          "already_perfect_pixel": false
+        },
+        "perfect_pixel_pixel_size": [
+          4,
+          4
+        ],
+        "perfect_pixel_detected_pixel_size": null,
+        "perfect_pixel_pixel_size_source": "manual",
+        "perfect_pixel_already_perfect": false,
+        "operator_chain": [
+          "perfect_pixel_or_resize"
+        ]
+      },
+      "input_step_path": "https://storage.googleapis.com/meowart-bucket/image/output/2026-07-05/09:57:20-pixelate-24ba85fcfc014135b085ea4db4ed49f5/steps/095718_pixelate_00c33e01/step_00_prepare_input_image.png",
+      "steps_metadata_path": "https://storage.googleapis.com/meowart-bucket/image/output/2026-07-05/09:57:20-pixelate-24ba85fcfc014135b085ea4db4ed49f5/steps/step_manifest.json",
+      "steps": [
+        {
+          "step_index": 0,
+          "operator_name": "prepare",
+          "label": "input_image",
+          "path": "https://storage.googleapis.com/meowart-bucket/image/output/2026-07-05/09:57:20-pixelate-24ba85fcfc014135b085ea4db4ed49f5/steps/095718_pixelate_00c33e01/step_00_prepare_input_image.png",
+          "image": {
+            "id": "1f093b39b44d4bd2805d68d46ddbf0bb",
+            "width": 286,
+            "height": 380
+          },
+          "metadata": {}
+        },
+        {
+          "step_index": 1,
+          "operator_name": "perfect_pixel_or_resize",
+          "label": "perfect_pixel_output",
+          "path": "https://storage.googleapis.com/meowart-bucket/image/output/2026-07-05/09:57:20-pixelate-24ba85fcfc014135b085ea4db4ed49f5/steps/095718_pixelate_00c33e01/step_01_perfect_pixel_or_resize_perfect_pixel_output.png",
+          "image": {
+            "id": "0885e9d148f7463498938b284da88cff",
+            "width": 128,
+            "height": 128
+          },
+          "metadata": {
+            "operator_name": "perfect_pixel_or_resize",
+            "operator_config": {
+              "pixel_size": [
+                4,
+                4
+              ],
+              "alpha_threshold": 128,
+              "sample_method": "majority",
+              "min_size": 2.0,
+              "peak_width": 6,
+              "refine_intensity": 0.25,
+              "max_ratio": 1.5,
+              "fix_square": true,
+              "fixed_grid_refine": false,
+              "pad_pow2_square": true,
+              "crop_border": false,
+              "crop_color_thr": 20,
+              "crop_bg_ratio": 0.995,
+              "crop_edge_width": 10,
+              "image_store": "<app.workflows.pixel_gen.image_store.ImageStore object at 0x7f67f8049f30>"
+            },
+            "workflow_params": {
+              "pixel_size": [
+                4,
+                4
+              ],
+              "alpha_threshold": 128,
+              "sample_method": "majority",
+              "min_size": 2.0,
+              "peak_width": 6,
+              "refine_intensity": 0.25,
+              "max_ratio": 1.5,
+              "fix_square": true,
+              "fixed_grid_refine": false,
+              "pad_pow2_square": true,
+              "crop_border": false,
+              "crop_color_thr": 20,
+              "crop_bg_ratio": 0.995,
+              "crop_edge_width": 10
+            },
+            "extra": {
+              "target_artifact": ""
+            }
+          }
+        }
+      ],
+      "result_path": "https://media.meowa.ai/public/image/output/2026-07-05/09%3A57%3A20-pixelate-24ba85fcfc014135b085ea4db4ed49f5/result.png",
+      "storage": "local",
+      "pixel_size": [
+        4,
+        4
+      ],
+      "detected_pixel_size": null,
+      "requested_pixel_size": [
+        4,
+        4
+      ],
+      "pixel_size_source": "manual",
+      "already_perfect_pixel": false
+    },
+    "storage": "gcs"
+  },
+  "error": "",
+  "credit_refund": {
+    "refunded": false,
+    "amount": 0,
+    "reference_id": "pixelate-24ba85fcfc014135b085ea4db4ed49f5"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "3888b7e2-380e-4ce3-8249-9cc8ceae5fe2",
+  "api_job_id": "3888b7e2-380e-4ce3-8249-9cc8ceae5fe2",
+  "status": "success",
+  "error": null,
+  "animation_type": "other",
+  "source_image_url": "https://media.meowa.ai/public/animate/output/2026-07-05/10%3A00%3A53-3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/source_static.png",
+  "final_prompt": "The girl in the brown beanie and leather jacket reacts with a cheerful bounce and a wide smile. She raises her hands in a celebratory gesture while her hair and oversized hat sway with the momentum of her joyful hop.",
+  "output": {
+    "url": "https://media.meowa.ai/public/animate/output/2026-07-05/10%3A01%3A07-3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/transparent_backup.webp",
+    "transparent_output_urls": {
+      "webp": "https://media.meowa.ai/public/animate/output/2026-07-05/10%3A01%3A07-3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/transparent_backup.webp",
+      "gif": "https://media.meowa.ai/public/animate/output/2026-07-05/10%3A01%3A07-3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/transparent_backup.gif",
+      "png": "https://media.meowa.ai/public/animate/output/2026-07-05/10%3A01%3A07-3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/transparent_backup.png"
+    },
+    "frame_count": 2,
+    "output_frames": 2
+  }
+}

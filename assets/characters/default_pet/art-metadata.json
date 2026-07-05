@@ -1,0 +1,30 @@
+{
+  "characterId": "default_seal",
+  "status": "procedural_placeholder",
+  "sourceType": "procedural_runtime",
+  "commercialUse": "original_project_asset",
+  "sourceFiles": [],
+  "plannedSourceFiles": [
+    "default_seal.aseprite",
+    "default_seal_sheet.png",
+    "preview.png"
+  ],
+  "canvas": {
+    "preferredSource": "96x96",
+    "runtimeWindow": "320x320",
+    "scaling": "integer_only"
+  },
+  "palette": {
+    "body": "#f8fcff",
+    "outline": "#b8c7d2",
+    "flipper": "#e5eef5",
+    "shadow": "#355070",
+    "eyes": "#1d2730",
+    "cheek": "#ff9fb3"
+  },
+  "notes": [
+    "M3 uses procedural placeholder art driven by manifest palette.",
+    "Final Aseprite source and exported sprite sheet are required before Steam candidate.",
+    "Default character quality must not be cut; reduce animation count first if art schedule slips."
+  ]
+}

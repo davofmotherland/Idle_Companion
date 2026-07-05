@@ -1,0 +1,19 @@
+{
+  "id": "dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7",
+  "api_job_id": "dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7",
+  "status": "success",
+  "error": null,
+  "animation_type": "other",
+  "source_image_url": "https://media.meowa.ai/public/animate/output/2026-07-05/09%3A58%3A49-dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/source_static.png",
+  "final_prompt": "The girl in the brown beanie and black sunglasses stands in a neutral pose, performing a subtle idle breathing cycle. Her chest rises slightly while her long brown hair sways gently, followed by a single quick blink of her eyes behind the sunglasses.",
+  "output": {
+    "url": "https://media.meowa.ai/public/animate/output/2026-07-05/09%3A59%3A02-dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/transparent_backup.webp",
+    "transparent_output_urls": {
+      "webp": "https://media.meowa.ai/public/animate/output/2026-07-05/09%3A59%3A02-dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/transparent_backup.webp",
+      "gif": "https://media.meowa.ai/public/animate/output/2026-07-05/09%3A59%3A02-dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/transparent_backup.gif",
+      "png": "https://media.meowa.ai/public/animate/output/2026-07-05/09%3A59%3A02-dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/transparent_backup.png"
+    },
+    "frame_count": 4,
+    "output_frames": 4
+  }
+}

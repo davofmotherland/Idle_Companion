@@ -1,0 +1,33 @@
+{
+    "characterId":  "photo_001_travel_girl",
+    "status":  "right_top_small_meowa_optimized_mvp_animation_implemented",
+    "sourceType":  "owner_selected_candidate_to_meowa_optimized_animation_pack",
+    "sourcePhoto":  "assets/references/photo-inputs/photo-001.png",
+    "approvedReferenceSheet":  "assets/references/photo-to-pixel-tests/photo-001-style-candidates-v1.png",
+    "selectedSource":  "assets/characters/photo_001_travel_girl/selected-right-top-small-source.png",
+    "meowaOptimizedSource":  "assets/references/meowa/photo001/right_top_optimize/selected-right-top-small-source/result.png",
+    "runtimeIdle":  "assets/characters/photo_001_travel_girl/idle.png",
+    "animationFrames":  "assets/characters/photo_001_travel_girl/animations/",
+    "meowaJobs":  {
+                      "pixelOptimize":  "pixelate-24ba85fcfc014135b085ea4db4ed49f5",
+                      "idle":  "dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7",
+                      "walk":  "67570b77-cd6e-4854-b501-0474fe284acd",
+                      "sleep":  "3d59e8e0-7e7a-46d2-a173-5784a19cd65c",
+                      "happy":  "3888b7e2-380e-4ce3-8249-9cc8ceae5fe2"
+                  },
+    "visualTraits":  [
+                         "brown knit beanie",
+                         "black sunglasses",
+                         "long brown hair",
+                         "black leather jacket",
+                         "white inner shirt",
+                         "blue jeans",
+                         "small chibi pixel proportions"
+                     ],
+    "notes":  [
+                  "Owner selected the smaller top-right candidate, not the top-left tall candidate.",
+                  "Meowa pixelate output is used as the normalized visual source.",
+                  "MVP animation states implemented: idle 4 frames, walk 4 frames, sleep 2 frames, happy/poke 2 frames.",
+                  "Do not change outfit palette or candidate selection without owner approval."
+              ]
+}

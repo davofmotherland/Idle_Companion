@@ -1,0 +1,22 @@
+{
+  "id": "template_blue_headphone_girl",
+  "name": "Blue Headphone Girl",
+  "scale": 3,
+  "theme": "template_pixel_avatar_approved_baseline",
+  "renderMode": "template_pixel_avatar",
+  "fallbackToProcedural": false,
+  "palette": {
+    "body": "#f8fbff",
+    "outline": "#455a68",
+    "flipper": "#5b9ed6",
+    "shadow": "#25313a",
+    "cheek": "#ff9fb3"
+  },
+  "animations": {
+    "idle": "baseline.png"
+  },
+  "personality": {
+    "tone": "cute_bilingual",
+    "catchphrases": ["ready!", "hello!"]
+  }
+}

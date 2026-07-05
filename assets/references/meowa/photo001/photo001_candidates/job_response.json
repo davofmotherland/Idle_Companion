@@ -1,0 +1,33 @@
+{
+  "api_job_id": "f4c69c22-a86b-4ad6-862c-14c661c4173e",
+  "status": "success",
+  "error": "",
+  "output": {
+    "url": "https://media.meowa.ai/public/pixel-gen/output/2026-07-05/09%3A25%3A06-f4c69c22-a86b-4ad6-862c-14c661c4173e/sprite_00.png",
+    "final_sprite_paths": [
+      "https://media.meowa.ai/public/pixel-gen/output/2026-07-05/09%3A25%3A06-f4c69c22-a86b-4ad6-862c-14c661c4173e/sprite_00.png",
+      "https://media.meowa.ai/public/pixel-gen/output/2026-07-05/09%3A25%3A06-f4c69c22-a86b-4ad6-862c-14c661c4173e/sprite_01.png"
+    ],
+    "prompt_detail": "正面全身像，Q版比例，戴着棕色针织冷帽，黑色墨镜，长棕色直发，穿着黑色皮夹克，袖口露出白色内衬，双手自然下垂，站姿；正面全身像，Q版比例，戴着棕色针织冷帽，黑色墨镜，长棕色直发，穿着黑色皮夹克，袖口露出白色内衬，双手抱胸，站姿",
+    "sprite_pack_names": [
+      "双手下垂女孩",
+      "双手抱胸女孩"
+    ],
+    "sprite_crop_path": "https://media.meowa.ai/public/pixel-gen/output/2026-07-05/09%3A25%3A06-f4c69c22-a86b-4ad6-862c-14c661c4173e/sprite_00.png",
+    "sprite_pack_preview_path": "https://media.meowa.ai/public/pixel-gen/output/2026-07-05/09%3A25%3A06-f4c69c22-a86b-4ad6-862c-14c661c4173e/sprite_pack_preview.png"
+  },
+  "stage": "completed",
+  "progress": {
+    "percent": 100,
+    "label": "已完成"
+  },
+  "queue": {
+    "position": 0,
+    "estimated_wait_seconds": 0
+  },
+  "credit_refund": {
+    "refunded": false,
+    "amount": 0,
+    "reference_id": "f4c69c22-a86b-4ad6-862c-14c661c4173e"
+  }
+}

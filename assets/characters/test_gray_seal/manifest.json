@@ -1,0 +1,25 @@
+{
+  "id": "test_gray_seal",
+  "name": "Gray Test Seal",
+  "scale": 3,
+  "theme": "gray_test_seal",
+  "renderMode": "procedural_seal",
+  "fallbackToProcedural": true,
+  "palette": {
+    "body": "#dbe4ea",
+    "outline": "#7f95a3",
+    "flipper": "#c5d2db",
+    "shadow": "#2f4b5f",
+    "cheek": "#ffadc0"
+  },
+  "animations": {
+    "idle": "missing_gray_idle.png"
+  },
+  "personality": {
+    "tone": "cute_bilingual",
+    "catchphrases": [
+      "test arf!",
+      "fallback ok"
+    ]
+  }
+}

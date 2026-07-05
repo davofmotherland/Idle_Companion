@@ -1,0 +1,19 @@
+{
+  "id": "67570b77-cd6e-4854-b501-0474fe284acd",
+  "api_job_id": "67570b77-cd6e-4854-b501-0474fe284acd",
+  "status": "success",
+  "error": null,
+  "animation_type": "other",
+  "source_image_url": "https://media.meowa.ai/public/animate/output/2026-07-05/09%3A59%3A32-67570b77-cd6e-4854-b501-0474fe284acd/source_static.png",
+  "final_prompt": "The chibi character in a brown beanie, black sunglasses, and leather jacket performs a front-facing walk cycle. She takes small, rhythmic steps that cause her body and beanie to sway slightly from side to side. Her arms move in opposition to her legs while her hair bounces with each step, maintaining her cute, front-facing proportions.",
+  "output": {
+    "url": "https://media.meowa.ai/public/animate/output/2026-07-05/09%3A59%3A53-67570b77-cd6e-4854-b501-0474fe284acd/transparent_backup.webp",
+    "transparent_output_urls": {
+      "webp": "https://media.meowa.ai/public/animate/output/2026-07-05/09%3A59%3A53-67570b77-cd6e-4854-b501-0474fe284acd/transparent_backup.webp",
+      "gif": "https://media.meowa.ai/public/animate/output/2026-07-05/09%3A59%3A53-67570b77-cd6e-4854-b501-0474fe284acd/transparent_backup.gif",
+      "png": "https://media.meowa.ai/public/animate/output/2026-07-05/09%3A59%3A53-67570b77-cd6e-4854-b501-0474fe284acd/transparent_backup.png"
+    },
+    "frame_count": 4,
+    "output_frames": 4
+  }
+}

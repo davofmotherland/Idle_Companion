@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Seal M4 visual QA</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: Arial, sans-serif;
+      background: #f4f7fa;
+      color: #1d2730;
+    }
+    h1 { font-size: 16px; margin: 0 0 16px; }
+    .row { display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap; }
+    .card {
+      background: #fff;
+      border: 1px solid rgba(95, 125, 145, 0.45);
+      border-radius: 10px;
+      padding: 12px;
+      min-width: 140px;
+    }
+    .card h2 { font-size: 13px; margin: 0 0 10px; font-weight: 700; }
+    canvas { display: block; image-rendering: pixelated; }
+    #input-canvas { width: 120px; height: 180px; }
+    #output-canvas { width: 144px; height: 192px; background: #eef4f8; }
+    #placeholder-canvas { width: 144px; height: 192px; background: #eef4f8; }
+    .note { font-size: 12px; color: #5a6a75; margin-top: 12px; max-width: 420px; }
+    .palette { font-family: monospace; font-size: 11px; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Project Seal M4 — photo-to-pixel visual QA</h1>
+  <div class="row">
+    <div class="card">
+      <h2>Synthetic input photo</h2>
+      <canvas id="input-canvas" width="120" height="180"></canvas>
+    </div>
+    <div class="card">
+      <h2>Generated pixel avatar</h2>
+      <canvas id="output-canvas" width="48" height="64"></canvas>
+      <div class="palette" id="palette"></div>
+    </div>
+    <div class="card">
+      <h2>Placeholder (initial state)</h2>
+      <canvas id="placeholder-canvas" width="48" height="64"></canvas>
+    </div>
+  </div>
+  <p class="note">
+    This test uses the same <code>generateFromPhoto</code> drawing pipeline as the app. If the generated avatar looks personalized (hair color, skin tone, outfit color match the input), the renderer logic is working. The real app also needs the segmentation step to extract these features from an actual uploaded photo.
+  </p>
+
+  <script>
+    // ─── Inline copy of the photo-to-pixel drawing pipeline ─────────────────
+
+    const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+    const quantize = (v) => Math.round(v / 24) * 24;
+    const hex = (r, g, b) => `#${[r, g, b].map(x => Math.round(clamp(x, 0, 255)).toString(16).padStart(2, '0')).join('')}`;
+
+    function rect(ctx, x, y, w, h, color) {
+      ctx.fillStyle = color;
+      ctx.fillRect(x, y, w, h);
+    }
+
+    function ellipse(ctx, cx, cy, rx, ry, color) {
+      ctx.fillStyle = color;
+      for (let y = Math.floor(cy - ry); y <= Math.ceil(cy + ry); y++) {
+        for (let x = Math.floor(cx - rx); x <= Math.ceil(cx + rx); x++) {
+          const dx = (x - cx) / rx;
+          const dy = (y - cy) / ry;
+          if (dx * dx + dy * dy <= 1) ctx.fillRect(x, y, 1, 1);
+        }
+      }
+    }
+
+    function face(ctx, palette, y = 16) {
+      rect(ctx, 17, y, 4, 5, '#19232b');
+      rect(ctx, 28, y, 4, 5, '#19232b');
+      rect(ctx, 18, y, 2, 1, '#ffffff');
+      rect(ctx, 29, y, 2, 1, '#ffffff');
+      rect(ctx, 22, y + 6, 4, 2, '#19232b');
+      rect(ctx, 13, y + 5, 4, 3, palette.cheek);
+      rect(ctx, 32, y + 5, 4, 3, palette.cheek);
+    }
+
+    function hairBob(ctx, p) {
+      ellipse(ctx, 24, 15, 14, 12, p.outline);
+      ellipse(ctx, 24, 16, 12, 10, p.hair);
+      rect(ctx, 12, 17, 6, 14, p.hair);
+      rect(ctx, 30, 17, 6, 14, p.hair);
+      rect(ctx, 18, 8, 13, 6, p.hair);
+      rect(ctx, 21, 14, 3, 2, p.shadow);
+      rect(ctx, 26, 14, 3, 2, p.shadow);
+    }
+    function hairShort(ctx, p) {
+      ellipse(ctx, 24, 15, 12, 9, p.outline);
+      ellipse(ctx, 24, 16, 10, 7, p.hair);
+      rect(ctx, 16, 7, 17, 3, p.hair);
+      rect(ctx, 21, 14, 3, 2, p.shadow);
+      rect(ctx, 26, 14, 3, 2, p.shadow);
+    }
+    function hairLong(ctx, p) {
+      ellipse(ctx, 24, 15, 14, 13, p.outline);
+      ellipse(ctx, 24, 16, 12, 11, p.hair);
+      rect(ctx, 17, 8, 15, 6, p.hair);
+      rect(ctx, 10, 17, 5, 22, p.hair);
+      rect(ctx, 34, 17, 5, 22, p.hair);
+      rect(ctx, 9, 17, 1, 22, p.outline);
+      rect(ctx, 39, 17, 1, 22, p.outline);
+      rect(ctx, 21, 14, 3, 2, p.shadow);
+      rect(ctx, 26, 14, 3, 2, p.shadow);
+    }
+    function hairCurly(ctx, p) {
+      ellipse(ctx, 24, 14, 16, 12, p.outline);
+      ellipse(ctx, 24, 15, 14, 10, p.hair);
+      ellipse(ctx, 10, 20, 4, 5, p.hair);
+      ellipse(ctx, 38, 20, 4, 5, p.hair);
+      rect(ctx, 14, 5, 21, 5, p.hair);
+      rect(ctx, 14, 4, 21, 1, p.outline);
+      rect(ctx, 20, 14, 4, 2, p.shadow);
+      rect(ctx, 26, 14, 4, 2, p.shadow);
+    }
+
+    function selectHairFunction(variant) {
+      switch (variant) {
+        case 'short': return hairShort;
+        case 'bob': return hairBob;
+        case 'long': return hairLong;
+        case 'curly': return hairCurly;
+        default: return hairBob;
+      }
+    }
+
+    function headphones(ctx, p) {
+      rect(ctx, 14, 6, 20, 3, '#f7fbff');
+      rect(ctx, 11, 14, 5, 11, p.outline);
+      rect(ctx, 32, 14, 5, 11, p.outline);
+      rect(ctx, 12, 15, 3, 8, '#f7fbff');
+      rect(ctx, 33, 15, 3, 8, '#f7fbff');
+      rect(ctx, 12, 22, 3, 2, p.accent);
+      rect(ctx, 33, 22, 3, 2, p.accent);
+    }
+    function head(ctx, p) {
+      ellipse(ctx, 24, 19, 12, 11, p.outline);
+      ellipse(ctx, 24, 19, 10, 9, p.body);
+      face(ctx, p, 17);
+    }
+    function arms(ctx, p) {
+      rect(ctx, 13, 33, 3, 2, p.outline);
+      rect(ctx, 33, 33, 3, 2, p.outline);
+      rect(ctx, 12, 35, 4, 12, p.outline);
+      rect(ctx, 33, 35, 4, 12, p.outline);
+      rect(ctx, 13, 36, 2, 10, p.body);
+      rect(ctx, 34, 36, 2, 10, p.body);
+      rect(ctx, 12, 46, 4, 3, p.body);
+      rect(ctx, 33, 46, 4, 3, p.body);
+    }
+    function shoes(ctx, p) {
+      const shoesColor = p.shoes || '#1f2428';
+      const soleColor = '#12161a';
+      rect(ctx, 16, 56, 7, 4, shoesColor);
+      rect(ctx, 26, 56, 7, 4, shoesColor);
+      rect(ctx, 15, 60, 8, 3, soleColor);
+      rect(ctx, 25, 60, 8, 3, soleColor);
+    }
+
+    function paintApprovedBase({ ctx, p }, hairFn, hasAccessories) {
+      ellipse(ctx, 24, 61, 13, 2, p.shadow);
+      hairFn(ctx, p);
+      if (hasAccessories) headphones(ctx, p);
+      head(ctx, p); arms(ctx, p);
+      rect(ctx, 17, 31, 15, 3, p.outfit);
+      rect(ctx, 16, 34, 17, 17, p.outline);
+      rect(ctx, 18, 34, 13, 17, p.accent);
+      rect(ctx, 20, 35, 2, 15, '#dff4ff');
+      rect(ctx, 26, 35, 2, 15, '#dff4ff');
+      rect(ctx, 18, 49, 13, 1, p.accent);
+      rect(ctx, 18, 51, 13, 8, p.outfit);
+      shoes(ctx, p);
+    }
+    function paintSimpleDress({ ctx, p }, hairFn, hasAccessories) {
+      ellipse(ctx, 24, 61, 13, 2, p.shadow);
+      hairFn(ctx, p);
+      if (hasAccessories) headphones(ctx, p);
+      head(ctx, p); arms(ctx, p);
+      rect(ctx, 17, 31, 15, 3, p.outfit);
+      rect(ctx, 16, 34, 17, 8, p.accent);
+      rect(ctx, 14, 42, 21, 17, p.outfit);
+      rect(ctx, 14, 42, 21, 2, p.outline);
+      shoes(ctx, p);
+    }
+    function paintShortsCasual({ ctx, p }, hairFn, hasAccessories) {
+      ellipse(ctx, 24, 61, 13, 2, p.shadow);
+      hairFn(ctx, p);
+      if (hasAccessories) headphones(ctx, p);
+      head(ctx, p); arms(ctx, p);
+      rect(ctx, 16, 32, 17, 14, p.outfit);
+      rect(ctx, 18, 34, 13, 10, p.accent);
+      rect(ctx, 17, 47, 7, 8, p.outfit);
+      rect(ctx, 26, 47, 7, 8, p.outfit);
+      shoes(ctx, p);
+    }
+    function paintHoodieCasual({ ctx, p }, hairFn) {
+      ellipse(ctx, 24, 61, 13, 2, p.shadow);
+      hairFn(ctx, p);
+      head(ctx, p);
+      rect(ctx, 14, 31, 20, 22, p.outline);
+      rect(ctx, 16, 33, 16, 18, p.accent);
+      rect(ctx, 21, 34, 2, 14, p.outfit);
+      rect(ctx, 26, 34, 2, 14, p.outfit);
+      rect(ctx, 11, 36, 5, 12, p.outline);
+      rect(ctx, 33, 36, 5, 12, p.outline);
+      rect(ctx, 17, 53, 6, 5, '#2d343a');
+      rect(ctx, 27, 53, 6, 5, '#2d343a');
+      shoes(ctx, p);
+    }
+    function paintSoftUniform({ ctx, p }, hairFn, hasAccessories) {
+      ellipse(ctx, 24, 61, 13, 2, p.shadow);
+      hairFn(ctx, p);
+      if (hasAccessories) headphones(ctx, p);
+      head(ctx, p); arms(ctx, p);
+      rect(ctx, 16, 32, 17, 14, p.outfit);
+      rect(ctx, 21, 34, 7, 4, p.accent);
+      rect(ctx, 15, 46, 19, 11, p.accent);
+      rect(ctx, 16, 46, 17, 2, p.outline);
+      shoes(ctx, p);
+    }
+
+    function paintPlaceholder({ ctx, p }) {
+      ellipse(ctx, 24, 19, 10, 9, p.outline);
+      ellipse(ctx, 24, 19, 8, 7, p.body);
+      rect(ctx, 19, 17, 3, 3, '#19232b');
+      rect(ctx, 27, 17, 3, 3, '#19232b');
+      rect(ctx, 22, 22, 4, 1, '#19232b');
+      rect(ctx, 18, 28, 12, 18, p.outline);
+      rect(ctx, 20, 30, 8, 14, p.outfit);
+      rect(ctx, 14, 32, 4, 10, p.outline);
+      rect(ctx, 31, 32, 4, 10, p.outline);
+      rect(ctx, 15, 33, 2, 8, p.body);
+      rect(ctx, 32, 33, 2, 8, p.body);
+      rect(ctx, 19, 48, 5, 3, '#1f2428');
+      rect(ctx, 26, 48, 5, 3, '#1f2428');
+      ellipse(ctx, 24, 52, 8, 2, p.shadow);
+    }
+
+    function paintVariant(variantId, { ctx, p }, hairVariant = 'bob', hasAccessories = true) {
+      const hairFn = selectHairFunction(hairVariant);
+      if (variantId === 'placeholder') {
+        paintPlaceholder({ ctx, p });
+        return;
+      }
+      const painters = {
+        approved_base: paintApprovedBase, blue_shift: paintApprovedBase,
+        light_shift: paintSimpleDress, warm_shift: paintShortsCasual,
+        dark_shift: paintHoodieCasual, simple_dress: paintSimpleDress,
+        shorts_casual: paintShortsCasual, hoodie_casual: paintHoodieCasual,
+        soft_uniform: paintSoftUniform
+      };
+      (painters[variantId] || paintApprovedBase)({ ctx, p }, hairFn, hasAccessories);
+    }
+
+    function buildFeaturePaletteFromResult(features) {
+      const skinHex = hex(quantize(features.skinColor.red), quantize(features.skinColor.green), quantize(features.skinColor.blue));
+      const hairHex = hex(quantize(features.hairColor.red), quantize(features.hairColor.green), quantize(features.hairColor.blue));
+      const outfitHex = hex(quantize(features.outfitPrimaryColor.red), quantize(features.outfitPrimaryColor.green), quantize(features.outfitPrimaryColor.blue));
+      const accentHex = hex(quantize(features.outfitSecondaryColor.red), quantize(features.outfitSecondaryColor.green), quantize(features.outfitSecondaryColor.blue));
+      const parseHex = (h) => {
+        const n = h.replace('#', '');
+        return [parseInt(n.substring(0, 2), 16), parseInt(n.substring(2, 4), 16), parseInt(n.substring(4, 6), 16)];
+      };
+      const darken = (h, factor) => {
+        const [r, g, b] = parseHex(h);
+        return hex(Math.round(r * factor), Math.round(g * factor), Math.round(b * factor));
+      };
+      const outlineHex = darken(skinHex, 0.50);
+      const shadowHex = darken(outlineHex, 0.70);
+      const shoesHex = accentHex !== outfitHex ? accentHex : '#1f2428';
+      return {
+        hair: hairHex, body: skinHex, outline: outlineHex, accent: accentHex,
+        outfit: outfitHex, flipper: accentHex, shadow: shadowHex, cheek: '#ff9fb3', shoes: shoesHex
+      };
+    }
+
+    function generateFromPhoto(featureResult, targetCanvas) {
+      const palette = buildFeaturePaletteFromResult(featureResult);
+      const ctx = targetCanvas.getContext('2d');
+      if (!ctx) return palette;
+      targetCanvas.width = 48;
+      targetCanvas.height = 64;
+      ctx.imageSmoothingEnabled = false;
+      ctx.clearRect(0, 0, targetCanvas.width, targetCanvas.height);
+      paintVariant(featureResult.outfitVariant, { ctx, p: palette }, featureResult.hairVariant, featureResult.hasAccessories);
+      return palette;
+    }
+
+    // ─── Draw synthetic input photo ───────────────────────────────────────
+    const inputCanvas = document.getElementById('input-canvas');
+    const ictx = inputCanvas.getContext('2d');
+    ictx.fillStyle = '#87CEEB'; ictx.fillRect(0, 0, 120, 180);
+    ictx.fillStyle = '#6B4423'; ictx.fillRect(30, 10, 60, 35); // hair
+    ictx.fillStyle = '#FFE6D2'; ictx.fillRect(35, 35, 50, 50); // face
+    ictx.fillStyle = '#FF4444'; ictx.fillRect(30, 85, 60, 60); // shirt
+    ictx.fillStyle = '#4444FF'; ictx.fillRect(30, 145, 60, 35); // pants
+
+    // ─── Generate pixel avatar from manual features ───────────────────────
+    const featureResult = {
+      hairVariant: 'long',
+      outfitVariant: 'simple_dress',
+      hasAccessories: false,
+      skinColor: { red: 255, green: 230, blue: 210 },
+      hairColor: { red: 107, green: 75, blue: 62 },
+      outfitPrimaryColor: { red: 255, green: 100, blue: 100 },
+      outfitSecondaryColor: { red: 200, green: 50, blue: 50 }
+    };
+    const outputCanvas = document.getElementById('output-canvas');
+    const palette = generateFromPhoto(featureResult, outputCanvas);
+    document.getElementById('palette').textContent = Object.entries(palette)
+      .map(([k, v]) => `${k}:${v}`).join('  ');
+
+    // ─── Draw placeholder for comparison ──────────────────────────────────
+    const placeholderCanvas = document.getElementById('placeholder-canvas');
+    const pctx = placeholderCanvas.getContext('2d');
+    placeholderCanvas.width = 48; placeholderCanvas.height = 64;
+    pctx.imageSmoothingEnabled = false;
+    paintVariant('placeholder', { ctx: pctx, p: buildFeaturePaletteFromResult(featureResult) }, 'bob', false);
+  </script>
+</body>
+</html>
