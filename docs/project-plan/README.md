@@ -27,5 +27,3 @@ This folder contains the working plan for the desktop pet project.
 
 - [Photo Commission Character Pipeline](photo-commission-character-pipeline.md)
 
-
-
