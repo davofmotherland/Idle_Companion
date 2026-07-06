@@ -2,8 +2,11 @@
 
 This folder contains the working plan for the desktop pet project.
 
-- project-rules.md: mandatory git, Meowa art direction, and art QA rules.
-- 	eam-and-agents.md: team structure, subagent responsibilities, and operating model.
+- `project-seal-gdd.md`: overall game design document for Project Seal.
+- `project-seal-prd.md`: planning PRD covering MVP scope, backlog, milestones, and requirements.
+
+- `project-rules.md`: mandatory git, Meowa art direction, and art QA rules.
+- `team-and-agents.md`: team structure, subagent responsibilities, and operating model.
 - `product-inputs.md`: current product name, default character direction, language, and price assumptions.
 - `m0-product-lock.md`: locked MVP scope, non-goals, readiness checklist, and M1 entry criteria.
 - `m1-desktop-shell-acceptance.md`: M1 run instructions, acceptance checklist, and fail conditions.
@@ -23,4 +26,6 @@ This folder contains the working plan for the desktop pet project.
 - `cost-and-resources.md`: paid/free resource requirements and acquisition priorities.
 
 - [Photo Commission Character Pipeline](photo-commission-character-pipeline.md)
+
+
 
