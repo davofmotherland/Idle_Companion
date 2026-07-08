@@ -1,4 +1,4 @@
-﻿const fs = require('fs');
+const fs = require('fs');
 const path = require('path');
 
 const root = path.resolve(__dirname, '..');
@@ -53,6 +53,10 @@ const docGroups = [
 
 function read(file) {
   return fs.existsSync(file) ? fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '') : '';
+}
+
+function safeJsonForScript(value) {
+  return JSON.stringify(value).replace(/</g, '\\u003c');
 }
 
 function escapeHtml(value) {
@@ -351,7 +355,7 @@ button { border:1px solid var(--line); border-radius:6px; padding:7px 10px; back
 </header>
 <nav class="tabs" id="tabs"></nav>
 <main id="views"></main>
-<script id="dashboard-data" type="application/json">${escapeHtml(JSON.stringify(data))}</script>
+<script id="dashboard-data" type="application/json">${safeJsonForScript(data)}</script>
 <script>
 const DATA = JSON.parse(document.getElementById('dashboard-data').textContent);
 const STATUSES = ['未制作', '占位资源', '正式资源'];
@@ -443,8 +447,3 @@ fs.writeFileSync(outputPath, html, 'utf8');
 console.log(`Dashboard generated: ${path.relative(root, outputPath)}`);
 console.log(`Art status generated: ${path.relative(root, statusPath)}`);
 console.log(`Tracked art assets: ${data.artAssets.length}`);
-
-
-
-
-
