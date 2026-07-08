@@ -7,7 +7,7 @@ const dashboardDir = path.join(root, 'docs', 'project-dashboard');
 const statusPath = path.join(dashboardDir, 'art-assets-status.json');
 const outputPath = path.join(dashboardDir, 'index.html');
 
-const STATUS = ['未制作', '占位资源', '正式资源'];
+const STATUS = ['未制作', '占位资源', '正式资源', '弃置', '参考图'];
 
 const docGroups = [
   { id: 'gdd', label: 'GDD', files: ['project-seal-gdd.md'] },
@@ -210,8 +210,8 @@ function loadStatusMap() {
 function buildArtAssets() {
   const previous = loadStatusMap();
   const rawFiles = [
-    ...collectFiles(path.join(root, 'assets', 'characters'), ['.png', '.jpg', '.jpeg', '.json', '.gif', '.webp']),
-    ...collectFiles(path.join(root, 'assets', 'references', 'meowa'), ['.png', '.jpg', '.jpeg', '.json', '.gif', '.webp'])
+    ...collectFiles(path.join(root, 'assets', 'characters'), ['.png', '.jpg', '.jpeg', '.gif', '.webp']),
+    ...collectFiles(path.join(root, 'assets', 'references', 'meowa'), ['.png', '.jpg', '.jpeg', '.gif', '.webp'])
   ];
   const files = rawFiles.filter((full) => {
     const relative = path.relative(root, full).replace(/\\/g, '/');
@@ -344,6 +344,14 @@ button { border:1px solid var(--line); border-radius:6px; padding:7px 10px; back
 .status.todo { color:var(--todo); }
 .status.placeholder { color:var(--warn); }
 .status.final { color:var(--ok); }
+.status.discarded { color:#6b7280; }
+.status.reference { color:#2563eb; }
+.asset-row-todo { background:#fff1f2; }
+.asset-row-placeholder { background:#fffbeb; }
+.asset-row-final { background:#ecfdf5; }
+.asset-row-discarded { background:#f3f4f6; color:#6b7280; opacity:.72; }
+.asset-row-reference { background:#eff6ff; }
+.asset-row-discarded a, .asset-row-discarded .asset-path { color:#6b7280; }
 .badge { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:2px 8px; font-size:12px; background:#fff; }
 .badge.high { color:var(--bad); border-color:#f3b7b0; }
 .badge.medium { color:var(--warn); border-color:#f3d19b; }
@@ -367,8 +375,9 @@ button { border:1px solid var(--line); border-radius:6px; padding:7px 10px; back
 <script id="dashboard-data" type="application/json">${safeJsonForScript(data)}</script>
 <script>
 const DATA = JSON.parse(document.getElementById('dashboard-data').textContent);
-const STATUSES = ['未制作', '占位资源', '正式资源'];
-const statusClass = (s) => s === '正式资源' ? 'final' : s === '占位资源' ? 'placeholder' : 'todo';
+const STATUSES = DATA.statuses || ['未制作', '占位资源', '正式资源', '弃置', '参考图'];
+const statusClass = (s) => s === '正式资源' ? 'final' : s === '占位资源' ? 'placeholder' : s === '弃置' ? 'discarded' : s === '参考图' ? 'reference' : 'todo';
+const rowClass = (s) => 'asset-row-' + statusClass(s);
 const storageKey = 'project-seal-art-status-overrides';
 let overrides = JSON.parse(localStorage.getItem(storageKey) || '{}');
 function saveOverrides() { localStorage.setItem(storageKey, JSON.stringify(overrides)); }
@@ -405,7 +414,7 @@ function renderPmDesk() {
 function renderAssets() {
   const categories = [...new Set(DATA.artAssets.map((a) => a.category))].sort((a, b) => a.localeCompare(b, 'zh-Hans-CN'));
   const options = ['全部', ...categories].map((c) => '<option value="' + c + '">' + c + '</option>').join('');
-  return '<section class="view" id="view-art-assets"><article class="card"><h2>美术资产台账</h2><p class="note">动作帧在本表中以 GIF 预览资产展示，不再把每一帧 PNG 散列出来。资产名和路径可点击打开源文件；图片类资产直接显示缩略图。状态选项固定为：未制作、占位资源、正式资源。</p><div class="filterbar"><input id="asset-search" placeholder="搜索资产/路径"><select id="asset-category">' + options + '</select><select id="asset-status"><option>全部状态</option>' + STATUSES.map((s) => '<option>' + s + '</option>').join('') + '</select><button id="export-status">导出状态 JSON</button><button id="reset-status">重置本地选择</button></div><div class="table-wrap"><table><thead><tr><th>分类</th><th>资产 / 预览</th><th>状态</th><th>路径</th><th>备注</th><th>更新时间</th></tr></thead><tbody id="asset-rows"></tbody></table></div></article></section>';
+  return '<section class="view" id="view-art-assets"><article class="card"><h2>美术资产台账</h2><p class="note">动作帧在本表中以 GIF 预览资产展示，不再把每一帧 PNG 散列出来；JSON 文件不进入美术资产台账。资产名和路径可点击打开源文件；图片类资产直接显示缩略图。状态选项固定为：未制作、占位资源、正式资源、弃置、参考图。行颜色：弃置置灰，参考图淡蓝，未制作淡红，占位资源淡黄，正式资源淡绿。</p><div class="filterbar"><input id="asset-search" placeholder="搜索资产/路径"><select id="asset-category">' + options + '</select><select id="asset-status"><option>全部状态</option>' + STATUSES.map((s) => '<option>' + s + '</option>').join('') + '</select><button id="export-status">导出状态 JSON</button><button id="reset-status">重置本地选择</button></div><div class="table-wrap"><table><thead><tr><th>分类</th><th>资产 / 预览</th><th>状态</th><th>路径</th><th>备注</th><th>更新时间</th></tr></thead><tbody id="asset-rows"></tbody></table></div></article></section>';
 }
 function bindAssets() {
   const rows = document.getElementById('asset-rows');
@@ -423,7 +432,7 @@ function bindAssets() {
     });
     rows.innerHTML = filtered.map((asset) => {
       const s = currentStatus(asset);
-      const select = '<select data-id="' + asset.id + '" class="asset-status"><option ' + (s === '未制作' ? 'selected' : '') + '>未制作</option><option ' + (s === '占位资源' ? 'selected' : '') + '>占位资源</option><option ' + (s === '正式资源' ? 'selected' : '') + '>正式资源</option></select>';
+      const select = '<select data-id="' + asset.id + '" class="asset-status">' + STATUSES.map((status) => '<option ' + (s === status ? 'selected' : '') + '>' + status + '</option>').join('') + '</select>';
       const href = isRealFileAsset(asset) ? assetHref(asset) : '';
       const thumb = isPreviewableAsset(asset)
         ? '<a href="' + href + '" target="_blank"><img class="asset-thumb" src="' + href + '" alt="' + escapeAttr(asset.name) + '"></a>'
@@ -434,7 +443,7 @@ function bindAssets() {
       const pathCell = isRealFileAsset(asset)
         ? '<a class="asset-link asset-path" href="' + href + '" target="_blank">' + asset.path + '</a>'
         : '<div class="asset-path">' + asset.path + '</div>';
-      return '<tr><td>' + asset.category + '</td><td><div class="asset-cell">' + thumb + '<div class="asset-name-text">' + name + '</div></div></td><td><span class="status ' + statusClass(s) + '">' + select + '</span></td><td>' + pathCell + '</td><td><input data-note-id="' + asset.id + '" value="' + escapeAttr(currentNotes(asset) || '') + '" placeholder="备注"></td><td>' + (asset.updatedAt || '未制作') + '</td></tr>';
+      return '<tr class="' + rowClass(s) + '"><td>' + asset.category + '</td><td><div class="asset-cell">' + thumb + '<div class="asset-name-text">' + name + '</div></div></td><td><span class="status ' + statusClass(s) + '">' + select + '</span></td><td>' + pathCell + '</td><td><input data-note-id="' + asset.id + '" value="' + escapeAttr(currentNotes(asset) || '') + '" placeholder="备注"></td><td>' + (asset.updatedAt || '未制作') + '</td></tr>';
     }).join('');
     rows.querySelectorAll('.asset-status').forEach((el) => el.addEventListener('change', () => {
       overrides[el.dataset.id] = { ...(overrides[el.dataset.id] || {}), status: el.value };

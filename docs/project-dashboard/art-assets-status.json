@@ -4,9 +4,11 @@
   "statuses": [
     "未制作",
     "占位资源",
-    "正式资源"
+    "正式资源",
+    "弃置",
+    "参考图"
   ],
-  "generatedAt": "2026-07-08T15:36:25.895Z",
+  "generatedAt": "2026-07-08T15:45:05.353Z",
   "assets": [
     {
       "id": "planned/props/bed.png",
@@ -90,24 +92,6 @@
       "notes": ""
     },
     {
-      "id": "assets/characters/default_pet/art-metadata.json",
-      "name": "art-metadata.json",
-      "category": "角色资产",
-      "status": "占位资源",
-      "path": "assets/characters/default_pet/art-metadata.json",
-      "updatedAt": "2026-06-22T13:06:52.146Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/characters/default_pet/manifest.json",
-      "name": "manifest.json",
-      "category": "角色资产",
-      "status": "占位资源",
-      "path": "assets/characters/default_pet/manifest.json",
-      "updatedAt": "2026-06-22T13:01:26.705Z",
-      "notes": ""
-    },
-    {
       "id": "assets/characters/photo_001_travel_girl/animation-preview.png",
       "name": "animation-preview.png",
       "category": "角色资产",
@@ -123,15 +107,6 @@
       "status": "占位资源",
       "path": "assets/characters/photo_001_travel_girl/approved-blue-jeans-source.png",
       "updatedAt": "2026-07-05T09:51:39.202Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/characters/photo_001_travel_girl/art-metadata.json",
-      "name": "art-metadata.json",
-      "category": "角色资产",
-      "status": "占位资源",
-      "path": "assets/characters/photo_001_travel_girl/art-metadata.json",
-      "updatedAt": "2026-07-05T15:43:36.894Z",
       "notes": ""
     },
     {
@@ -162,15 +137,6 @@
       "notes": ""
     },
     {
-      "id": "assets/characters/photo_001_travel_girl/manifest.json",
-      "name": "manifest.json",
-      "category": "角色资产",
-      "status": "占位资源",
-      "path": "assets/characters/photo_001_travel_girl/manifest.json",
-      "updatedAt": "2026-07-05T10:05:36.787Z",
-      "notes": ""
-    },
-    {
       "id": "assets/characters/photo_001_travel_girl/meowa-candidates-preview.png",
       "name": "meowa-candidates-preview.png",
       "category": "角色资产",
@@ -189,39 +155,12 @@
       "notes": ""
     },
     {
-      "id": "assets/characters/template_blue_headphone_girl/art-metadata.json",
-      "name": "art-metadata.json",
-      "category": "角色资产",
-      "status": "占位资源",
-      "path": "assets/characters/template_blue_headphone_girl/art-metadata.json",
-      "updatedAt": "2026-06-23T15:42:01.141Z",
-      "notes": ""
-    },
-    {
       "id": "assets/characters/template_blue_headphone_girl/baseline.png",
       "name": "baseline.png",
       "category": "角色资产",
       "status": "占位资源",
       "path": "assets/characters/template_blue_headphone_girl/baseline.png",
       "updatedAt": "2026-06-23T14:47:51.490Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/characters/template_blue_headphone_girl/manifest.json",
-      "name": "manifest.json",
-      "category": "角色资产",
-      "status": "占位资源",
-      "path": "assets/characters/template_blue_headphone_girl/manifest.json",
-      "updatedAt": "2026-06-23T15:42:00.758Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/characters/test_gray_seal/manifest.json",
-      "name": "manifest.json",
-      "category": "角色资产",
-      "status": "占位资源",
-      "path": "assets/characters/test_gray_seal/manifest.json",
-      "updatedAt": "2026-06-22T13:02:31.573Z",
       "notes": ""
     },
     {
@@ -234,30 +173,12 @@
       "notes": ""
     },
     {
-      "id": "assets/references/meowa/photo001/anim_v2/happy/84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/job_response.json",
-      "name": "job_response.json",
-      "category": "Meowa参考输出",
-      "status": "占位资源",
-      "path": "assets/references/meowa/photo001/anim_v2/happy/84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/job_response.json",
-      "updatedAt": "2026-07-05T15:35:14.878Z",
-      "notes": ""
-    },
-    {
       "id": "assets/references/meowa/photo001/anim_v2/happy/84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/source_static.png",
       "name": "source_static.png",
       "category": "Meowa参考输出",
       "status": "占位资源",
       "path": "assets/references/meowa/photo001/anim_v2/happy/84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/source_static.png",
       "updatedAt": "2026-07-05T15:35:15.902Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/references/meowa/photo001/anim_v2/happy/84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/submit_response.json",
-      "name": "submit_response.json",
-      "category": "Meowa参考输出",
-      "status": "占位资源",
-      "path": "assets/references/meowa/photo001/anim_v2/happy/84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/submit_response.json",
-      "updatedAt": "2026-07-05T15:35:14.877Z",
       "notes": ""
     },
     {
@@ -288,30 +209,12 @@
       "notes": ""
     },
     {
-      "id": "assets/references/meowa/photo001/anim_v2/idle/c7f196e1-5abe-4ca4-90df-e92e2e3d338d/job_response.json",
-      "name": "job_response.json",
-      "category": "Meowa参考输出",
-      "status": "占位资源",
-      "path": "assets/references/meowa/photo001/anim_v2/idle/c7f196e1-5abe-4ca4-90df-e92e2e3d338d/job_response.json",
-      "updatedAt": "2026-07-05T15:34:22.747Z",
-      "notes": ""
-    },
-    {
       "id": "assets/references/meowa/photo001/anim_v2/idle/c7f196e1-5abe-4ca4-90df-e92e2e3d338d/source_static.png",
       "name": "source_static.png",
       "category": "Meowa参考输出",
       "status": "占位资源",
       "path": "assets/references/meowa/photo001/anim_v2/idle/c7f196e1-5abe-4ca4-90df-e92e2e3d338d/source_static.png",
       "updatedAt": "2026-07-05T15:34:25.126Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/references/meowa/photo001/anim_v2/idle/c7f196e1-5abe-4ca4-90df-e92e2e3d338d/submit_response.json",
-      "name": "submit_response.json",
-      "category": "Meowa参考输出",
-      "status": "占位资源",
-      "path": "assets/references/meowa/photo001/anim_v2/idle/c7f196e1-5abe-4ca4-90df-e92e2e3d338d/submit_response.json",
-      "updatedAt": "2026-07-05T15:34:22.747Z",
       "notes": ""
     },
     {
@@ -342,30 +245,12 @@
       "notes": ""
     },
     {
-      "id": "assets/references/meowa/photo001/anim_v2/sleep/d948e35e-d50c-403f-8031-ee84ef081fd3/job_response.json",
-      "name": "job_response.json",
-      "category": "Meowa参考输出",
-      "status": "占位资源",
-      "path": "assets/references/meowa/photo001/anim_v2/sleep/d948e35e-d50c-403f-8031-ee84ef081fd3/job_response.json",
-      "updatedAt": "2026-07-05T15:35:02.344Z",
-      "notes": ""
-    },
-    {
       "id": "assets/references/meowa/photo001/anim_v2/sleep/d948e35e-d50c-403f-8031-ee84ef081fd3/source_static.png",
       "name": "source_static.png",
       "category": "Meowa参考输出",
       "status": "占位资源",
       "path": "assets/references/meowa/photo001/anim_v2/sleep/d948e35e-d50c-403f-8031-ee84ef081fd3/source_static.png",
       "updatedAt": "2026-07-05T15:35:04.031Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/references/meowa/photo001/anim_v2/sleep/d948e35e-d50c-403f-8031-ee84ef081fd3/submit_response.json",
-      "name": "submit_response.json",
-      "category": "Meowa参考输出",
-      "status": "占位资源",
-      "path": "assets/references/meowa/photo001/anim_v2/sleep/d948e35e-d50c-403f-8031-ee84ef081fd3/submit_response.json",
-      "updatedAt": "2026-07-05T15:35:02.343Z",
       "notes": ""
     },
     {
@@ -396,30 +281,12 @@
       "notes": ""
     },
     {
-      "id": "assets/references/meowa/photo001/anim_v2/walk/ab2e205c-bc4b-489a-8cf1-45dce17396ca/job_response.json",
-      "name": "job_response.json",
-      "category": "Meowa参考输出",
-      "status": "占位资源",
-      "path": "assets/references/meowa/photo001/anim_v2/walk/ab2e205c-bc4b-489a-8cf1-45dce17396ca/job_response.json",
-      "updatedAt": "2026-07-05T15:34:35.237Z",
-      "notes": ""
-    },
-    {
       "id": "assets/references/meowa/photo001/anim_v2/walk/ab2e205c-bc4b-489a-8cf1-45dce17396ca/source_static.png",
       "name": "source_static.png",
       "category": "Meowa参考输出",
       "status": "占位资源",
       "path": "assets/references/meowa/photo001/anim_v2/walk/ab2e205c-bc4b-489a-8cf1-45dce17396ca/source_static.png",
       "updatedAt": "2026-07-05T15:34:37.084Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/references/meowa/photo001/anim_v2/walk/ab2e205c-bc4b-489a-8cf1-45dce17396ca/submit_response.json",
-      "name": "submit_response.json",
-      "category": "Meowa参考输出",
-      "status": "占位资源",
-      "path": "assets/references/meowa/photo001/anim_v2/walk/ab2e205c-bc4b-489a-8cf1-45dce17396ca/submit_response.json",
-      "updatedAt": "2026-07-05T15:34:35.236Z",
       "notes": ""
     },
     {
@@ -450,30 +317,12 @@
       "notes": ""
     },
     {
-      "id": "assets/references/meowa/photo001/anim/happy/3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/job_response.json",
-      "name": "job_response.json",
-      "category": "Meowa参考输出",
-      "status": "占位资源",
-      "path": "assets/references/meowa/photo001/anim/happy/3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/job_response.json",
-      "updatedAt": "2026-07-05T10:02:52.922Z",
-      "notes": ""
-    },
-    {
       "id": "assets/references/meowa/photo001/anim/happy/3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/source_static.png",
       "name": "source_static.png",
       "category": "Meowa参考输出",
       "status": "占位资源",
       "path": "assets/references/meowa/photo001/anim/happy/3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/source_static.png",
       "updatedAt": "2026-07-05T10:02:54.575Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/references/meowa/photo001/anim/happy/3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/submit_response.json",
-      "name": "submit_response.json",
-      "category": "Meowa参考输出",
-      "status": "占位资源",
-      "path": "assets/references/meowa/photo001/anim/happy/3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/submit_response.json",
-      "updatedAt": "2026-07-05T10:02:52.920Z",
       "notes": ""
     },
     {
@@ -504,30 +353,12 @@
       "notes": ""
     },
     {
-      "id": "assets/references/meowa/photo001/anim/idle/dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/job_response.json",
-      "name": "job_response.json",
-      "category": "Meowa参考输出",
-      "status": "占位资源",
-      "path": "assets/references/meowa/photo001/anim/idle/dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/job_response.json",
-      "updatedAt": "2026-07-05T10:02:21.290Z",
-      "notes": ""
-    },
-    {
       "id": "assets/references/meowa/photo001/anim/idle/dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/source_static.png",
       "name": "source_static.png",
       "category": "Meowa参考输出",
       "status": "占位资源",
       "path": "assets/references/meowa/photo001/anim/idle/dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/source_static.png",
       "updatedAt": "2026-07-05T10:02:22.979Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/references/meowa/photo001/anim/idle/dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/submit_response.json",
-      "name": "submit_response.json",
-      "category": "Meowa参考输出",
-      "status": "占位资源",
-      "path": "assets/references/meowa/photo001/anim/idle/dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/submit_response.json",
-      "updatedAt": "2026-07-05T10:02:21.289Z",
       "notes": ""
     },
     {
@@ -558,30 +389,12 @@
       "notes": ""
     },
     {
-      "id": "assets/references/meowa/photo001/anim/sleep/3d59e8e0-7e7a-46d2-a173-5784a19cd65c/job_response.json",
-      "name": "job_response.json",
-      "category": "Meowa参考输出",
-      "status": "占位资源",
-      "path": "assets/references/meowa/photo001/anim/sleep/3d59e8e0-7e7a-46d2-a173-5784a19cd65c/job_response.json",
-      "updatedAt": "2026-07-05T10:02:43.092Z",
-      "notes": ""
-    },
-    {
       "id": "assets/references/meowa/photo001/anim/sleep/3d59e8e0-7e7a-46d2-a173-5784a19cd65c/source_static.png",
       "name": "source_static.png",
       "category": "Meowa参考输出",
       "status": "占位资源",
       "path": "assets/references/meowa/photo001/anim/sleep/3d59e8e0-7e7a-46d2-a173-5784a19cd65c/source_static.png",
       "updatedAt": "2026-07-05T10:02:44.829Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/references/meowa/photo001/anim/sleep/3d59e8e0-7e7a-46d2-a173-5784a19cd65c/submit_response.json",
-      "name": "submit_response.json",
-      "category": "Meowa参考输出",
-      "status": "占位资源",
-      "path": "assets/references/meowa/photo001/anim/sleep/3d59e8e0-7e7a-46d2-a173-5784a19cd65c/submit_response.json",
-      "updatedAt": "2026-07-05T10:02:43.091Z",
       "notes": ""
     },
     {
@@ -612,30 +425,12 @@
       "notes": ""
     },
     {
-      "id": "assets/references/meowa/photo001/anim/walk/67570b77-cd6e-4854-b501-0474fe284acd/job_response.json",
-      "name": "job_response.json",
-      "category": "Meowa参考输出",
-      "status": "占位资源",
-      "path": "assets/references/meowa/photo001/anim/walk/67570b77-cd6e-4854-b501-0474fe284acd/job_response.json",
-      "updatedAt": "2026-07-05T10:02:31.911Z",
-      "notes": ""
-    },
-    {
       "id": "assets/references/meowa/photo001/anim/walk/67570b77-cd6e-4854-b501-0474fe284acd/source_static.png",
       "name": "source_static.png",
       "category": "Meowa参考输出",
       "status": "占位资源",
       "path": "assets/references/meowa/photo001/anim/walk/67570b77-cd6e-4854-b501-0474fe284acd/source_static.png",
       "updatedAt": "2026-07-05T10:02:34.187Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/references/meowa/photo001/anim/walk/67570b77-cd6e-4854-b501-0474fe284acd/submit_response.json",
-      "name": "submit_response.json",
-      "category": "Meowa参考输出",
-      "status": "占位资源",
-      "path": "assets/references/meowa/photo001/anim/walk/67570b77-cd6e-4854-b501-0474fe284acd/submit_response.json",
-      "updatedAt": "2026-07-05T10:02:31.909Z",
       "notes": ""
     },
     {
@@ -666,15 +461,6 @@
       "notes": ""
     },
     {
-      "id": "assets/references/meowa/photo001/photo001_candidates/job_response.json",
-      "name": "job_response.json",
-      "category": "Meowa参考输出",
-      "status": "占位资源",
-      "path": "assets/references/meowa/photo001/photo001_candidates/job_response.json",
-      "updatedAt": "2026-07-05T09:25:18.327Z",
-      "notes": ""
-    },
-    {
       "id": "assets/references/meowa/photo001/photo001_candidates/sprite_00.png",
       "name": "sprite_00.png",
       "category": "Meowa参考输出",
@@ -702,39 +488,12 @@
       "notes": ""
     },
     {
-      "id": "assets/references/meowa/photo001/photo001_candidates/submit_response.json",
-      "name": "submit_response.json",
-      "category": "Meowa参考输出",
-      "status": "占位资源",
-      "path": "assets/references/meowa/photo001/photo001_candidates/submit_response.json",
-      "updatedAt": "2026-07-05T09:25:18.326Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/references/meowa/photo001/right_top_optimize/selected-right-top-small-source/job_response.json",
-      "name": "job_response.json",
-      "category": "Meowa参考输出",
-      "status": "占位资源",
-      "path": "assets/references/meowa/photo001/right_top_optimize/selected-right-top-small-source/job_response.json",
-      "updatedAt": "2026-07-05T09:57:30.547Z",
-      "notes": ""
-    },
-    {
       "id": "assets/references/meowa/photo001/right_top_optimize/selected-right-top-small-source/result.png",
       "name": "result.png",
       "category": "Meowa参考输出",
       "status": "占位资源",
       "path": "assets/references/meowa/photo001/right_top_optimize/selected-right-top-small-source/result.png",
       "updatedAt": "2026-07-05T09:57:32.911Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/references/meowa/photo001/right_top_optimize/selected-right-top-small-source/submit_response.json",
-      "name": "submit_response.json",
-      "category": "Meowa参考输出",
-      "status": "占位资源",
-      "path": "assets/references/meowa/photo001/right_top_optimize/selected-right-top-small-source/submit_response.json",
-      "updatedAt": "2026-07-05T09:57:30.544Z",
       "notes": ""
     },
     {
