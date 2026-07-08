@@ -2,190 +2,174 @@
 
 ## 1. Product Summary
 
-Project Seal is a Windows-first, offline Steam desktop pet priced around USD 1. The MVP delivers a cute pixel companion that lives on the desktop, reacts to simple interactions, supports character packs, and includes a lightweight local/offline chat or fallback response layer.
+Project Seal is a personal-use Windows desktop pet inspired by QQ Pet. It is no longer planned as a Steam sale product. The app should run locally, show only the pixel pet by default, reveal status UI on hover, and open a conversation box on double-click.
 
-The product initially centered on a white baby seal. The current production direction also supports owner-directed photo-commission characters created through a controlled Meowa art pipeline. Live in-client photo-to-pixel generation is not an MVP promise.
+The current active character is `photo_001_travel_girl`. The default white baby seal remains the mascot direction and fallback first-party character concept.
 
 ## 2. Product Goals
 
 | Goal | Requirement |
 | --- | --- |
-| Prove desktop pet appeal | Pet is visible, cute, draggable, reactive, and non-invasive. |
-| Ship a lean Steam MVP | Windows package works offline and has clear exit/settings path. |
-| Support character expansion | Character packs load from manifests and can be swapped without code changes. |
-| Support art-directed customization | Owner photos can become commissioned pixel character packs through Meowa and QA. |
-| Avoid overpromising AI | Chat works locally or falls back cleanly when no model is installed. |
+| Quiet daily desktop use | Only the pet is visible by default; UI appears on hover or explicit interaction. |
+| QQ Pet-style care loop | Health, mood, hunger, and money are the core values. |
+| Personal conversation | Double-click opens chat; future WeChat import can simulate a selected person's speaking style. |
+| Pixel-coherent art/UI | Character, status UI, chat box, and props use one locked pixel proportion system. |
+| Local/private data | Photos, chat records, persona profiles, and API keys remain local and out of git. |
 
-## 3. Target Users
+## 3. Target User
 
-Primary users:
+Primary user:
 
-- Players who like cute desktop companions and low-commitment idle software.
-- Users who enjoy personalized pixel avatars and screenshot sharing.
-- Steam users willing to buy a low-price novelty/companion app.
+- The owner, using the app personally on Windows.
 
-Secondary users:
+Secondary future user:
 
-- Streamers or social users who may share short desktop clips.
-- Users who want local/offline behavior instead of account-based companion products.
+- A trusted private tester, only after local privacy and data handling are safe.
 
-## 4. MVP Feature Requirements
+The product is not currently optimized for public sale, store onboarding, or broad customer support.
 
-### P0 Must Have
+## 4. P0 Requirements
 
 | Feature | Requirement | Acceptance |
 | --- | --- | --- |
-| Desktop shell | Transparent frameless always-on-top window | Pet appears without opaque rectangle and can stay above normal windows |
-| Tray control | Show, hide, exit | User can safely hide and fully exit the app |
-| Drag | Pet can be moved | Drag works across normal and mixed-resolution screens without losing the pet |
-| Poke | Click/poke reaction | Visible feedback occurs and state returns safely |
-| State machine | Idle, walk, sleep, dragged, happy/poke, annoyed fallback | No stuck states after repeated interaction |
-| Character pack loader | Manifest-driven assets with fallback | Missing optional animation does not crash app |
-| Current animated character | `photo_001_travel_girl` runtime frames | Brown beanie/sunglasses/jacket/white shirt/blue jeans visible in screenshot QA |
-| Default mascot direction | White baby seal remains product identity | White seal spec exists and must carry Steam page later |
-| Save/settings foundation | Position and basic runtime values persist | Restart does not lose expected state |
-| Offline-first | Core pet runs without network | App launches and pet remains usable offline |
-| QA gate | Milestone QA and screenshot QA for art | QA report exists before owner acceptance |
+| Quiet desktop pet | Default screen shows only the pet sprite | No permanent import/settings/debug panel around the pet |
+| Hover status | Mouse hover reveals health, mood, hunger, money | UI appears near pet, remains readable, disappears when not hovered |
+| Core values | Replace active care model with health/mood/hunger/money | Values persist locally and can drive state changes |
+| Double-click chat shell | Double-click opens a compact conversation box | Box opens/closes without breaking pet animation or drag |
+| Existing animation stability | Current idle/walk/sleep/happy/poke still work | M5 screenshot QA remains valid after UI changes |
+| Local save | Position, active character, and core values persist | Restart restores expected state |
+| Art proportion lock | Art Director confirms pet/UI pixel scale before UI kit generation | UI implementation does not begin from mismatched proportions |
+| Art Director prompt gate | Meowa UI/character prompts come from unified Art Director | Prompt summary and output path are recorded |
+| Screenshot QA | Every visual/UI/art change is screenshot-verified | Screenshot shown before owner acceptance |
 
-### P1 Should Have
+## 5. P1 Requirements
 
 | Feature | Requirement |
 | --- | --- |
-| Scene props | Bed, toy, and food/snack trigger visible reactions and value changes |
-| Local chat bridge | Local model adapter or deterministic fallback replies |
-| Bilingual text foundation | Core UI/menu/reply text can support two languages |
-| Settings panel | Always-on-top, animation, language, volume, lock mode where applicable |
-| Steam package | Windows build launches outside dev tooling |
-| Store capture | Real screenshots/clips can be captured from runtime |
+| WeChat import parser | Import owner-provided WeChat chat export into local structured records |
+| Style distillation | Extract tone, phrase habits, reply rhythm, emoji/punctuation patterns, and common expressions |
+| Persona profile | Store distilled style locally as a profile separate from raw chat logs |
+| Styled chat replies | Double-click chat uses the persona profile to imitate speaking style |
+| Food/toy/bed actions | Care props affect health, mood, hunger, and money |
+| Hungry/sick feedback | Low hunger or health changes pet state or hover UI warning |
+| Meowa pixel UI kit | Generate and implement status/chat UI assets that match the locked pet scale |
 
-### P2 Can Defer
+## 6. P2 / Later Requirements
 
 | Feature | Reason To Defer |
 | --- | --- |
-| Dedicated annoyed/dragged art | MVP can reuse happy/idle with renderer feedback |
-| Advanced photo-to-pixel editor | Previous procedural path produced poor art and is not MVP direction |
-| Achievements | Not needed to prove core desktop pet loop |
-| Workshop | Too much moderation/platform scope for USD 1 MVP |
-| Cloud save/account | Conflicts with offline-first lean scope |
-| Voice features | High cost and QA risk |
-| Multi-pet runtime | More collision, performance, and interaction complexity |
+| Public Steam build | Cancelled for current direction |
+| Store assets/trailer | Not needed for personal use |
+| Cloud/account sync | Conflicts with local-private design |
+| Workshop/public sharing | Not aligned with current personal-use scope |
+| Voice recognition/synthesis | High privacy and implementation risk |
+| Multi-pet runtime | More complexity than current care loop needs |
+| Exact identity simulation claims | Risky and unnecessary; style imitation is enough |
 
-## 5. Current Implementation Baseline
+## 7. Current Implementation Baseline
 
 Completed:
 
-- Electron + PixiJS + TypeScript desktop app.
-- Transparent desktop pet runtime.
+- Electron + PixiJS + TypeScript desktop runtime.
+- Transparent desktop pet window.
 - State machine and drag/poke behavior.
 - Cross-monitor drag fixes verified by owner for M2.
-- Character pack format and fallback behavior.
-- Product direction change from live photo generator to photo-commission character pipeline.
-- Meowa skill installed and first character pack generated/animated.
+- Manifest-driven character pack loading and fallback.
+- Photo-commission character production pipeline using Meowa.
+- Active character `photo_001_travel_girl` with M5 animation frames.
 - Old import/save UI removed from runtime.
-- M5 animation frames implemented for idle/walk/sleep/happy.
-- Screenshot QA process required for art changes.
-- Git rule requires non-ignored changes to be committed and pushed.
+- Screenshot QA requirement for art changes.
+- Git rule requiring verified non-ignored changes to commit and push.
 
-Current active character:
+Needs update for new direction:
 
-- `photo_001_travel_girl`.
-- Selected visual target: top-right small chibi candidate.
-- Runtime status: `right_top_small_meowa_v2_animation_screenshot_qa_passed`.
-- Meowa credit after last generation: 176.
+- Replace active values with health/mood/hunger/money.
+- Add hover-only status UI.
+- Add double-click chat box.
+- Define local WeChat import and distillation format.
+- Lock pixel proportions and generate matching UI kit through Meowa.
 
-## 6. Planned Milestones
+## 8. Planned Milestones
 
 | Milestone | Product Outcome | Status |
 | --- | --- | --- |
-| M0 Product Lock | Product boundaries, team roles, and MVP promise defined | Complete |
+| M0 Product Lock | Original product lock; refreshed target is now personal use | Complete / superseded by PRD refresh |
 | M1 Desktop Shell | Desktop pet window launches, moves, hides, exits | Complete |
-| M2 Pet Runtime | Pet state machine, interactions, save, cross-screen safety | Complete |
+| M2 Pet Runtime | State machine, interactions, save, cross-screen safety | Complete |
 | M3 Character Packs | Manifest-driven character packs and fallback | Complete |
 | M4 Photo Commission Pipeline | Owner photo to art-directed character pack workflow | Complete |
 | M5 Character Animation MVP | Meowa-assisted animation frames and state playback | Complete pending owner acceptance |
-| M6 AI + Scene Slice | Local/fallback chat plus bed/toy/food props | Next |
-| M7 Steam Candidate | Packaged offline Windows build and store-capture readiness | Planned |
+| M6 Personal Care + Hover UI | Health/mood/hunger/money and hover-only status UI | Next |
+| M7 WeChat Persona Chat Slice | Double-click chat plus local WeChat style profile | Planned |
+| M8 Personal Build Polish | Settings, data hygiene, local backup/export, stability | Planned |
 
-## 7. Photo-Commission Character Pipeline
+## 9. WeChat Import And Persona Distillation
 
-The MVP character customization promise is a production workflow:
+### Input
 
-1. Owner provides photo/reference.
-2. Art Director extracts visual traits and writes/approves Meowa prompts.
-3. Meowa generates candidates or animation passes.
-4. Owner selects a direction.
-5. Implementation normalizes assets into a character pack.
-6. QA runs frame checks and screenshot QA.
-7. Non-ignored assets and docs are committed and pushed.
+Supported input is owner-provided exported WeChat chat records. Exact export format still needs confirmation during implementation.
 
-This is not an end-user runtime editor for MVP.
+### Local Processing Goals
 
-Required records per Meowa batch:
+- Normalize sender, timestamp, message type, and text.
+- Filter unsupported media or represent them as placeholders.
+- Extract writing style features from the target person.
+- Build a compact persona profile used by the chat runtime.
 
-- Source reference path.
-- Art Director prompt summary.
-- Template/model or endpoint used.
-- Job IDs.
-- Output paths.
-- Remaining Meowa credit.
-- Owner selection/rejection notes.
+### Distilled Style Profile Should Capture
 
-## 8. Idea Note Backlog And Version Placement
+| Dimension | Examples |
+| --- | --- |
+| Tone | gentle, teasing, concise, direct, playful |
+| Phrase habits | common openings, endings, filler words |
+| Reply length | short bursts, long paragraphs, one-line replies |
+| Emoji/sticker habits | emoji frequency, expressive markers, repeated symbols |
+| Punctuation rhythm | ellipses, exclamation, question marks, line breaks |
+| Topic boundaries | what the persona should avoid or refuse |
 
-The idea-note subagent may add raw ideas, but implementation priority is controlled by version buckets.
+### Privacy Requirements
 
-| Bucket | Product Rule | Example Ideas |
-| --- | --- | --- |
-| MVP | Required for a stable, cute, offline, Steam-viable desktop pet | Core pet, state animation, character pack, photo-commission pipeline, local/fallback chat, scene props |
-| EA | Strong value after first playable MVP but not required for Steam candidate | Extra props, screenshot mode, more reactions, more commissioned characters, daily greetings |
-| 1.0 | Requires broader QA or stable systems | Full settings polish, low-spec pass, complete bilingual table, store asset set, installer hardening |
-| DLC/Update | Mostly cosmetic or content expansion | Seasonal skins, prop packs, themed scene packs, extra animation packs |
-| Later/Reject | Too costly, online-dependent, or misaligned with USD 1 offline promise | Social feed, cloud accounts, Workshop at MVP, exact likeness generation, voice recognition/synthesis, multi-pet runtime |
+- Raw chat exports are ignored and never committed.
+- Persona profiles should be local by default.
+- Any model call involving chat records must be local unless owner explicitly approves otherwise.
+- The app should clearly distinguish style simulation from the real person.
 
-If an idea does not clearly fit a bucket, default it to Later/Reject until the owner approves a higher version.
+## 10. Pixel UI Kit Requirements
 
-## 9. Non-Functional Requirements
+Before implementation:
+
+1. Art Director confirms character frame size, display scale, and UI grid.
+2. Art Director writes Meowa prompts for a UI kit matching the pet scale.
+3. Meowa outputs are previewed before implementation.
+4. Selected UI assets are normalized and implemented.
+5. Screenshot QA verifies hover and chat UI at runtime size.
+
+UI kit assets:
+
+- Hover status frame.
+- Health, mood, hunger, money icons.
+- Pixel bars or counters.
+- Conversation box frame.
+- Chat input area.
+- Optional close/send buttons.
+- Food/toy/bed icons or prop UI.
+
+## 11. Non-Functional Requirements
 
 | Area | Requirement |
 | --- | --- |
-| Stability | Two-hour idle test passes before Steam candidate. |
-| Performance | Idle CPU/GPU must be low enough for everyday background use. |
-| Safety | Clear tray/menu exit path is always available. |
-| Offline | Core runtime does not require network. |
-| Privacy | Raw owner photos and API keys are not committed. |
-| Art QA | Every art/animation change has screenshot QA evidence. |
-| Git | Non-ignored verified changes are committed and pushed to the tracked remote. |
-| Bilingual | Text should move to a central table as UI grows. |
-
-## 10. Success Metrics
-
-MVP success:
-
-- Owner accepts M7 with no blocker QA failures.
-- Packaged Windows app launches without dev tooling.
-- Pet can run offline and be exited cleanly.
-- Current active character is visible and animated in screenshot QA.
-- First store screenshots can be captured from real runtime, not mockups.
-
-Post-release learning metrics:
-
-- User reviews mention cuteness and non-intrusive behavior.
-- Users share screenshots or clips.
-- Users request more skins/props rather than reporting launch/exit issues.
-
-## 11. Risks And Mitigations
-
-| Risk | Mitigation |
-| --- | --- |
-| Generated art inconsistency | Unified Art Director prompt gate and screenshot QA. |
-| Desktop behavior differs across monitors/DPI | Windows-first QA, owner hardware checks, bounds correction. |
-| AI package too large or fragile | Optional local model or fallback-only replies for MVP. |
-| Feature creep beyond USD 1 scope | Version bucket rules and explicit MVP cuts. |
-| Steam review concern over desktop behavior | Clear exit, non-invasive default, offline operation, stable packaging. |
+| Stability | Pet can idle for long personal sessions without crash. |
+| Performance | Idle mode stays low CPU/GPU. |
+| Visibility | No persistent UI unless hovered, chatting, or explicitly opened. |
+| Privacy | Raw WeChat logs, private photos, and API keys are never committed. |
+| Offline | Core pet and local chat fallback work without network. |
+| Art QA | Every UI/art/animation change has screenshot QA evidence. |
+| Git | Non-ignored verified changes are committed and pushed. |
 
 ## 12. Open Questions
 
-- Is the white baby seal still the Steam-facing hero mascot if the first implemented character is `photo_001_travel_girl`?
-- Should M6 ship fallback-only chat first, or should a small local model be integrated before props?
-- Which bilingual pair is final for launch copy and UI?
-- What is the minimum store asset set needed before M7 owner review?
+- What exact WeChat export format will be used first?
+- Should raw chat logs remain only outside the repo, or should sanitized sample fixtures be created for tests?
+- Should the first style simulation use rules/templates, a local LLM, or both?
+- What final pet frame size and display scale should be locked before UI kit generation?
+- Should money be earned over time, granted manually, or tied to care actions in the personal build?

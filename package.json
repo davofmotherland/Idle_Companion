@@ -10,7 +10,8 @@
     "preview": "electron-vite preview",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "package:win": "electron-builder --win"
+    "package:win": "electron-builder --win",
+    "dashboard": "node scripts/generate-project-dashboard.cjs"
   },
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.1",

@@ -2,95 +2,102 @@
 
 ## 1. High Concept
 
-Project Seal is a Windows-first offline desktop pet for Steam. The product fantasy is a cute pixel companion living lightly on the user's desktop: visible, reactive, easy to move away, and pleasant enough to leave running during normal work.
+Project Seal is a personal-use Windows desktop pet. It is no longer planned as a Steam sale product. The design target is a private, modern pixel desktop companion inspired by QQ Pet: the pet lives directly on the desktop, reacts to simple interaction, has visible needs systems, and stays visually quiet unless the user interacts with it.
 
-The first commercial identity is a white baby seal, but the project now also supports art-directed photo-commission character packs. The current implemented MVP character pack is `photo_001_travel_girl`.
+The default mascot direction remains a white baby seal, while the current implemented active character pack is `photo_001_travel_girl`.
 
 ## 2. Design Pillars
 
 | Pillar | Design Meaning |
 | --- | --- |
-| Cute at desktop size | Characters must read clearly when small, with strong silhouettes and low visual noise. |
-| Non-invasive | The pet must never trap the user, block normal desktop work, or hide the exit path. |
-| Offline-first | Core runtime, saves, and first Steam release must work without accounts or servers. |
-| Shareable moments | The pet should create screenshot/clip-worthy reactions, outfits, and desktop scenes. |
-| Lean USD 1 scope | The MVP prioritizes polish and stability over large content volume. |
+| Quiet desktop presence | By default only the pet is visible. UI appears only on hover, double-click, or explicit interaction. |
+| QQ Pet-style care loop | Health, mood, hunger, and money form the core simulation values. |
+| Personal and local | The project is for personal use; chat records, distilled style data, and generated assets stay local unless explicitly exported. |
+| Pixel-coherent | Pet art, UI, icons, bubbles, and panels share one pixel scale and one Art Director style. |
+| Safe control | The pet must remain draggable, closable, and non-invasive. |
 
-## 3. Target Player Experience
+## 3. Target Experience
 
-The player launches Project Seal, sees a small pixel pet on the desktop, drags or pokes it, watches it idle or walk, and receives short reactions. Over time, scene props and simple mood changes make the pet feel alive. The player can also use owner-directed commissioned character packs made from reference photos, but the MVP does not promise live in-client photo generation.
+The user sees only a small pixel pet on the desktop during normal use. When the mouse hovers over the pet, a compact QQ Pet-style status UI appears, showing health, mood, hunger, and money. When the user double-clicks the pet, a conversation box opens.
+
+Later, the user can import WeChat chat records. The app locally distills the other person's speaking style and uses that style in the double-click conversation flow. The goal is tone simulation for personal companionship, not public chatbot publishing.
 
 ## 4. Core Loop
 
-1. Pet idles on the desktop.
-2. Player drags, pokes, uses a prop, or sends a short message.
-3. Pet changes animation state and optionally shows a short bubble.
-4. Mood, energy, hunger, and affection update.
-5. Pet returns to idle, walks, sleeps, or reacts again.
-6. Player captures screenshots/clips or changes character/scene content.
+1. Pet idles on the desktop with no persistent UI around it.
+2. User hovers over pet and sees health, mood, hunger, and money.
+3. User drags, pokes, feeds, plays, rests, or opens chat.
+4. Pet reacts with animation and short pixel UI feedback.
+5. Values change: health, mood, hunger, money.
+6. User can double-click to talk with the pet or style-simulated persona.
+7. Pet returns to quiet desktop presence.
 
-## 5. Current MVP Scope
+## 5. Core Systems
 
-### In Scope
+### 5.1 Needs Values
 
-- Transparent always-on-top desktop pet window.
-- Tray/menu safety controls: show, hide, exit, later lock/settings.
-- Drag, poke, idle, walk, sleep, happy/poke, annoyed fallback, and dragged feedback.
-- Manifest-driven character packs with missing-animation fallback.
-- White baby seal as the first-party mascot direction.
-- Photo-commission character production flow using Meowa and Art Director-approved prompts.
-- Current animated character pack: brown beanie, black sunglasses/jacket, white shirt, blue jeans.
-- Local save/settings.
-- Basic scene props: bed, toy, food/snack.
-- Offline-safe chat: local model bridge or deterministic fallback replies.
-- Bilingual release foundation.
-- Windows package path for Steam.
+| Value | Meaning | Changes From | UI Rule |
+| --- | --- | --- | --- |
+| Health | Overall condition and long-term care state | Low hunger, poor rest, time, care actions | Hover status only |
+| Mood | Emotional state and interaction quality | Poke, play, chat, neglect, props | Hover status only |
+| Hunger | Need for food | Time decay, food item use | Hover status only |
+| Money | Soft resource for food/props/cosmetics | Planned rewards or manual grant in personal build | Hover status only |
 
-### Out of Scope for MVP
+The previous mood/energy/affection/hunger model is replaced by the QQ Pet-like health/mood/hunger/money model for active planning.
 
-- Steam Workshop.
-- Cloud save.
-- Online accounts.
-- Multiplayer or social feed.
-- Full live local photo-to-pixel character generation.
-- Exact likeness from photos.
-- Voice recognition or voice synthesis.
-- Multiple active pets.
-- Mac/Linux.
-- Complex quests, economy, achievements, or room editor.
+### 5.2 Desktop Visibility Rules
+
+- Default state: only the pet sprite is visible.
+- Hover state: show compact pixel status UI anchored near the pet.
+- Double-click state: open the conversation box.
+- Interaction state: show only short feedback needed for the action.
+- Debug labels, import panels, and permanent app UI must not cover the pet during normal use.
+
+### 5.3 Conversation System
+
+MVP direction:
+
+- Double-click opens a compact chat box.
+- Chat can start with fallback persona replies.
+- WeChat chat import is planned as the personalization path.
+
+WeChat import pipeline:
+
+1. User provides exported WeChat chat records.
+2. Import parser normalizes messages into local structured data.
+3. Local distillation extracts tone, phrase patterns, rhythm, emoji habits, and common reply shapes.
+4. A local persona profile is created.
+5. Double-click conversation uses that profile to simulate speaking style.
+
+Privacy boundary:
+
+- Chat records are personal and local-only by default.
+- Do not commit raw chat records to git.
+- Do not send chat records to Meowa.
+- Any LLM use must be local or explicitly approved by the owner.
 
 ## 6. Pet States
 
-| State | Trigger | Gameplay Purpose | MVP Animation |
+| State | Trigger | Purpose | MVP Art |
 | --- | --- | --- | --- |
-| Idle | Default fallback | Rest state and breathing/blink feel | 2-4 frames |
-| Walk | Timer or scene target | Makes pet feel autonomous | 2-4 frames |
-| Sleep | Low energy or inactivity | Long-session variety | 1-2 frames |
-| Dragged | User drag | Direct manipulation feedback | Idle reuse + tilt acceptable |
-| Happy | Positive poke/prop | Reward response | 1-2 frames |
-| Poke | User click | Tactile reaction | Reuses happy in MVP |
-| Annoyed | Repeated poke or bad timing | Cute boundary feedback | Reuses happy until dedicated art |
-| Eating | Food prop | Need recovery and prop purpose | Planned M6 |
-| Playing | Toy prop | Affection and energy interaction | Planned M6 |
-| Talking | Chat message | Companion fantasy | Planned M6 |
+| Idle | Default | Quiet presence | Implemented |
+| Walk | Timer or small movement | Autonomous life | Implemented |
+| Sleep | Low activity or rest | Care loop support | Implemented |
+| Dragged | User drag | Direct manipulation | Implemented with reuse/tilt |
+| Happy/Poke | Click or positive interaction | Immediate feedback | Implemented |
+| Hungry | Hunger low | QQ Pet-like needs feedback | Planned |
+| Sick/Low health | Health low | Care warning | Planned |
+| Chatting | Double-click conversation | Personal dialogue | Planned |
+| Eating | Food action | Hunger recovery | Planned |
+| Playing | Toy/action | Mood recovery | Planned |
 
-Priority order: dragged, talking, eating/playing, happy/annoyed, sleep, walk, idle.
+Priority order: dragged, chatting, eating/playing, sick/low health, hungry, happy/poke, sleep, walk, idle.
 
-## 7. Character And Art Design
+## 7. Art Direction
 
-### Default Mascot
+### 7.1 Character Art
 
-The default first-party mascot remains a white baby seal:
-
-- Round body and head silhouette.
-- Simple dark eyes.
-- Short flippers.
-- Soft off-white shading, never pure white only.
-- Low-detail pixel style readable on light and dark desktops.
-
-### Current Implemented Photo-Commission Character
-
-`photo_001_travel_girl` is the current implemented replacement character pack:
+The active runtime character is `photo_001_travel_girl`:
 
 - Brown knit beanie.
 - Black sunglasses.
@@ -100,104 +107,87 @@ The default first-party mascot remains a white baby seal:
 - Blue jeans.
 - Small chibi pixel proportions.
 
-M5 implemented runtime frames:
+Current runtime frames:
 
 - `idle`: 4 frames.
 - `walk`: 4 frames.
 - `sleep`: 2 frames.
 - `happy/poke`: 2 frames.
 
-### Art Direction Rule
+### 7.2 Pixel Proportion Lock
 
-All Meowa prompts must be generated or approved by a unified Art Director. Engineers may execute approved prompts and process outputs, but must not casually rewrite art direction.
+Before adding new UI or commissioning more Meowa UI assets, the Art Director must lock the overall pixel proportion system:
 
-Every visual change requires screenshot QA before owner acceptance.
+| Item | Decision Needed |
+| --- | --- |
+| Runtime character frame | Confirm final logical frame size and display scale. |
+| Status UI pixel grid | Confirm unit size, border thickness, icon size, and font size. |
+| Chat box grid | Confirm panel width, line height, avatar/icon slot, and bubble padding. |
+| Prop scale | Confirm bed/toy/food size relative to pet height. |
 
-## 8. Scene Design
+No UI kit should be implemented until the pet-to-UI scale is confirmed.
 
-MVP scene props should be small desktop objects, not a full room editor.
+### 7.3 Meowa UI Kit Rule
 
-| Prop | Function | Pet Response |
+After pixel proportions are locked, the unified Art Director generates prompts for a Meowa-assisted pixel UI kit that matches the pet scale.
+
+The UI kit should include:
+
+- Hover status frame.
+- Health icon/bar.
+- Mood icon/bar.
+- Hunger icon/bar.
+- Money icon/counter.
+- Double-click chat box.
+- Small action buttons if needed.
+- Bed, food, toy UI/prop icons.
+
+All Meowa prompts must come from the unified Art Director. Engineers may run approved prompts and implement outputs, but must not rewrite art direction ad hoc. Every UI/art change requires screenshot QA.
+
+## 8. Scene And Care Design
+
+The scene remains lightweight. It should support care actions rather than a full room editor.
+
+| Object | Function | Value Effect |
 | --- | --- | --- |
-| Bed | Rest/sleep entry | Sleep or energy recovery |
-| Toy | Play interaction | Happy/play reaction, affection gain |
-| Food/snack | Feeding | Eating/happy reaction, hunger recovery |
+| Food | Feed pet | Hunger recovers, mood may improve, money decreases |
+| Toy | Play | Mood improves, hunger may decay faster |
+| Bed | Rest/sleep | Health improves, mood stabilizes |
 
-Future props should be cosmetic-first and easy to screenshot. Complex placement, physics, or economy belongs after the Steam candidate.
+Money is a soft personal-use resource. It can start as a debug/manual value before any earning loop is designed.
 
-## 9. AI And Dialogue Design
-
-AI supports the pet fantasy but must never become a runtime dependency.
-
-MVP behavior:
-
-- Local model bridge or fallback-only adapter.
-- Short bilingual-ready replies.
-- Timeout and cancel handling.
-- No launch blocking when a model is missing.
-- Talking state exits safely.
-
-Tone:
-
-- Cute, concise, low-pressure.
-- Avoid long assistant-like answers.
-- Pet speaks as a desktop companion, not a general productivity bot.
-
-## 10. Progression And Retention
-
-MVP retention should come from daily lightweight presence, not deep systems.
-
-MVP-level retention:
-
-- Mood/energy/hunger/affection values.
-- Small state variation over time.
-- Prop reactions.
-- Character/skin swapping.
-- Screenshot-worthy idle and poke moments.
-
-Post-MVP retention ideas:
-
-- Cosmetic unlocks.
-- Seasonal props.
-- More reaction animations.
-- Additional commissioned character packs.
-- Simple daily greetings.
-- Optional achievements after Steam candidate stability.
-
-## 11. Versioned Idea Backlog
-
-The idea-note subagent should place new ideas into these buckets.
+## 9. Versioned Idea Backlog
 
 | Bucket | Include | Current Candidate Ideas |
 | --- | --- | --- |
-| MVP | Needed for stable white seal desktop pet, commissioned character pack, offline chat/scene, Steam viability | Tray exit, drag/poke, state animation, manifest packs, Meowa pipeline, screenshot QA, local fallback chat, bed/toy/food |
-| EA | Improves retention or shareability after first playable MVP | More props, more reactions, screenshot mode, simple daily greetings, extra commissioned characters |
-| 1.0 | Requires stable systems or more QA | Settings polish, broader bilingual string table, packaged installer hardening, low-spec performance pass, Steam store assets |
-| DLC/Update | Cosmetic/content expansions | Seasonal skins, prop packs, extra animations, themed desktop scenes, optional character packs |
-| Later/Reject | Too expensive, risky, or misaligned with USD 1 offline scope | Cloud accounts, multiplayer/social feed, Workshop at MVP, exact likeness generation, voice features, multi-pet runtime, complex economy |
+| MVP | Required for the personal QQ Pet-style loop | Hover stats, health/mood/hunger/money, double-click chat shell, current animated character, local save |
+| Next | Directly supports the new direction after MVP | WeChat import parser, local style distillation, pixel UI kit, hungry/sick states, food/toy/bed actions |
+| 1.0 Personal | Stable daily-use polish | Settings, low-resource mode, robust local data management, chat profile management, backup/export |
+| Content Update | Cosmetic or interaction expansion | More outfits, props, seasonal UI skins, more reactions, extra commissioned characters |
+| Later/Reject | Too broad or not aligned with personal local use | Steam store launch, cloud accounts, online social feed, public chatbot sharing, Workshop, voice features unless explicitly revived |
 
-If a future note conflicts with offline-first, low-price, or non-invasive desktop behavior, it should start in Later/Reject until the owner explicitly upgrades its priority.
-
-## 12. Current Status
+## 10. Current Status
 
 | Milestone | Status |
 | --- | --- |
-| M0 Product Lock | Complete |
+| M0 Product Lock | Complete, but active product target refreshed to personal use |
 | M1 Desktop Shell | Complete |
 | M2 Pet Runtime | Complete |
 | M3 Character Packs | Complete |
 | M4 Photo Commission Pipeline | Complete |
 | M5 Character Animation MVP | Complete pending owner acceptance |
-| M6 AI + Scene Slice | Not started |
-| M7 Steam Candidate | Not started |
+| M6 Personal Care + Hover UI | Not started |
+| M7 WeChat Persona Chat Slice | Not started |
+| M8 Personal Build Polish | Not started |
 
-## 13. Acceptance Standards
+## 11. Acceptance Standards
 
-The MVP is game-design acceptable when:
+The personal-use MVP is acceptable when:
 
-- The pet can run for two hours without crash or runaway CPU/GPU.
-- The user can always exit from tray/menu.
-- Drag, poke, idle, walk, sleep, and happy/poke are visible and do not get stuck.
+- The pet runs quietly with only the sprite visible by default.
+- Hover shows health, mood, hunger, and money without blocking normal desktop use.
+- Double-click opens a usable conversation box.
+- Drag, poke, idle, walk, sleep, and happy/poke remain stable.
 - The active character is visible in screenshot QA and never silently falls back to the wrong character.
-- The app works offline or clearly falls back when local AI is unavailable.
-- The Steam candidate can launch from a clean Windows package.
+- Local saves persist pet position and core values.
+- No raw chat records, private photos, or API keys are committed.

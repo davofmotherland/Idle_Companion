@@ -1,4 +1,4 @@
-﻿# Project Rules
+# Project Rules
 
 These rules are mandatory for Project Seal delivery work.
 
@@ -31,6 +31,22 @@ Commit rules:
 - Stop before push only if secrets, private raw photos, unrelated user work, merge conflicts, authentication failure, or remote rejection is detected.
 - After push, confirm `git status -sb` shows the local branch is aligned with its remote tracking branch.
 
+## Dashboard Update Rule
+
+The HTML dashboard is the primary project-management entry point.
+
+When any milestone document, GDD, PRD, QA report, art asset, art metadata, or planning document changes, run:
+
+```powershell
+npm.cmd run dashboard
+```
+
+This regenerates:
+
+- `docs/project-dashboard/index.html`
+- `docs/project-dashboard/art-assets-status.json`
+
+The dashboard must be committed and pushed together with the underlying project change so the HTML view stays current.
 ## Meowa Art Direction Rule
 
 All Meowa art prompts must be created or approved by one unified Art Director role before generation.
@@ -69,5 +85,3 @@ Required checks:
 - Confirm key visual traits are visible.
 - Confirm no fallback character, old UI, or debug label is covering the pet.
 - Show or attach the screenshot before asking for owner acceptance.
-
-

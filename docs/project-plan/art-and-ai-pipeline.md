@@ -136,6 +136,38 @@ The imported photo owns only:
 
 The default white seal is a first-party character pack and placeholder runtime mascot. It is not the target template for user photo generation.
 
+## Pixel Proportion Lock
+
+Before any new hover UI, chat box, or care prop UI is implemented, the Art Director must lock the shared pixel proportion system.
+
+Required decisions:
+
+- Character logical frame size.
+- Runtime display scale.
+- Status UI grid unit.
+- Border thickness.
+- Icon size for health, mood, hunger, and money.
+- Chat box width, line height, input height, and padding.
+- Prop scale relative to pet height.
+
+Do not generate or implement a Meowa UI kit before this scale is locked.
+
+## Meowa Pixel UI Kit
+
+After the pixel proportion lock, Meowa should be used to generate a UI kit that matches the desktop pet scale. Prompts must be written or approved by the unified Art Director.
+
+Minimum UI kit:
+
+- Hover status frame.
+- Health icon/bar.
+- Mood icon/bar.
+- Hunger icon/bar.
+- Money icon/counter.
+- Double-click chat box frame.
+- Chat input area.
+- Food, toy, and bed icons.
+
+Every UI kit pass must include screenshot QA before implementation acceptance.
 ## Meowa Prompt Ownership
 
 Meowa is treated as an art production tool, not a free-form implementation shortcut. A unified Art Director owns the prompt language, negative prompts, style consistency, and batch acceptance criteria. Engineers may execute the approved prompts and convert the selected output into runtime assets, but they do not change the art direction independently.
@@ -170,31 +202,9 @@ Check licenses for:
 - UI icons.
 - Any imported open-source desktop pet code.
 
-Generated assets should still receive manual review before being included in a commercial Steam build.
+Generated assets should still receive manual review before being included in the personal build.
 
-## Steam Visual Assets
+## Public Release Visual Assets
 
-Prepare these before the Steam page goes live:
-
-| Asset | Size |
-| --- | --- |
-| Header Capsule | 460x215 |
-| Small Capsule | 231x87 |
-| Main Capsule | 616x353 |
-| Vertical Capsule | 374x448 |
-| Page Background | 1438x810 |
-| Library Capsule | 600x900 |
-| Library Hero | 3840x1240 |
-| Library Logo | Transparent PNG |
-| Community Icon | 184x184 |
-| Client Icon | ICO |
-
-Screenshot order:
-
-1. Pet active on a real desktop.
-2. Replacement character selection.
-3. Photo-to-pixel flow.
-4. Local/offline chat.
-5. Scene props and interactions.
-6. Skins and customization.
+Public release visual assets are no longer active scope. If public distribution is revived later, create a separate release art checklist at that time.
 

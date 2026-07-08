@@ -1,6 +1,10 @@
-﻿# Pixel Desktop Pet Project Plan
+# Pixel Desktop Pet Project Plan
 
 This folder contains the working plan for the desktop pet project.
+
+Primary HTML management entry: docs/project-dashboard/index.html.
+Regenerate it with
+pm.cmd run dashboard after planning, milestone, QA, or art asset changes.
 
 - `project-seal-gdd.md`: overall game design document for Project Seal.
 - `project-seal-prd.md`: planning PRD covering MVP scope, backlog, milestones, and requirements.
@@ -26,4 +30,3 @@ This folder contains the working plan for the desktop pet project.
 - `cost-and-resources.md`: paid/free resource requirements and acquisition priorities.
 
 - [Photo Commission Character Pipeline](photo-commission-character-pipeline.md)
-

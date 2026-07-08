@@ -1,33 +1,32 @@
-# Technical Direction
+﻿# Technical Direction
 
 ## Recommendation
 
-Use a desktop app stack rather than a traditional game engine for the first commercial MVP.
+Use a desktop app stack for the personal-use MVP.
 
 Recommended stack:
 
 - Client shell: Electron first, Tauri later if footprint becomes a major issue.
-- Renderer: PixiJS or Phaser.
-- UI layer: React or Svelte.
+- Renderer: PixiJS.
+- UI layer: lightweight DOM overlay or renderer-integrated pixel UI, depending on final scale.
 - App language: TypeScript.
 - Runtime state: lightweight event bus or Zustand-style store.
-- Data: JSON content definitions plus local SQLite or simple file-backed saves.
-- Local AI: llama.cpp-compatible local service or child process.
-- Image pipeline: local preprocessing plus optional ComfyUI workflow for high-quality generated variants.
+- Data: JSON content definitions plus file-backed local saves.
+- Local AI/persona: local model adapter or deterministic fallback profile runtime.
+- Art pipeline: Meowa-assisted assets through unified Art Director prompts.
 
 ## Why Not Unity First
 
-Unity is strong for game scenes, animation tooling, and cross-platform games, but desktop pet products need unusually good control over desktop window behavior:
+Unity is strong for game scenes and animation tooling, but this project needs precise desktop behavior:
 
 - Transparent always-on-top windows.
 - Optional click-through.
 - Dragging a frameless character.
 - Tray menu and background runtime behavior.
 - Native settings and startup behavior.
+- Small hover UI around a desktop sprite.
 
-These are easier to productize in Electron/Tauri/native desktop code than in a conventional game engine.
-
-Unity remains a good fallback if the project later becomes scene-heavy, physics-heavy, or animation-tooling-heavy.
+These remain easier to productize in Electron/Tauri/native desktop code than in a conventional game engine.
 
 ## Architecture
 
@@ -37,18 +36,21 @@ desktop-shell
     window-manager
     tray-menu
     settings
-    steam-adapter
+    local-data-manager
     ai-service-controller
   renderer
     pet-runtime
+    hover-status-ui
+    chat-box-ui
     scene-runtime
     interaction-layer
-    ui-panels
   shared
     content-schema
     save-schema
+    persona-schema
     event-bus
     asset-loader
+    privacy-guards
 ```
 
 ## Core Runtime Modules
@@ -56,70 +58,98 @@ desktop-shell
 | Module | Responsibility |
 | --- | --- |
 | Window Manager | Transparent window, always-on-top, click-through toggle, monitor bounds |
-| Pet Runtime | State machine, animation playback, needs/mood values, scheduled behaviors |
-| Scene Runtime | Small desktop scene objects, object interactions, unlocks |
-| Asset Loader | Default assets, imported character packs, generated pixel assets |
-| AI Service Controller | Starts/stops local model process and handles chat requests |
-| Save System | Settings, pet profile, unlocked items, imported assets |
-| Steam Adapter | Steam launch detection, achievements later, build channel later |
+| Pet Runtime | State machine, animation playback, health/mood/hunger/money values |
+| Hover Status UI | Displays core values only while mouse is over the pet |
+| Chat Box UI | Opens on double-click and hosts local/fallback conversation |
+| Scene Runtime | Food, toy, bed, and other small care interactions |
+| Asset Loader | Default assets, character packs, Meowa UI kit assets |
+| Persona Manager | Stores local style profiles and connects them to chat runtime |
+| WeChat Importer | Parses owner-provided WeChat exports into local structured records |
+| AI Service Controller | Starts/stops local model process and handles chat requests when enabled |
+| Save System | Settings, pet profile, active character, core values, persona selection |
+| Privacy Guard | Keeps raw private photos, chat logs, and API keys out of git and external calls |
 
-## Window Modes
-
-The desktop pet needs explicit interaction modes because click-through and drag interactions conflict by nature.
+## Window And UI Modes
 
 | Mode | Behavior |
 | --- | --- |
-| Normal | Pet receives pointer events; desktop under transparent areas remains usable where supported |
+| Normal | Only pet sprite is visible; pointer events go to pet as needed |
+| Hover | Compact pixel status UI appears near pet |
 | Drag | Pointer is captured; pet follows cursor; state switches to `Dragged` |
+| Chat | Double-click opens compact conversation box; low-priority pet states pause |
 | Lock | Pet ignores interaction and stays out of the user's way |
-| Edit Scene | Click-through is disabled; scene props can be moved or configured |
+| Edit Scene | Click-through is disabled; props can be moved or configured |
 
-The MVP should expose these through the tray menu and settings panel.
+## Data Model Changes
 
-## MVP Technical Risks
+Active pet values:
+
+```json
+{
+  "health": 80,
+  "mood": 70,
+  "hunger": 40,
+  "money": 100
+}
+```
+
+Persona profile:
+
+```json
+{
+  "id": "wechat_persona_001",
+  "sourceType": "wechat_export",
+  "localOnly": true,
+  "styleSummary": {
+    "tone": [],
+    "phraseHabits": [],
+    "replyLength": "short",
+    "emojiHabit": "light"
+  }
+}
+```
+
+## Technical Risks
 
 | Risk | Mitigation |
 | --- | --- |
-| Transparent window behavior differs across OS versions | Windows-first MVP, isolate platform code |
-| Local model package becomes too large | Ship AI as optional local pack or small default model |
-| Generated pixel avatars look inconsistent | Start with constrained bust/avatar conversion before full-body animation |
+| Transparent window behavior differs across monitors/DPI | Windows-first QA and bounds correction |
+| Hover UI mis-scales against pet art | Lock pixel proportions before Meowa UI kit generation |
+| Chat records contain private data | Keep raw imports ignored/local; add privacy guard checks |
+| Local model package becomes too large | Start with fallback/rules persona, add local model later |
+| Style imitation feels wrong or unsafe | Store owner-approved persona profiles and avoid exact identity claims |
 | Desktop pet consumes too much CPU/GPU | Fixed low FPS idle mode, animation throttling, sleep mode |
-| Steam review rejects unstable desktop behavior | Keep default behavior non-invasive; clear exit/tray controls |
 
 ## Technical MVP Cut
 
-Must have:
+Must have next:
 
-- Windows desktop pet window.
-- Transparent background.
-- Always-on-top toggle.
-- Drag pet around.
-- Pet state machine.
-- Sprite animation playback.
-- Small scene object interaction.
-- Local save/settings.
-- Imported image to pixel avatar preview.
-- Basic local AI chat or clearly optional AI module.
-- Steam-ready offline build.
+- Health/mood/hunger/money values.
+- Hover-only status UI.
+- Double-click chat box shell.
+- Local save of values and UI state.
+- Pixel proportion lock document.
+- Art Director Meowa UI kit prompt brief.
 
 Defer:
 
-- Multiplayer/social features.
-- Full body auto-animation from photo.
-- Workshop.
-- Achievement system.
-- Complex room editor.
-- Multi-model AI marketplace.
+- Public packaging/store flow.
+- Full WeChat import UI.
+- Local LLM integration if fallback persona replies are enough for first slice.
+- Voice features.
+- Multi-pet runtime.
+- Complex economy.
 
-## MVP Technical Task List
+## Updated Technical Task List
 
-1. Build transparent, frameless, always-on-top Windows window.
-2. Add tray menu with show/hide, lock, settings, exit.
-3. Implement click-through toggle, drag mode, and position persistence.
-4. Add PixiJS renderer with integer scaling and low-FPS idle mode.
-5. Implement finite state machine for `Idle`, `Walk`, `Sleep`, `Dragged`, `Happy`, `Annoyed`, `Eating`, `Playing`, and `Talking`.
-6. Define character pack loader with animation fallback.
-7. Add scene prop runtime with 2-3 interactable objects.
-8. Add local AI process controller with timeout, cancel, and fallback replies.
-9. Package Windows x64 build with all core assets local.
-10. Run multi-monitor, DPI, offline launch, and two-hour idle smoke tests.
+1. Lock pet frame size, display scale, UI grid, and panel dimensions.
+2. Define value schema for health, mood, hunger, and money.
+3. Replace old value model in runtime/state save.
+4. Implement hover detection and status UI visibility.
+5. Implement double-click chat box shell.
+6. Add local persona profile schema.
+7. Design WeChat import parser interface and ignored raw-data location.
+8. Add food/toy/bed value effects.
+9. Generate Meowa pixel UI kit after Art Director prompt approval.
+10. Run screenshot QA for hover UI and chat UI.
+11. Run multi-monitor, DPI, idle, and privacy-file checks.

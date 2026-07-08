@@ -1,0 +1,876 @@
+{
+  "version": 1,
+  "rule": "All art is placeholder until owner confirms final shipping quality.",
+  "statuses": [
+    "未制作",
+    "占位资源",
+    "正式资源"
+  ],
+  "generatedAt": "2026-07-08T14:40:54.509Z",
+  "assets": [
+    {
+      "id": "planned/props/bed.png",
+      "name": "Bed prop",
+      "category": "场景/道具",
+      "status": "未制作",
+      "path": "planned/props/bed.png",
+      "updatedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "planned/props/food.png",
+      "name": "Food prop",
+      "category": "场景/道具",
+      "status": "未制作",
+      "path": "planned/props/food.png",
+      "updatedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "planned/props/toy.png",
+      "name": "Toy prop",
+      "category": "场景/道具",
+      "status": "未制作",
+      "path": "planned/props/toy.png",
+      "updatedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/animations/happy-0.png",
+      "name": "happy-0.png",
+      "category": "角色动作帧",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/animations/happy-0.png",
+      "updatedAt": "2026-07-05T15:38:01.551Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/animations/happy-1.png",
+      "name": "happy-1.png",
+      "category": "角色动作帧",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/animations/happy-1.png",
+      "updatedAt": "2026-07-05T15:38:01.551Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/animations/idle-0.png",
+      "name": "idle-0.png",
+      "category": "角色动作帧",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/animations/idle-0.png",
+      "updatedAt": "2026-07-05T15:38:01.539Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/animations/idle-1.png",
+      "name": "idle-1.png",
+      "category": "角色动作帧",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/animations/idle-1.png",
+      "updatedAt": "2026-07-05T15:38:01.540Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/animations/idle-2.png",
+      "name": "idle-2.png",
+      "category": "角色动作帧",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/animations/idle-2.png",
+      "updatedAt": "2026-07-05T15:38:01.541Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/animations/idle-3.png",
+      "name": "idle-3.png",
+      "category": "角色动作帧",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/animations/idle-3.png",
+      "updatedAt": "2026-07-05T15:38:01.542Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/animations/sleep-0.png",
+      "name": "sleep-0.png",
+      "category": "角色动作帧",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/animations/sleep-0.png",
+      "updatedAt": "2026-07-05T15:38:01.549Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/animations/sleep-1.png",
+      "name": "sleep-1.png",
+      "category": "角色动作帧",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/animations/sleep-1.png",
+      "updatedAt": "2026-07-05T15:38:01.550Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/animations/walk-0.png",
+      "name": "walk-0.png",
+      "category": "角色动作帧",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/animations/walk-0.png",
+      "updatedAt": "2026-07-05T15:38:01.545Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/animations/walk-1.png",
+      "name": "walk-1.png",
+      "category": "角色动作帧",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/animations/walk-1.png",
+      "updatedAt": "2026-07-05T15:38:01.546Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/animations/walk-2.png",
+      "name": "walk-2.png",
+      "category": "角色动作帧",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/animations/walk-2.png",
+      "updatedAt": "2026-07-05T15:38:01.547Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/animations/walk-3.png",
+      "name": "walk-3.png",
+      "category": "角色动作帧",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/animations/walk-3.png",
+      "updatedAt": "2026-07-05T15:38:01.547Z",
+      "notes": ""
+    },
+    {
+      "id": "planned/states/hungry.png",
+      "name": "Hungry state art",
+      "category": "角色动作帧",
+      "status": "未制作",
+      "path": "planned/states/hungry.png",
+      "updatedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "planned/states/low-health.png",
+      "name": "Low health/sick state art",
+      "category": "角色动作帧",
+      "status": "未制作",
+      "path": "planned/states/low-health.png",
+      "updatedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/default_pet/art-metadata.json",
+      "name": "art-metadata.json",
+      "category": "角色资产",
+      "status": "占位资源",
+      "path": "assets/characters/default_pet/art-metadata.json",
+      "updatedAt": "2026-06-22T13:06:52.146Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/default_pet/manifest.json",
+      "name": "manifest.json",
+      "category": "角色资产",
+      "status": "占位资源",
+      "path": "assets/characters/default_pet/manifest.json",
+      "updatedAt": "2026-06-22T13:01:26.705Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/animation-preview.png",
+      "name": "animation-preview.png",
+      "category": "角色资产",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/animation-preview.png",
+      "updatedAt": "2026-07-05T15:38:01.578Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/approved-blue-jeans-source.png",
+      "name": "approved-blue-jeans-source.png",
+      "category": "角色资产",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/approved-blue-jeans-source.png",
+      "updatedAt": "2026-07-05T09:51:39.202Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/art-metadata.json",
+      "name": "art-metadata.json",
+      "category": "角色资产",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/art-metadata.json",
+      "updatedAt": "2026-07-05T15:43:36.894Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/candidate-arms-crossed.png",
+      "name": "candidate-arms-crossed.png",
+      "category": "角色资产",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/candidate-arms-crossed.png",
+      "updatedAt": "2026-07-05T09:27:41.245Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/idle-source.png",
+      "name": "idle-source.png",
+      "category": "角色资产",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/idle-source.png",
+      "updatedAt": "2026-07-05T15:38:01.555Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/idle.png",
+      "name": "idle.png",
+      "category": "角色资产",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/idle.png",
+      "updatedAt": "2026-07-05T15:38:01.553Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/manifest.json",
+      "name": "manifest.json",
+      "category": "角色资产",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/manifest.json",
+      "updatedAt": "2026-07-05T10:05:36.787Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/meowa-candidates-preview.png",
+      "name": "meowa-candidates-preview.png",
+      "category": "角色资产",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/meowa-candidates-preview.png",
+      "updatedAt": "2026-07-05T09:27:41.252Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/selected-right-top-small-source.png",
+      "name": "selected-right-top-small-source.png",
+      "category": "角色资产",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/selected-right-top-small-source.png",
+      "updatedAt": "2026-07-05T09:56:02.756Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/template_blue_headphone_girl/art-metadata.json",
+      "name": "art-metadata.json",
+      "category": "角色资产",
+      "status": "占位资源",
+      "path": "assets/characters/template_blue_headphone_girl/art-metadata.json",
+      "updatedAt": "2026-06-23T15:42:01.141Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/template_blue_headphone_girl/baseline.png",
+      "name": "baseline.png",
+      "category": "角色资产",
+      "status": "占位资源",
+      "path": "assets/characters/template_blue_headphone_girl/baseline.png",
+      "updatedAt": "2026-06-23T14:47:51.490Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/template_blue_headphone_girl/manifest.json",
+      "name": "manifest.json",
+      "category": "角色资产",
+      "status": "占位资源",
+      "path": "assets/characters/template_blue_headphone_girl/manifest.json",
+      "updatedAt": "2026-06-23T15:42:00.758Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/test_gray_seal/manifest.json",
+      "name": "manifest.json",
+      "category": "角色资产",
+      "status": "占位资源",
+      "path": "assets/characters/test_gray_seal/manifest.json",
+      "updatedAt": "2026-06-22T13:02:31.573Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/animation-v2-preview.png",
+      "name": "animation-v2-preview.png",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/animation-v2-preview.png",
+      "updatedAt": "2026-07-05T15:35:54.667Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/happy/84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/job_response.json",
+      "name": "job_response.json",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/happy/84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/job_response.json",
+      "updatedAt": "2026-07-05T15:35:14.878Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/happy/84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/source_static.png",
+      "name": "source_static.png",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/happy/84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/source_static.png",
+      "updatedAt": "2026-07-05T15:35:15.902Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/happy/84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/submit_response.json",
+      "name": "submit_response.json",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/happy/84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/submit_response.json",
+      "updatedAt": "2026-07-05T15:35:14.877Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/happy/84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/transparent_backup.gif",
+      "name": "transparent_backup.gif",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/happy/84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/transparent_backup.gif",
+      "updatedAt": "2026-07-05T15:35:18.612Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/happy/84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/transparent_backup.png",
+      "name": "transparent_backup.png",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/happy/84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/transparent_backup.png",
+      "updatedAt": "2026-07-05T15:35:20.368Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/happy/84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/transparent_backup.webp",
+      "name": "transparent_backup.webp",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/happy/84149964-d804-4ebd-9ad6-d6fa1d2ea2e6/transparent_backup.webp",
+      "updatedAt": "2026-07-05T15:35:16.941Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/idle/c7f196e1-5abe-4ca4-90df-e92e2e3d338d/job_response.json",
+      "name": "job_response.json",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/idle/c7f196e1-5abe-4ca4-90df-e92e2e3d338d/job_response.json",
+      "updatedAt": "2026-07-05T15:34:22.747Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/idle/c7f196e1-5abe-4ca4-90df-e92e2e3d338d/source_static.png",
+      "name": "source_static.png",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/idle/c7f196e1-5abe-4ca4-90df-e92e2e3d338d/source_static.png",
+      "updatedAt": "2026-07-05T15:34:25.126Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/idle/c7f196e1-5abe-4ca4-90df-e92e2e3d338d/submit_response.json",
+      "name": "submit_response.json",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/idle/c7f196e1-5abe-4ca4-90df-e92e2e3d338d/submit_response.json",
+      "updatedAt": "2026-07-05T15:34:22.747Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/idle/c7f196e1-5abe-4ca4-90df-e92e2e3d338d/transparent_backup.gif",
+      "name": "transparent_backup.gif",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/idle/c7f196e1-5abe-4ca4-90df-e92e2e3d338d/transparent_backup.gif",
+      "updatedAt": "2026-07-05T15:34:28.618Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/idle/c7f196e1-5abe-4ca4-90df-e92e2e3d338d/transparent_backup.png",
+      "name": "transparent_backup.png",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/idle/c7f196e1-5abe-4ca4-90df-e92e2e3d338d/transparent_backup.png",
+      "updatedAt": "2026-07-05T15:34:30.028Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/idle/c7f196e1-5abe-4ca4-90df-e92e2e3d338d/transparent_backup.webp",
+      "name": "transparent_backup.webp",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/idle/c7f196e1-5abe-4ca4-90df-e92e2e3d338d/transparent_backup.webp",
+      "updatedAt": "2026-07-05T15:34:26.886Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/sleep/d948e35e-d50c-403f-8031-ee84ef081fd3/job_response.json",
+      "name": "job_response.json",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/sleep/d948e35e-d50c-403f-8031-ee84ef081fd3/job_response.json",
+      "updatedAt": "2026-07-05T15:35:02.344Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/sleep/d948e35e-d50c-403f-8031-ee84ef081fd3/source_static.png",
+      "name": "source_static.png",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/sleep/d948e35e-d50c-403f-8031-ee84ef081fd3/source_static.png",
+      "updatedAt": "2026-07-05T15:35:04.031Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/sleep/d948e35e-d50c-403f-8031-ee84ef081fd3/submit_response.json",
+      "name": "submit_response.json",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/sleep/d948e35e-d50c-403f-8031-ee84ef081fd3/submit_response.json",
+      "updatedAt": "2026-07-05T15:35:02.343Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/sleep/d948e35e-d50c-403f-8031-ee84ef081fd3/transparent_backup.gif",
+      "name": "transparent_backup.gif",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/sleep/d948e35e-d50c-403f-8031-ee84ef081fd3/transparent_backup.gif",
+      "updatedAt": "2026-07-05T15:35:06.102Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/sleep/d948e35e-d50c-403f-8031-ee84ef081fd3/transparent_backup.png",
+      "name": "transparent_backup.png",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/sleep/d948e35e-d50c-403f-8031-ee84ef081fd3/transparent_backup.png",
+      "updatedAt": "2026-07-05T15:35:07.847Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/sleep/d948e35e-d50c-403f-8031-ee84ef081fd3/transparent_backup.webp",
+      "name": "transparent_backup.webp",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/sleep/d948e35e-d50c-403f-8031-ee84ef081fd3/transparent_backup.webp",
+      "updatedAt": "2026-07-05T15:35:05.043Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/walk/ab2e205c-bc4b-489a-8cf1-45dce17396ca/job_response.json",
+      "name": "job_response.json",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/walk/ab2e205c-bc4b-489a-8cf1-45dce17396ca/job_response.json",
+      "updatedAt": "2026-07-05T15:34:35.237Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/walk/ab2e205c-bc4b-489a-8cf1-45dce17396ca/source_static.png",
+      "name": "source_static.png",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/walk/ab2e205c-bc4b-489a-8cf1-45dce17396ca/source_static.png",
+      "updatedAt": "2026-07-05T15:34:37.084Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/walk/ab2e205c-bc4b-489a-8cf1-45dce17396ca/submit_response.json",
+      "name": "submit_response.json",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/walk/ab2e205c-bc4b-489a-8cf1-45dce17396ca/submit_response.json",
+      "updatedAt": "2026-07-05T15:34:35.236Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/walk/ab2e205c-bc4b-489a-8cf1-45dce17396ca/transparent_backup.gif",
+      "name": "transparent_backup.gif",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/walk/ab2e205c-bc4b-489a-8cf1-45dce17396ca/transparent_backup.gif",
+      "updatedAt": "2026-07-05T15:34:40.655Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/walk/ab2e205c-bc4b-489a-8cf1-45dce17396ca/transparent_backup.png",
+      "name": "transparent_backup.png",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/walk/ab2e205c-bc4b-489a-8cf1-45dce17396ca/transparent_backup.png",
+      "updatedAt": "2026-07-05T15:34:42.662Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim_v2/walk/ab2e205c-bc4b-489a-8cf1-45dce17396ca/transparent_backup.webp",
+      "name": "transparent_backup.webp",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim_v2/walk/ab2e205c-bc4b-489a-8cf1-45dce17396ca/transparent_backup.webp",
+      "updatedAt": "2026-07-05T15:34:38.902Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/happy/3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/job_response.json",
+      "name": "job_response.json",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/happy/3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/job_response.json",
+      "updatedAt": "2026-07-05T10:02:52.922Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/happy/3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/source_static.png",
+      "name": "source_static.png",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/happy/3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/source_static.png",
+      "updatedAt": "2026-07-05T10:02:54.575Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/happy/3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/submit_response.json",
+      "name": "submit_response.json",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/happy/3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/submit_response.json",
+      "updatedAt": "2026-07-05T10:02:52.920Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/happy/3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/transparent_backup.gif",
+      "name": "transparent_backup.gif",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/happy/3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/transparent_backup.gif",
+      "updatedAt": "2026-07-05T10:02:57.227Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/happy/3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/transparent_backup.png",
+      "name": "transparent_backup.png",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/happy/3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/transparent_backup.png",
+      "updatedAt": "2026-07-05T10:02:58.889Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/happy/3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/transparent_backup.webp",
+      "name": "transparent_backup.webp",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/happy/3888b7e2-380e-4ce3-8249-9cc8ceae5fe2/transparent_backup.webp",
+      "updatedAt": "2026-07-05T10:02:55.554Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/idle/dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/job_response.json",
+      "name": "job_response.json",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/idle/dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/job_response.json",
+      "updatedAt": "2026-07-05T10:02:21.290Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/idle/dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/source_static.png",
+      "name": "source_static.png",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/idle/dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/source_static.png",
+      "updatedAt": "2026-07-05T10:02:22.979Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/idle/dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/submit_response.json",
+      "name": "submit_response.json",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/idle/dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/submit_response.json",
+      "updatedAt": "2026-07-05T10:02:21.289Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/idle/dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/transparent_backup.gif",
+      "name": "transparent_backup.gif",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/idle/dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/transparent_backup.gif",
+      "updatedAt": "2026-07-05T10:02:26.422Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/idle/dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/transparent_backup.png",
+      "name": "transparent_backup.png",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/idle/dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/transparent_backup.png",
+      "updatedAt": "2026-07-05T10:02:28.273Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/idle/dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/transparent_backup.webp",
+      "name": "transparent_backup.webp",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/idle/dbb0b282-aa1c-47a7-a5a3-8634b3dd6ff7/transparent_backup.webp",
+      "updatedAt": "2026-07-05T10:02:24.763Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/sleep/3d59e8e0-7e7a-46d2-a173-5784a19cd65c/job_response.json",
+      "name": "job_response.json",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/sleep/3d59e8e0-7e7a-46d2-a173-5784a19cd65c/job_response.json",
+      "updatedAt": "2026-07-05T10:02:43.092Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/sleep/3d59e8e0-7e7a-46d2-a173-5784a19cd65c/source_static.png",
+      "name": "source_static.png",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/sleep/3d59e8e0-7e7a-46d2-a173-5784a19cd65c/source_static.png",
+      "updatedAt": "2026-07-05T10:02:44.829Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/sleep/3d59e8e0-7e7a-46d2-a173-5784a19cd65c/submit_response.json",
+      "name": "submit_response.json",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/sleep/3d59e8e0-7e7a-46d2-a173-5784a19cd65c/submit_response.json",
+      "updatedAt": "2026-07-05T10:02:43.091Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/sleep/3d59e8e0-7e7a-46d2-a173-5784a19cd65c/transparent_backup.gif",
+      "name": "transparent_backup.gif",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/sleep/3d59e8e0-7e7a-46d2-a173-5784a19cd65c/transparent_backup.gif",
+      "updatedAt": "2026-07-05T10:02:47.566Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/sleep/3d59e8e0-7e7a-46d2-a173-5784a19cd65c/transparent_backup.png",
+      "name": "transparent_backup.png",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/sleep/3d59e8e0-7e7a-46d2-a173-5784a19cd65c/transparent_backup.png",
+      "updatedAt": "2026-07-05T10:02:49.190Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/sleep/3d59e8e0-7e7a-46d2-a173-5784a19cd65c/transparent_backup.webp",
+      "name": "transparent_backup.webp",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/sleep/3d59e8e0-7e7a-46d2-a173-5784a19cd65c/transparent_backup.webp",
+      "updatedAt": "2026-07-05T10:02:46.439Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/walk/67570b77-cd6e-4854-b501-0474fe284acd/job_response.json",
+      "name": "job_response.json",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/walk/67570b77-cd6e-4854-b501-0474fe284acd/job_response.json",
+      "updatedAt": "2026-07-05T10:02:31.911Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/walk/67570b77-cd6e-4854-b501-0474fe284acd/source_static.png",
+      "name": "source_static.png",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/walk/67570b77-cd6e-4854-b501-0474fe284acd/source_static.png",
+      "updatedAt": "2026-07-05T10:02:34.187Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/walk/67570b77-cd6e-4854-b501-0474fe284acd/submit_response.json",
+      "name": "submit_response.json",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/walk/67570b77-cd6e-4854-b501-0474fe284acd/submit_response.json",
+      "updatedAt": "2026-07-05T10:02:31.909Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/walk/67570b77-cd6e-4854-b501-0474fe284acd/transparent_backup.gif",
+      "name": "transparent_backup.gif",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/walk/67570b77-cd6e-4854-b501-0474fe284acd/transparent_backup.gif",
+      "updatedAt": "2026-07-05T10:02:37.646Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/walk/67570b77-cd6e-4854-b501-0474fe284acd/transparent_backup.png",
+      "name": "transparent_backup.png",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/walk/67570b77-cd6e-4854-b501-0474fe284acd/transparent_backup.png",
+      "updatedAt": "2026-07-05T10:02:38.953Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/anim/walk/67570b77-cd6e-4854-b501-0474fe284acd/transparent_backup.webp",
+      "name": "transparent_backup.webp",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/anim/walk/67570b77-cd6e-4854-b501-0474fe284acd/transparent_backup.webp",
+      "updatedAt": "2026-07-05T10:02:35.872Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/photo001_candidates/job_response.json",
+      "name": "job_response.json",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/photo001_candidates/job_response.json",
+      "updatedAt": "2026-07-05T09:25:18.327Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/photo001_candidates/sprite_00.png",
+      "name": "sprite_00.png",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/photo001_candidates/sprite_00.png",
+      "updatedAt": "2026-07-05T09:25:20.902Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/photo001_candidates/sprite_01.png",
+      "name": "sprite_01.png",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/photo001_candidates/sprite_01.png",
+      "updatedAt": "2026-07-05T09:25:22.837Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/photo001_candidates/sprite_pack_preview.png",
+      "name": "sprite_pack_preview.png",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/photo001_candidates/sprite_pack_preview.png",
+      "updatedAt": "2026-07-05T09:25:24.904Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/photo001_candidates/submit_response.json",
+      "name": "submit_response.json",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/photo001_candidates/submit_response.json",
+      "updatedAt": "2026-07-05T09:25:18.326Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/right_top_optimize/selected-right-top-small-source/job_response.json",
+      "name": "job_response.json",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/right_top_optimize/selected-right-top-small-source/job_response.json",
+      "updatedAt": "2026-07-05T09:57:30.547Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/right_top_optimize/selected-right-top-small-source/result.png",
+      "name": "result.png",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/right_top_optimize/selected-right-top-small-source/result.png",
+      "updatedAt": "2026-07-05T09:57:32.911Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/references/meowa/photo001/right_top_optimize/selected-right-top-small-source/submit_response.json",
+      "name": "submit_response.json",
+      "category": "Meowa参考输出",
+      "status": "占位资源",
+      "path": "assets/references/meowa/photo001/right_top_optimize/selected-right-top-small-source/submit_response.json",
+      "updatedAt": "2026-07-05T09:57:30.544Z",
+      "notes": ""
+    },
+    {
+      "id": "planned/ui/chat-box-frame.png",
+      "name": "Double-click chat box frame",
+      "category": "UI套件",
+      "status": "未制作",
+      "path": "planned/ui/chat-box-frame.png",
+      "updatedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "planned/ui/chat-input.png",
+      "name": "Chat input area",
+      "category": "UI套件",
+      "status": "未制作",
+      "path": "planned/ui/chat-input.png",
+      "updatedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "planned/ui/health-icon-or-bar.png",
+      "name": "Health icon/bar",
+      "category": "UI套件",
+      "status": "未制作",
+      "path": "planned/ui/health-icon-or-bar.png",
+      "updatedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "planned/ui/hover-status-frame.png",
+      "name": "Hover status frame",
+      "category": "UI套件",
+      "status": "未制作",
+      "path": "planned/ui/hover-status-frame.png",
+      "updatedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "planned/ui/hunger-icon-or-bar.png",
+      "name": "Hunger icon/bar",
+      "category": "UI套件",
+      "status": "未制作",
+      "path": "planned/ui/hunger-icon-or-bar.png",
+      "updatedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "planned/ui/money-icon-or-counter.png",
+      "name": "Money icon/counter",
+      "category": "UI套件",
+      "status": "未制作",
+      "path": "planned/ui/money-icon-or-counter.png",
+      "updatedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "planned/ui/mood-icon-or-bar.png",
+      "name": "Mood icon/bar",
+      "category": "UI套件",
+      "status": "未制作",
+      "path": "planned/ui/mood-icon-or-bar.png",
+      "updatedAt": null,
+      "notes": ""
+    }
+  ]
+}

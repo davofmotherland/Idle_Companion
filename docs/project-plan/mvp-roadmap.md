@@ -1,139 +1,148 @@
-# MVP Roadmap
+﻿# MVP Roadmap
 
 ## Product Goal
 
-Build Project Seal, a Windows-first offline Steam desktop pet centered on a cute white baby seal. The first release should be bilingual, priced around USD 1, and prove the core emotional loop before expanding into deeper AI or advanced customization.
+Build Project Seal as a personal-use Windows desktop pet. The active direction is no longer Steam sale. The product should behave like a modern pixel QQ Pet: quiet by default, status visible on hover, core care values, and optional personal conversation through a double-click chat box.
 
 ## Core Loop
 
-1. Pet idles on the desktop.
-2. Player interacts with pet or scene objects.
-3. Pet reacts with animation, expression, sound, and short text.
-4. Mood, energy, hunger, and affection change.
-5. New small behaviors or scene props unlock over time.
-6. Player can customize appearance and share screenshots or clips.
+1. Pet idles on the desktop with no persistent UI.
+2. Mouse hover shows health, mood, hunger, and money.
+3. User drags, pokes, feeds, plays, rests, or opens chat.
+4. Pet reacts with animation, expression, and compact pixel UI feedback.
+5. Health, mood, hunger, and money change.
+6. Double-click opens conversation with fallback/persona replies.
+7. Pet returns to quiet desktop presence.
 
-## Six-Week MVP Plan
+## Updated MVP Plan
 
-| Week | Goal | Deliverables |
+| Milestone | Goal | Deliverables |
 | --- | --- | --- |
-| 1 | Desktop foundation | Transparent window prototype, draggable seal, tray exit/settings, renderer proof, first recording |
-| 2 | Pet runtime | State machine, animation player, idle/walk/sleep/poke/drag reactions, mood/energy/affection values |
-| 3 | Character packs | Character directory format, animation fallback, default seal, 1-2 replacement skins |
-| 4 | Photo commission pipeline | Owner-provided photo, Meowa-assisted character asset production, character pack implementation |
-| 5 | Character animation MVP | Meowa pixel cleanup, idle/walk/sleep/happy keyframes, state-based animation playback, screenshot QA |
-| 6 | AI + scene slice | Local model bridge, persona prompt, basic chat bubble, no-network fallback, bed/toy/food props |
+| M0 | Product lock | Original lock complete; current target refreshed to personal use |
+| M1 | Desktop foundation | Transparent window, draggable pet, tray exit/settings, renderer proof |
+| M2 | Pet runtime | State machine, animation player, drag/poke, cross-monitor behavior, save |
+| M3 | Character packs | Manifest-driven character directory format and fallback behavior |
+| M4 | Photo commission pipeline | Owner-provided photo to art-directed Meowa character pack workflow |
+| M5 | Character animation MVP | Meowa cleanup, idle/walk/sleep/happy frames, state playback, screenshot QA |
+| M6 | Personal care + hover UI | Health/mood/hunger/money, hover-only status UI, local value persistence |
+| M7 | WeChat persona chat slice | Double-click chat box, WeChat import plan/parser, local style profile prototype |
+| M8 | Personal build polish | Settings, data hygiene, local backup/export, long-session stability |
 
 ## Acceptance Criteria
 
-The MVP is acceptable when:
+The personal-use MVP is acceptable when:
 
 - The pet can run for two hours without crashing.
 - The app can be closed clearly from tray/menu.
 - The pet does not block normal desktop use by default.
+- Only the pet is visible during normal idle state.
+- Hover shows health, mood, hunger, and money clearly.
+- Double-click opens a compact conversation box.
 - Idle CPU/GPU usage is low enough for everyday background use.
-- The default pet clearly reads as a white baby seal at desktop size.
 - At least four visible character animation state groups are implemented: idle, walk, sleep, and happy/poke.
-- Owner-provided photos can become a usable commissioned pixel character pack.
-- The local AI feature works offline or is cleanly disabled when no model is installed.
-- A Windows build can be launched from a Steam-like install folder without developer tooling.
+- Owner-provided photos can become usable commissioned pixel character packs.
+- WeChat chat records are processed locally or represented through safe local fixtures only.
+- No raw chat logs, private photos, or API keys are committed.
 
-## First Release Feature Set
+## First Personal Build Feature Set
 
 Keep:
 
-- Default white baby seal pixel pet.
-- Basic appearance replacement.
-- Small desktop scene.
-- Local chat or fallback character replies.
-- Settings and save.
-- Steam offline build.
+- Pixel desktop pet.
+- Current animated character pack.
+- Default white seal direction as mascot/fallback.
+- Health, mood, hunger, money values.
+- Hover-only status UI.
+- Double-click chat shell.
+- Local save/settings.
+- Local/fallback persona replies.
+- Art-directed Meowa UI kit after pixel scale lock.
 
 Cut if timeline slips:
 
-- Additional dedicated reaction animation sheets beyond MVP states.
-- Multi-character collection.
-- Steam Workshop.
-- Complex item economy.
-- Achievements.
-- Mac/Linux.
+- Dedicated annoyed/dragged art.
+- Full WeChat style distillation.
+- Complex earning economy.
+- Multiple pets.
+- Voice features.
+- Public release packaging.
 
 ## State Machine
 
-Use a finite state machine for the first version. Do not start with a behavior tree unless the interaction system becomes too complex.
+Use a finite state machine for the first version.
 
 | State | Trigger | Notes |
 | --- | --- | --- |
 | Idle | Default fallback | Can randomly branch into walk, blink, sit, or sleep |
 | Walk | Idle timer or scene target | Low priority, interruptible |
-| Sleep | Low energy or long inactivity | Click can wake the pet |
+| Sleep | Low activity or rest action | Click can wake the pet |
 | Dragged | User drags pet | Highest priority |
 | Happy | Positive interaction | Short duration reaction |
 | Annoyed | Repeated poke or bad timing | Keep cute, not hostile |
-| Eating | Food prop used | Changes mood/energy/hunger |
-| Playing | Toy prop used | Changes mood/affection/energy |
-| Talking | User asks question | Locks animation until reply or timeout |
+| Hungry | Hunger low | Show hover warning / request food |
+| LowHealth | Health low | Planned warning state |
+| Eating | Food prop used | Changes health/mood/hunger/money |
+| Playing | Toy prop used | Changes mood/hunger/money |
+| Chatting | User double-clicks pet | Opens conversation box and pauses other low-priority behavior |
 
 Priority order:
 
 1. Dragged.
-2. Talking.
+2. Chatting.
 3. Eating or Playing.
-4. Happy or Annoyed.
-5. Sleep.
-6. Walk.
-7. Idle.
+4. LowHealth or Hungry.
+5. Happy or Annoyed.
+6. Sleep.
+7. Walk.
+8. Idle.
 
 ## Data Schemas
-
-Character pack:
-
-```json
-{
-  "id": "default_seal",
-  "name": "Seal",
-  "scale": 3,
-  "theme": "white_baby_seal",
-  "animations": {
-    "idle": "default_seal_idle.png",
-    "walk": "default_seal_walk.png",
-    "sleep": "default_seal_sleep.png",
-    "happy": "default_seal_happy.png",
-    "dragged": "default_seal_dragged.png"
-  },
-  "personality": {
-    "tone": "cute_bilingual",
-    "catchphrases": ["arf!", "hello!"]
-  }
-}
-```
 
 Pet save:
 
 ```json
 {
-  "activeCharacterId": "default_seal",
+  "activeCharacterId": "photo_001_travel_girl",
+  "health": 80,
   "mood": 70,
-  "energy": 80,
-  "affection": 12,
-  "hunger": 30,
-  "lastPlayedAt": "2026-06-17T10:00:00+08:00",
-  "unlockedCharacters": ["default_seal"],
-  "customCharacters": []
+  "hunger": 40,
+  "money": 100,
+  "position": { "x": 1200, "y": 700 },
+  "lastPlayedAt": "2026-07-08T10:00:00+08:00",
+  "activePersonaProfileId": null
+}
+```
+
+Persona style profile:
+
+```json
+{
+  "id": "wechat_persona_001",
+  "sourceType": "wechat_export",
+  "displayName": "Local Persona",
+  "styleSummary": {
+    "tone": ["concise", "warm"],
+    "replyLength": "short",
+    "emojiHabit": "light",
+    "punctuation": "casual"
+  },
+  "safety": {
+    "rawChatCommitted": false,
+    "localOnly": true
+  }
 }
 ```
 
 ## Current Milestone Status
 
-As of the M5 documentation pass, the project status is:
-
 | Milestone | Status | Notes |
 | --- | --- | --- |
-| M0 Product Lock | Complete | Product name, platform, pricing, language, and non-goals documented |
+| M0 Product Lock | Complete / superseded | Original Steam/USD assumptions replaced by personal-use direction |
 | M1 Desktop Shell | Complete | Transparent draggable Electron shell established |
 | M2 Pet Runtime | Complete | State machine, drag/poke, cross-screen safety, and runtime save behavior established |
 | M3 Character Packs | Complete | Manifest-driven character packs and fallback behavior established |
-| M4 Photo Commission Pipeline | Complete | Product direction changed from live local generation to owner-directed commissioned character packs |
-| M5 Character Animation MVP | Complete pending owner acceptance | Right-top selected character has Meowa-assisted idle/walk/sleep/happy animation frames and screenshot QA |
-| M6 AI + Scene Slice | Not started | Next recommended milestone |
-| M7 Steam Candidate | Not started | Packaging/store candidate follows M6 |
+| M4 Photo Commission Pipeline | Complete | Owner-directed commissioned character packs established |
+| M5 Character Animation MVP | Complete pending owner acceptance | Meowa-assisted animation frames and screenshot QA |
+| M6 Personal Care + Hover UI | Not started | Next recommended milestone |
+| M7 WeChat Persona Chat Slice | Not started | Follows M6 |
+| M8 Personal Build Polish | Not started | Local stability and data hygiene |
