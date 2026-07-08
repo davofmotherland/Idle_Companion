@@ -10,53 +10,45 @@ const outputPath = path.join(dashboardDir, 'index.html');
 const STATUS = ['未制作', '占位资源', '正式资源'];
 
 const docGroups = [
-  {
-    id: 'overview',
-    label: '总览',
-    files: ['product-inputs.md', 'mvp-roadmap.md', 'project-rules.md']
-  },
-  {
-    id: 'gdd',
-    label: 'GDD',
-    files: ['project-seal-gdd.md']
-  },
-  {
-    id: 'prd',
-    label: 'PRD',
-    files: ['project-seal-prd.md']
-  },
+  { id: 'gdd', label: 'GDD', files: ['project-seal-gdd.md'] },
+  { id: 'prd', label: 'PRD', files: ['project-seal-prd.md'] },
   {
     id: 'milestones',
     label: 'Milestones',
-    files: [
-      'm0-product-lock.md',
-      'm1-desktop-shell-acceptance.md',
-      'm2-pet-runtime-acceptance.md',
-      'm3-character-pack-acceptance.md',
-      'm4-photo-to-pixel-acceptance.md',
-      'm5-character-animation-acceptance.md',
-      'mvp-milestones-and-agent-roles.md',
-      'milestone-qa-checklists.md'
-    ]
+    files: ['m0-product-lock.md', 'm1-desktop-shell-acceptance.md', 'm2-pet-runtime-acceptance.md', 'm3-character-pack-acceptance.md', 'm4-photo-to-pixel-acceptance.md', 'm5-character-animation-acceptance.md', 'mvp-milestones-and-agent-roles.md', 'milestone-qa-checklists.md']
   },
-  {
-    id: 'qa',
-    label: 'QA',
-    files: ['qa-tester-process.md', 'm2-qa-report.md', 'm3-qa-report.md', 'm4-qa-report.md', 'm5-qa-report.md']
-  },
-  {
-    id: 'tech',
-    label: '技术/流程',
-    files: ['technical-direction.md', 'team-and-agents.md', 'photo-commission-character-pipeline.md', 'art-and-ai-pipeline.md']
-  }
+  { id: 'qa', label: 'QA', files: ['qa-tester-process.md', 'm2-qa-report.md', 'm3-qa-report.md', 'm4-qa-report.md', 'm5-qa-report.md'] },
+  { id: 'tech', label: '技术/流程', files: ['product-inputs.md', 'mvp-roadmap.md', 'project-rules.md', 'technical-direction.md', 'team-and-agents.md', 'photo-commission-character-pipeline.md', 'art-and-ai-pipeline.md'] }
+];
+
+const pmActions = [
+  { area: 'M6', item: '锁定桌宠和 UI 像素比例', owner: '美术总监 + 主负责人', status: 'Next', gate: '比例表写入 GDD/PRD，截图验证 UI 不压角色' },
+  { area: 'M6', item: '实现 health / mood / hunger / money 四数值', owner: 'Planning + Client', status: 'Not started', gate: 'hover 面板和存档都能读写四个值' },
+  { area: 'M6', item: 'hover 才显示状态 UI', owner: 'Client', status: 'Not started', gate: '默认只显示桌宠；鼠标移入显示状态，移出隐藏' },
+  { area: 'M6', item: '由美术总监输出 Meowa UI 套件提示词', owner: 'Art Director', status: 'Not started', gate: '先看 UI kit 预览，再实装，必须截图 QA' },
+  { area: 'M7', item: '双击打开对话框', owner: 'Client + AI', status: 'Planned', gate: '对话框不影响拖拽/动画，可关闭，可截图 QA' },
+  { area: 'M7', item: '微信聊天记录导入方案和隐私边界', owner: 'AI + PM', status: 'Planned', gate: 'raw chat ignored/local-only，明确测试夹具策略' }
+];
+
+const decisionLog = [
+  ['2026-07-08', '取消 Steam 发售目标，改为个人使用。'],
+  ['2026-07-08', '产品对标 QQ 宠物式系统，核心值改为健康、情绪、饥饿、金钱。'],
+  ['2026-07-08', '默认只显示桌宠，hover 才显示状态 UI。'],
+  ['2026-07-08', '双击桌宠打开对话框，后续支持微信聊天记录本地蒸馏语气。'],
+  ['2026-07-08', '所有美术未被确认最终上线品质前，都按占位资源管理。'],
+  ['2026-07-08', 'HTML dashboard 成为项目管理核心入口，文档/美术变化后必须 regenerate。']
+];
+
+const riskRegister = [
+  { risk: '微信聊天记录涉及高度隐私', impact: 'High', mitigation: 'raw export 放 ignored 本地目录；仅提交脱敏 fixture；外部模型调用必须单独确认。' },
+  { risk: '像素 UI 与桌宠比例不统一', impact: 'High', mitigation: '先锁定 pet/UI grid，再让美术总监出 Meowa prompt。' },
+  { risk: '美术资产质量未达上线标准', impact: 'Medium', mitigation: '全部默认占位资源；正式资源只能由 owner 确认。' },
+  { risk: 'dashboard 不是实时应用', impact: 'Medium', mitigation: '项目规则要求变更后运行 npm.cmd run dashboard 并提交 push。' },
+  { risk: '本地语气模拟不像或越界', impact: 'Medium', mitigation: '先做风格摘要和安全边界，避免声明真实身份复刻。' }
 ];
 
 function read(file) {
   return fs.existsSync(file) ? fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '') : '';
-}
-
-function safeJsonForScript(value) {
-  return JSON.stringify(value).replace(/</g, '\\u003c');
 }
 
 function escapeHtml(value) {
@@ -65,6 +57,10 @@ function escapeHtml(value) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+}
+
+function safeJsonForScript(value) {
+  return JSON.stringify(value).replace(/</g, '\\u003c');
 }
 
 function inlineMarkdown(text) {
@@ -152,9 +148,7 @@ function markdownToHtml(markdown) {
     i += 1;
   }
   closeList();
-  if (inCode) {
-    out.push(`<pre><code>${escapeHtml(code.join('\n'))}</code></pre>`);
-  }
+  if (inCode) out.push(`<pre><code>${escapeHtml(code.join('\n'))}</code></pre>`);
   return out.join('\n');
 }
 
@@ -184,26 +178,23 @@ function collectFiles(dir, exts) {
   const result = [];
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) {
-      result.push(...collectFiles(full, exts));
-    } else if (exts.includes(path.extname(entry.name).toLowerCase())) {
-      result.push(full);
-    }
+    if (entry.isDirectory()) result.push(...collectFiles(full, exts));
+    else if (exts.includes(path.extname(entry.name).toLowerCase())) result.push(full);
   }
   return result;
 }
 
 function classifyAsset(relative) {
-  if (relative.includes('/animations/')) return '角色动作帧';
-  if (relative.includes('/assets/characters/') || relative.startsWith('assets/characters/')) return '角色资产';
-  if (relative.includes('/assets/references/meowa/') || relative.startsWith('assets/references/meowa/')) return 'Meowa参考输出';
-  if (relative.includes('/assets/references/')) return '参考资产';
+  if (relative.includes('/animation-previews/')) return '角色动作GIF';
+  if (relative.includes('/animations/')) return '角色动作源帧';
+  if (relative.startsWith('assets/characters/')) return '角色资产';
+  if (relative.startsWith('assets/references/meowa/')) return 'Meowa参考输出';
+  if (relative.startsWith('assets/references/')) return '参考资产';
   return '其他美术资产';
 }
 
 function defaultStatusFor(relative) {
-  if (relative.startsWith('planned/')) return '未制作';
-  return '占位资源';
+  return relative.startsWith('planned/') ? '未制作' : '占位资源';
 }
 
 function loadStatusMap() {
@@ -218,10 +209,15 @@ function loadStatusMap() {
 
 function buildArtAssets() {
   const previous = loadStatusMap();
-  const files = [
-    ...collectFiles(path.join(root, 'assets', 'characters'), ['.png', '.json', '.gif', '.webp']),
-    ...collectFiles(path.join(root, 'assets', 'references', 'meowa'), ['.png', '.json', '.gif', '.webp'])
+  const rawFiles = [
+    ...collectFiles(path.join(root, 'assets', 'characters'), ['.png', '.jpg', '.jpeg', '.json', '.gif', '.webp']),
+    ...collectFiles(path.join(root, 'assets', 'references', 'meowa'), ['.png', '.jpg', '.jpeg', '.json', '.gif', '.webp'])
   ];
+  const files = rawFiles.filter((full) => {
+    const relative = path.relative(root, full).replace(/\\/g, '/');
+    return !(relative.includes('/animations/') && path.extname(relative).toLowerCase() === '.png');
+  });
+
   const assets = files.map((full) => {
     const relative = path.relative(root, full).replace(/\\/g, '/');
     const prior = previous[relative] || {};
@@ -247,8 +243,8 @@ function buildArtAssets() {
     ['planned/props/food.png', '场景/道具', 'Food prop'],
     ['planned/props/toy.png', '场景/道具', 'Toy prop'],
     ['planned/props/bed.png', '场景/道具', 'Bed prop'],
-    ['planned/states/hungry.png', '角色动作帧', 'Hungry state art'],
-    ['planned/states/low-health.png', '角色动作帧', 'Low health/sick state art']
+    ['planned/states/hungry.png', '角色动作GIF', 'Hungry state art'],
+    ['planned/states/low-health.png', '角色动作GIF', 'Low health/sick state art']
   ].map(([id, category, name]) => {
     const prior = previous[id] || {};
     return {
@@ -265,7 +261,7 @@ function buildArtAssets() {
   const all = [...assets, ...planned].sort((a, b) => a.category.localeCompare(b.category, 'zh-Hans-CN') || a.path.localeCompare(b.path));
   fs.writeFileSync(statusPath, JSON.stringify({
     version: 1,
-    rule: 'All art is placeholder until owner confirms final shipping quality.',
+    rule: 'All existing art remains placeholder until owner confirms final shipping quality. Runtime animation frames are represented by GIF previews instead of individual PNG rows.',
     statuses: STATUS,
     generatedAt: new Date().toISOString(),
     assets: all
@@ -298,7 +294,10 @@ const data = {
   generatedAt: new Date().toISOString(),
   docs: buildDocs(),
   artAssets: buildArtAssets(),
-  milestones: parseMilestoneStatus()
+  milestones: parseMilestoneStatus(),
+  pmActions,
+  decisionLog,
+  riskRegister
 };
 
 const html = `<!doctype html>
@@ -308,16 +307,16 @@ const html = `<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Project Seal Dashboard</title>
 <style>
-:root { color-scheme: light; --ink:#1d2430; --muted:#687385; --line:#d9e0ea; --bg:#f7f9fc; --panel:#ffffff; --accent:#2563eb; --ok:#12805c; --warn:#a15c00; --todo:#7c3aed; }
+:root { color-scheme: light; --ink:#1d2430; --muted:#687385; --line:#d9e0ea; --bg:#f7f9fc; --panel:#ffffff; --accent:#2563eb; --ok:#12805c; --warn:#a15c00; --todo:#7c3aed; --bad:#b42318; }
 * { box-sizing: border-box; }
-body { margin:0; font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif; color:var(--ink); background:var(--bg); }
+body { margin:0; font-family:"Segoe UI", "Microsoft YaHei", Arial, sans-serif; color:var(--ink); background:var(--bg); }
 header { padding:18px 22px 12px; background:var(--panel); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:5; }
 h1 { font-size:22px; margin:0 0 6px; letter-spacing:0; }
 .meta { color:var(--muted); font-size:13px; display:flex; gap:14px; flex-wrap:wrap; }
 .tabs { display:flex; gap:6px; padding:10px 22px; background:var(--panel); border-bottom:1px solid var(--line); position:sticky; top:74px; z-index:4; overflow-x:auto; }
 .tab { border:1px solid var(--line); background:#fff; color:var(--ink); padding:8px 12px; border-radius:6px; cursor:pointer; white-space:nowrap; font-size:14px; }
 .tab.active { background:var(--accent); color:white; border-color:var(--accent); }
-main { padding:18px 22px 40px; max-width:1320px; margin:0 auto; }
+main { padding:18px 22px 40px; max-width:1360px; margin:0 auto; }
 .view { display:none; }
 .view.active { display:block; }
 .card { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:16px; margin-bottom:14px; }
@@ -333,9 +332,10 @@ th, td { border:1px solid var(--line); padding:8px 9px; text-align:left; vertica
 th { background:#f0f4fa; }
 .doc-head { display:flex; justify-content:space-between; gap:12px; align-items:center; border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:12px; }
 .doc-path { font-size:12px; color:var(--muted); }
-.grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:12px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; }
 .metric { border:1px solid var(--line); border-radius:8px; padding:12px; background:#fff; }
 .metric .num { font-size:28px; font-weight:700; }
+.metric .label { color:var(--muted); }
 .filterbar { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
 input, select, button { font:inherit; }
 input, select { border:1px solid var(--line); border-radius:6px; padding:7px 8px; background:#fff; }
@@ -344,14 +344,23 @@ button { border:1px solid var(--line); border-radius:6px; padding:7px 10px; back
 .status.todo { color:var(--todo); }
 .status.placeholder { color:var(--warn); }
 .status.final { color:var(--ok); }
+.badge { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:2px 8px; font-size:12px; background:#fff; }
+.badge.high { color:var(--bad); border-color:#f3b7b0; }
+.badge.medium { color:var(--warn); border-color:#f3d19b; }
 .asset-path { color:var(--muted); font-size:12px; word-break:break-all; }
+.asset-link { color:#1d4ed8; text-decoration:none; }
+.asset-link:hover { text-decoration:underline; }
+.asset-cell { display:flex; align-items:center; gap:10px; min-width:230px; }
+.asset-thumb { width:52px; height:52px; image-rendering:pixelated; object-fit:contain; border:1px solid var(--line); border-radius:6px; background:#fff; flex:0 0 auto; }
+.asset-thumb.missing { display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:11px; background:#f8fafc; }
+.asset-name-text { display:flex; flex-direction:column; gap:4px; }
 .note { color:var(--muted); font-size:13px; }
 </style>
 </head>
 <body>
 <header>
   <h1>Project Seal 项目管理面板</h1>
-  <div class="meta"><span>生成时间: ${escapeHtml(data.generatedAt)}</span><span>管理入口: docs/project-dashboard/index.html</span><span>美术规则: 未确认最终上线品质前均为占位资源</span></div>
+  <div class="meta"><span>生成时间: ${escapeHtml(data.generatedAt)}</span><span>核心入口: docs/project-dashboard/index.html</span><span>当前方向: 个人使用 / QQ 宠物式桌宠</span></div>
 </header>
 <nav class="tabs" id="tabs"></nav>
 <main id="views"></main>
@@ -365,6 +374,10 @@ let overrides = JSON.parse(localStorage.getItem(storageKey) || '{}');
 function saveOverrides() { localStorage.setItem(storageKey, JSON.stringify(overrides)); }
 function currentStatus(asset) { return overrides[asset.id]?.status || asset.status; }
 function currentNotes(asset) { return overrides[asset.id]?.notes ?? asset.notes ?? ''; }
+function escapeAttr(value) { return String(value).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+function isPreviewableAsset(asset) { return /\.(png|jpg|jpeg|gif|webp)$/i.test(asset.path) && !asset.path.startsWith('planned/'); }
+function isRealFileAsset(asset) { return !asset.path.startsWith('planned/'); }
+function assetHref(asset) { return encodeURI('../../' + asset.path).replace(/#/g, '%23'); }
 function setActive(id) {
   document.querySelectorAll('.tab').forEach((el) => el.classList.toggle('active', el.dataset.id === id));
   document.querySelectorAll('.view').forEach((el) => el.classList.toggle('active', el.id === 'view-' + id));
@@ -377,15 +390,22 @@ function renderTabs(tabs) {
 function renderDocs(group) {
   return '<section class="view" id="view-' + group.id + '">' + group.docs.map((doc) => '<article class="card"><div class="doc-head"><strong>' + doc.file + '</strong><span class="doc-path">更新: ' + (doc.updatedAt || 'missing') + '</span></div>' + doc.html + '</article>').join('') + '</section>';
 }
-function renderOverview() {
+function renderDashboard() {
   const counts = DATA.artAssets.reduce((acc, asset) => { const s = currentStatus(asset); acc[s] = (acc[s] || 0) + 1; return acc; }, {});
+  const current = DATA.milestones.find((m) => /Not started/.test(m.status)) || DATA.milestones[DATA.milestones.length - 1];
   const milestoneRows = DATA.milestones.map((m) => '<tr><td>' + m.milestone + '</td><td>' + m.status + '</td><td>' + m.notes + '</td></tr>').join('');
-  return '<section class="view" id="view-dashboard"><div class="grid"><div class="metric"><div class="num">' + DATA.milestones.length + '</div><div>Milestones</div></div><div class="metric"><div class="num">' + DATA.artAssets.length + '</div><div>Art assets tracked</div></div><div class="metric"><div class="num">' + (counts['占位资源'] || 0) + '</div><div>占位资源</div></div><div class="metric"><div class="num">' + (counts['未制作'] || 0) + '</div><div>未制作</div></div></div><article class="card"><h2>当前里程碑状态</h2><div class="table-wrap"><table><thead><tr><th>Milestone</th><th>Status</th><th>Notes</th></tr></thead><tbody>' + milestoneRows + '</tbody></table></div></article><article class="card"><h2>管理规则</h2><ul><li>后续以本 HTML 面板为核心入口追踪项目。</li><li>页面由 <code>npm run dashboard</code> 从 docs 和 assets 自动生成。</li><li>美术状态下拉会保存在当前浏览器 localStorage；需要入库时导出 JSON 后交给我同步。</li><li>所有未确认最终上线品质的已存在美术资产默认是 <strong>占位资源</strong>。</li></ul></article></section>';
+  return '<section class="view" id="view-dashboard"><div class="grid"><div class="metric"><div class="num">' + DATA.milestones.length + '</div><div class="label">Milestones</div></div><div class="metric"><div class="num">' + DATA.artAssets.length + '</div><div class="label">Art assets tracked</div></div><div class="metric"><div class="num">' + (counts['占位资源'] || 0) + '</div><div class="label">占位资源</div></div><div class="metric"><div class="num">' + (counts['未制作'] || 0) + '</div><div class="label">未制作</div></div></div><article class="card"><h2>PM 摘要</h2><div class="table-wrap"><table><tbody><tr><th>当前产品方向</th><td>个人使用 Windows 桌宠，对标 QQ 宠物系统，不再以 Steam 发售为目标。</td></tr><tr><th>当前关键状态</th><td>M5 已完成，M6 Personal Care + Hover UI 是下一阶段。</td></tr><tr><th>下一步焦点</th><td>' + current.milestone + '：' + current.notes + '</td></tr><tr><th>交付规则</th><td>HTML dashboard 是项目管理核心入口；文档/资产变化后必须重新生成、截图 QA、commit + push。</td></tr></tbody></table></div></article><article class="card"><h2>当前里程碑状态</h2><div class="table-wrap"><table><thead><tr><th>Milestone</th><th>Status</th><th>Notes</th></tr></thead><tbody>' + milestoneRows + '</tbody></table></div></article></section>';
+}
+function renderPmDesk() {
+  const actions = DATA.pmActions.map((a) => '<tr><td>' + a.area + '</td><td>' + a.item + '</td><td>' + a.owner + '</td><td><span class="badge">' + a.status + '</span></td><td>' + a.gate + '</td></tr>').join('');
+  const decisions = DATA.decisionLog.map((d) => '<tr><td>' + d[0] + '</td><td>' + d[1] + '</td></tr>').join('');
+  const risks = DATA.riskRegister.map((r) => '<tr><td>' + r.risk + '</td><td><span class="badge ' + r.impact.toLowerCase() + '">' + r.impact + '</span></td><td>' + r.mitigation + '</td></tr>').join('');
+  return '<section class="view" id="view-pm"><article class="card"><h2>PM 工作台：下一步行动</h2><div class="table-wrap"><table><thead><tr><th>阶段</th><th>事项</th><th>负责人</th><th>状态</th><th>验收门槛</th></tr></thead><tbody>' + actions + '</tbody></table></div></article><article class="card"><h2>决策记录</h2><div class="table-wrap"><table><thead><tr><th>日期</th><th>决策</th></tr></thead><tbody>' + decisions + '</tbody></table></div></article><article class="card"><h2>风险登记</h2><div class="table-wrap"><table><thead><tr><th>风险</th><th>影响</th><th>缓解方案</th></tr></thead><tbody>' + risks + '</tbody></table></div></article></section>';
 }
 function renderAssets() {
   const categories = [...new Set(DATA.artAssets.map((a) => a.category))].sort((a, b) => a.localeCompare(b, 'zh-Hans-CN'));
   const options = ['全部', ...categories].map((c) => '<option value="' + c + '">' + c + '</option>').join('');
-  return '<section class="view" id="view-art-assets"><article class="card"><h2>美术资产台账</h2><p class="note">状态选项固定为：未制作、占位资源、正式资源。你未确认最终上线品质前，当前所有已存在美术资产都按占位资源管理。</p><div class="filterbar"><input id="asset-search" placeholder="搜索资产/路径"><select id="asset-category">' + options + '</select><select id="asset-status"><option>全部状态</option>' + STATUSES.map((s) => '<option>' + s + '</option>').join('') + '</select><button id="export-status">导出状态 JSON</button><button id="reset-status">重置本地选择</button></div><div class="table-wrap"><table><thead><tr><th>分类</th><th>资产</th><th>状态</th><th>路径</th><th>备注</th><th>更新时间</th></tr></thead><tbody id="asset-rows"></tbody></table></div></article></section>';
+  return '<section class="view" id="view-art-assets"><article class="card"><h2>美术资产台账</h2><p class="note">动作帧在本表中以 GIF 预览资产展示，不再把每一帧 PNG 散列出来。资产名和路径可点击打开源文件；图片类资产直接显示缩略图。状态选项固定为：未制作、占位资源、正式资源。</p><div class="filterbar"><input id="asset-search" placeholder="搜索资产/路径"><select id="asset-category">' + options + '</select><select id="asset-status"><option>全部状态</option>' + STATUSES.map((s) => '<option>' + s + '</option>').join('') + '</select><button id="export-status">导出状态 JSON</button><button id="reset-status">重置本地选择</button></div><div class="table-wrap"><table><thead><tr><th>分类</th><th>资产 / 预览</th><th>状态</th><th>路径</th><th>备注</th><th>更新时间</th></tr></thead><tbody id="asset-rows"></tbody></table></div></article></section>';
 }
 function bindAssets() {
   const rows = document.getElementById('asset-rows');
@@ -404,7 +424,17 @@ function bindAssets() {
     rows.innerHTML = filtered.map((asset) => {
       const s = currentStatus(asset);
       const select = '<select data-id="' + asset.id + '" class="asset-status"><option ' + (s === '未制作' ? 'selected' : '') + '>未制作</option><option ' + (s === '占位资源' ? 'selected' : '') + '>占位资源</option><option ' + (s === '正式资源' ? 'selected' : '') + '>正式资源</option></select>';
-      return '<tr><td>' + asset.category + '</td><td><strong>' + asset.name + '</strong></td><td><span class="status ' + statusClass(s) + '">' + select + '</span></td><td><div class="asset-path">' + asset.path + '</div></td><td><input data-note-id="' + asset.id + '" value="' + (currentNotes(asset) || '').replace(/"/g, '&quot;') + '" placeholder="备注"></td><td>' + (asset.updatedAt || '未制作') + '</td></tr>';
+      const href = isRealFileAsset(asset) ? assetHref(asset) : '';
+      const thumb = isPreviewableAsset(asset)
+        ? '<a href="' + href + '" target="_blank"><img class="asset-thumb" src="' + href + '" alt="' + escapeAttr(asset.name) + '"></a>'
+        : '<div class="asset-thumb missing">' + (asset.path.startsWith('planned/') ? '未制作' : '文件') + '</div>';
+      const name = isRealFileAsset(asset)
+        ? '<a class="asset-link" href="' + href + '" target="_blank"><strong>' + asset.name + '</strong></a>'
+        : '<strong>' + asset.name + '</strong>';
+      const pathCell = isRealFileAsset(asset)
+        ? '<a class="asset-link asset-path" href="' + href + '" target="_blank">' + asset.path + '</a>'
+        : '<div class="asset-path">' + asset.path + '</div>';
+      return '<tr><td>' + asset.category + '</td><td><div class="asset-cell">' + thumb + '<div class="asset-name-text">' + name + '</div></div></td><td><span class="status ' + statusClass(s) + '">' + select + '</span></td><td>' + pathCell + '</td><td><input data-note-id="' + asset.id + '" value="' + escapeAttr(currentNotes(asset) || '') + '" placeholder="备注"></td><td>' + (asset.updatedAt || '未制作') + '</td></tr>';
     }).join('');
     rows.querySelectorAll('.asset-status').forEach((el) => el.addEventListener('change', () => {
       overrides[el.dataset.id] = { ...(overrides[el.dataset.id] || {}), status: el.value };
@@ -431,17 +461,16 @@ function bindAssets() {
   draw();
 }
 function init() {
-  const tabs = [{ id: 'dashboard', label: 'Dashboard' }, ...DATA.docs.map((g) => ({ id: g.id, label: g.label })), { id: 'art-assets', label: '美术资产' }];
+  const tabs = [{ id: 'dashboard', label: 'Dashboard' }, { id: 'pm', label: 'PM工作台' }, ...DATA.docs.map((g) => ({ id: g.id, label: g.label })), { id: 'art-assets', label: '美术资产' }];
   renderTabs(tabs);
-  document.getElementById('views').innerHTML = renderOverview() + DATA.docs.map(renderDocs).join('') + renderAssets();
+  document.getElementById('views').innerHTML = renderDashboard() + renderPmDesk() + DATA.docs.map(renderDocs).join('') + renderAssets();
   bindAssets();
   setActive('dashboard');
 }
 init();
 </script>
 </body>
-</html>
-`;
+</html>`;
 
 fs.writeFileSync(outputPath, html, 'utf8');
 console.log(`Dashboard generated: ${path.relative(root, outputPath)}`);

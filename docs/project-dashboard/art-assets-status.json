@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "rule": "All art is placeholder until owner confirms final shipping quality.",
+  "rule": "All existing art remains placeholder until owner confirms final shipping quality. Runtime animation frames are represented by GIF previews instead of individual PNG rows.",
   "statuses": [
     "未制作",
     "占位资源",
     "正式资源"
   ],
-  "generatedAt": "2026-07-08T15:23:05.232Z",
+  "generatedAt": "2026-07-08T15:36:25.895Z",
   "assets": [
     {
       "id": "planned/props/bed.png",
@@ -36,114 +36,6 @@
       "notes": ""
     },
     {
-      "id": "assets/characters/photo_001_travel_girl/animations/happy-0.png",
-      "name": "happy-0.png",
-      "category": "角色动作帧",
-      "status": "占位资源",
-      "path": "assets/characters/photo_001_travel_girl/animations/happy-0.png",
-      "updatedAt": "2026-07-05T15:38:01.551Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/characters/photo_001_travel_girl/animations/happy-1.png",
-      "name": "happy-1.png",
-      "category": "角色动作帧",
-      "status": "占位资源",
-      "path": "assets/characters/photo_001_travel_girl/animations/happy-1.png",
-      "updatedAt": "2026-07-05T15:38:01.551Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/characters/photo_001_travel_girl/animations/idle-0.png",
-      "name": "idle-0.png",
-      "category": "角色动作帧",
-      "status": "占位资源",
-      "path": "assets/characters/photo_001_travel_girl/animations/idle-0.png",
-      "updatedAt": "2026-07-05T15:38:01.539Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/characters/photo_001_travel_girl/animations/idle-1.png",
-      "name": "idle-1.png",
-      "category": "角色动作帧",
-      "status": "占位资源",
-      "path": "assets/characters/photo_001_travel_girl/animations/idle-1.png",
-      "updatedAt": "2026-07-05T15:38:01.540Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/characters/photo_001_travel_girl/animations/idle-2.png",
-      "name": "idle-2.png",
-      "category": "角色动作帧",
-      "status": "占位资源",
-      "path": "assets/characters/photo_001_travel_girl/animations/idle-2.png",
-      "updatedAt": "2026-07-05T15:38:01.541Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/characters/photo_001_travel_girl/animations/idle-3.png",
-      "name": "idle-3.png",
-      "category": "角色动作帧",
-      "status": "占位资源",
-      "path": "assets/characters/photo_001_travel_girl/animations/idle-3.png",
-      "updatedAt": "2026-07-05T15:38:01.542Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/characters/photo_001_travel_girl/animations/sleep-0.png",
-      "name": "sleep-0.png",
-      "category": "角色动作帧",
-      "status": "占位资源",
-      "path": "assets/characters/photo_001_travel_girl/animations/sleep-0.png",
-      "updatedAt": "2026-07-05T15:38:01.549Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/characters/photo_001_travel_girl/animations/sleep-1.png",
-      "name": "sleep-1.png",
-      "category": "角色动作帧",
-      "status": "占位资源",
-      "path": "assets/characters/photo_001_travel_girl/animations/sleep-1.png",
-      "updatedAt": "2026-07-05T15:38:01.550Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/characters/photo_001_travel_girl/animations/walk-0.png",
-      "name": "walk-0.png",
-      "category": "角色动作帧",
-      "status": "占位资源",
-      "path": "assets/characters/photo_001_travel_girl/animations/walk-0.png",
-      "updatedAt": "2026-07-05T15:38:01.545Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/characters/photo_001_travel_girl/animations/walk-1.png",
-      "name": "walk-1.png",
-      "category": "角色动作帧",
-      "status": "占位资源",
-      "path": "assets/characters/photo_001_travel_girl/animations/walk-1.png",
-      "updatedAt": "2026-07-05T15:38:01.546Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/characters/photo_001_travel_girl/animations/walk-2.png",
-      "name": "walk-2.png",
-      "category": "角色动作帧",
-      "status": "占位资源",
-      "path": "assets/characters/photo_001_travel_girl/animations/walk-2.png",
-      "updatedAt": "2026-07-05T15:38:01.547Z",
-      "notes": ""
-    },
-    {
-      "id": "assets/characters/photo_001_travel_girl/animations/walk-3.png",
-      "name": "walk-3.png",
-      "category": "角色动作帧",
-      "status": "占位资源",
-      "path": "assets/characters/photo_001_travel_girl/animations/walk-3.png",
-      "updatedAt": "2026-07-05T15:38:01.547Z",
-      "notes": ""
-    },
-    {
       "id": "planned/states/hungry.png",
       "name": "Hungry state art",
       "category": "角色动作帧",
@@ -159,6 +51,42 @@
       "status": "未制作",
       "path": "planned/states/low-health.png",
       "updatedAt": null,
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/animation-previews/happy.gif",
+      "name": "happy.gif",
+      "category": "角色动作GIF",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/animation-previews/happy.gif",
+      "updatedAt": "2026-07-08T15:31:49.902Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/animation-previews/idle.gif",
+      "name": "idle.gif",
+      "category": "角色动作GIF",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/animation-previews/idle.gif",
+      "updatedAt": "2026-07-08T15:31:49.890Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/animation-previews/sleep.gif",
+      "name": "sleep.gif",
+      "category": "角色动作GIF",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/animation-previews/sleep.gif",
+      "updatedAt": "2026-07-08T15:31:49.899Z",
+      "notes": ""
+    },
+    {
+      "id": "assets/characters/photo_001_travel_girl/animation-previews/walk.gif",
+      "name": "walk.gif",
+      "category": "角色动作GIF",
+      "status": "占位资源",
+      "path": "assets/characters/photo_001_travel_girl/animation-previews/walk.gif",
+      "updatedAt": "2026-07-08T15:31:49.896Z",
       "notes": ""
     },
     {
