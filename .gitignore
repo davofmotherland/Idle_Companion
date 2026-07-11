@@ -5,6 +5,7 @@ release/
 .env
 .env.local
 tmp-*.png
+tmp-acceptance-report.json
 .DS_Store
 Thumbs.db
 .agents/skills/**/.meow_art/
